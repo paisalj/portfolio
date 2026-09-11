@@ -7,7 +7,7 @@
             <div class="footer-brand">
 
                 <a href="#home">
-                    Paisal<span>Johen2</span>
+                    Paisal<span>Johen2 saputra2</span>
                 </a>
 
                 <p>
