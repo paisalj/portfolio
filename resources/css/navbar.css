@@ -164,6 +164,25 @@
 
     transform: translateY(-1px);
 }
+/* =====================================================
+   THEME ICON
+===================================================== */
+
+.theme-toggle i {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff !important;
+
+    font-size: 1rem;
+
+    line-height: 1;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 
 
 /* =====================================================
