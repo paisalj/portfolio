@@ -1,0 +1,10 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './navbar.css';
+@import './hero.css';
+@import './about.css';
+@import './skills.css';
+@import './projects.css';
+@import './experience.css';
+@import './education.css';
+@import './contact.css';
+@import './footer.css';

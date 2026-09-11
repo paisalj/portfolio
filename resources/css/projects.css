@@ -1,0 +1,474 @@
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+
+.projects-section {
+    position: relative;
+
+    padding: 110px 0;
+
+    overflow: hidden;
+
+    background: #061226;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.projects-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+.projects-glow-1 {
+    top: 10%;
+    left: -180px;
+
+    background: rgba(22, 131, 255, 0.08);
+}
+
+.projects-glow-2 {
+    right: -180px;
+    bottom: 10%;
+
+    background: rgba(70, 70, 255, 0.08);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.projects-header {
+    max-width: 700px;
+
+    margin-bottom: 45px;
+}
+
+.projects-header .section-label {
+    margin-bottom: 18px;
+}
+
+.projects-title {
+    margin: 0 0 18px;
+
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+.projects-title span {
+    color: #1683ff;
+}
+
+.projects-subtitle {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: #8fa5c1;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c35,
+            #071426
+        );
+
+    border: 1px solid rgba(59, 130, 246, 0.17);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(22, 131, 255, 0.5);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.project-image {
+    position: relative;
+
+    height: 220px;
+
+    overflow: hidden;
+
+    background: #0a1a31;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(22, 131, 255, 0.18),
+            transparent 60%
+        );
+
+    color: #1683ff;
+
+    font-size: 3.5rem;
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.project-overlay {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background: rgba(3, 14, 30, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(8px);
+
+    color: #bcd0e8;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.project-content {
+    position: relative;
+
+    padding: 25px;
+}
+
+.project-number {
+    margin-bottom: 8px;
+
+    color: #1683ff;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.project-content h3 {
+    margin-bottom: 12px;
+
+    color: #f3f7fc;
+
+    font-size: 1.25rem;
+
+    font-weight: 750;
+}
+
+.project-content p {
+    min-height: 76px;
+
+    margin-bottom: 18px;
+
+    color: #8da2bc;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROJECT SKILLS
+===================================================== */
+
+.project-skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 22px;
+}
+
+.project-skills span {
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: rgba(22, 131, 255, 0.08);
+
+    border: 1px solid rgba(22, 131, 255, 0.15);
+
+    color: #75b5ff;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.project-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.project-links a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: #c9d8e9;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.project-links a:hover {
+    color: #ffffff;
+
+    border-color: #1683ff;
+
+    background: rgba(22, 131, 255, 0.1);
+}
+
+.project-links .project-demo {
+    margin-left: auto;
+
+    color: #ffffff;
+
+    background: #1683ff;
+
+    border-color: #1683ff;
+}
+
+.project-links .project-demo:hover {
+    background: #0876ef;
+
+    box-shadow:
+        0 8px 20px rgba(22, 131, 255, 0.2);
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.projects-empty {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: rgba(7, 24, 48, 0.6);
+
+    border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.projects-empty i {
+    margin-bottom: 15px;
+
+    color: #1683ff;
+
+    font-size: 2.5rem;
+}
+
+.projects-empty h3 {
+    font-size: 1.2rem;
+}
+
+.projects-empty p {
+    margin: 0;
+
+    color: #7f93ae;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .projects-section {
+        padding: 90px 0;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .projects-section {
+        padding: 75px 0;
+    }
+
+    .projects-header {
+        margin-bottom: 30px;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 21px;
+    }
+
+    .project-content p {
+        min-height: auto;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .projects-section {
+        padding: 65px 0;
+    }
+
+    .project-image {
+        height: 185px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-content p {
+        font-size: 0.82rem;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-links .project-demo {
+        margin-left: 0;
+    }
+
+}

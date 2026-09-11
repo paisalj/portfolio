@@ -1,0 +1,104 @@
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.portfolio-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(3, 12, 29, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.portfolio-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffffff !important;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.portfolio-brand > span:last-child > span {
+    color: #1683ff;
+}
+
+.brand-icon {
+    color: #1683ff;
+    font-size: 1.35rem;
+}
+
+.portfolio-nav-link {
+    position: relative;
+
+    color: #cbd5e1 !important;
+
+    padding: 1.4rem 1rem !important;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.portfolio-nav-link:hover {
+    color: #ffffff !important;
+}
+
+.portfolio-nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 1rem;
+    right: 1rem;
+    bottom: 7px;
+
+    height: 2px;
+
+    background: #1683ff;
+
+    transform: scaleX(0);
+
+    transition: transform 0.3s ease;
+
+    box-shadow: 0 0 10px #1683ff;
+}
+
+.portfolio-nav-link:hover::after,
+.portfolio-nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.portfolio-nav-link.active {
+    color: #1683ff !important;
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+
+    background: rgba(15, 40, 80, 0.7);
+
+    color: #ffffff;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #1683ff;
+    box-shadow: 0 0 20px rgba(22, 131, 255, 0.5);
+}
+
+.portfolio-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
