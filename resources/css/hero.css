@@ -636,13 +636,14 @@
         gap: 12px;
     }
 
-    .hero-btn-primary,
-    .hero-btn-outline {
-        width: 100%;
-        min-height: 56px;
-        font-size: 1rem;
-    }
-
+.hero-btn-primary,
+.hero-btn-outline {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+}
     .hero-social {
         margin-top: 22px;
         gap: 12px;

@@ -6,14 +6,28 @@
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     z-index: 1000;
 
     background: rgba(3, 12, 29, 0.88);
+
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
     border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.portfolio-navbar .container {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
 }
 
 
@@ -24,13 +38,21 @@
 .portfolio-brand {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     color: #ffffff !important;
+
     font-size: 1.45rem;
     font-weight: 700;
 
     white-space: nowrap;
+
+    text-decoration: none;
+}
+
+.portfolio-brand:hover {
+    color: #ffffff !important;
 }
 
 .portfolio-brand > span:last-child > span {
@@ -39,12 +61,15 @@
 
 .brand-icon {
     color: #1683ff;
+
     font-size: 1.35rem;
+
+    line-height: 1;
 }
 
 
 /* =====================================================
-   NAVIGATION LINK
+   NAVIGATION
 ===================================================== */
 
 .portfolio-nav-link {
@@ -57,12 +82,19 @@
     font-size: 1rem;
     font-weight: 500;
 
-    transition: all 0.3s ease;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
 }
 
 .portfolio-nav-link:hover {
     color: #ffffff !important;
 }
+
+
+/* =====================================================
+   NAVIGATION ACTIVE LINE
+===================================================== */
 
 .portfolio-nav-link::after {
     content: "";
@@ -78,6 +110,8 @@
     background: #1683ff;
 
     transform: scaleX(0);
+
+    transform-origin: center;
 
     transition: transform 0.3s ease;
 
@@ -102,19 +136,33 @@
     width: 42px;
     height: 42px;
 
+    padding: 0;
+
     border: 1px solid rgba(59, 130, 246, 0.3);
+
     border-radius: 12px;
 
     background: rgba(15, 40, 80, 0.7);
 
     color: #ffffff;
 
-    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 .theme-toggle:hover {
     background: #1683ff;
-    box-shadow: 0 0 20px rgba(22, 131, 255, 0.5);
+
+    box-shadow:
+        0 0 20px rgba(22, 131, 255, 0.5);
+
+    transform: translateY(-1px);
 }
 
 
@@ -129,17 +177,78 @@
     padding: 0;
 
     border: 1px solid rgba(255, 255, 255, 0.2);
+
     border-radius: 10px;
 
-    display: flex;
+    background: rgba(15, 40, 80, 0.7);
+
+    color: #ffffff;
+
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    background: rgba(15, 40, 80, 0.7);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.portfolio-toggler:hover {
+    background: rgba(22, 131, 255, 0.15);
+
+    border-color: rgba(22, 131, 255, 0.5);
 }
 
 .portfolio-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(22, 131, 255, 0.15);
+    box-shadow:
+        0 0 0 3px rgba(22, 131, 255, 0.15);
+}
+
+
+/* =====================================================
+   HAMBURGER ICON
+===================================================== */
+
+/*
+   Bootstrap tetap menggunakan:
+   <span class="navbar-toggler-icon"></span>
+
+   Kita hanya mengganti tampilan icon-nya.
+*/
+
+.portfolio-toggler .navbar-toggler-icon {
+    width: 24px;
+    height: 18px;
+
+    display: block;
+
+    position: relative;
+
+    background-image: none !important;
+
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    border-radius: 1px;
+}
+
+.portfolio-toggler .navbar-toggler-icon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 1px;
+
+    transform: translateY(-50%);
 }
 
 
@@ -150,8 +259,9 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-    .portfolio-navbar .container,
-    .portfolio-navbar .container-fluid {
+    .portfolio-navbar .container {
+        min-height: 68px;
+
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -166,6 +276,7 @@
 
     .portfolio-nav-link {
         font-size: 1rem;
+
         padding: 0.9rem 0.8rem !important;
     }
 
@@ -177,7 +288,7 @@
 
 /* =====================================================
    MOBILE
-   381px - 767px
+   <= 767px
 ===================================================== */
 
 @media (max-width: 767.98px) {
@@ -186,14 +297,16 @@
         min-height: 64px;
     }
 
-    /*
-       Jarak kiri-kanan sedang.
-       Tidak terlalu mepet dan tidak terlalu jauh.
-    */
-    .portfolio-navbar .container,
-    .portfolio-navbar .container-fluid {
+
+    /* ---------------------------------------------
+       CONTAINER
+    --------------------------------------------- */
+
+    .portfolio-navbar .container {
         width: 100%;
         max-width: 100%;
+
+        min-height: 64px;
 
         padding-left: 16px;
         padding-right: 16px;
@@ -202,12 +315,13 @@
     }
 
 
-    /* -----------------------------
-       BRAND MOBILE
-    ----------------------------- */
+    /* ---------------------------------------------
+       BRAND
+    --------------------------------------------- */
 
     .portfolio-brand {
         font-size: 1.15rem;
+
         gap: 8px;
     }
 
@@ -216,36 +330,41 @@
     }
 
 
-    /* -----------------------------
-       HAMBURGER MOBILE
-    ----------------------------- */
+    /* ---------------------------------------------
+       HAMBURGER
+    --------------------------------------------- */
 
     .portfolio-toggler {
         width: 44px;
         height: 44px;
 
+        flex-shrink: 0;
+
         border-radius: 10px;
     }
 
 
-    /* -----------------------------
-       COLLAPSED MENU
-    ----------------------------- */
+    /* ---------------------------------------------
+       COLLAPSE MENU
+    --------------------------------------------- */
 
     .portfolio-navbar .navbar-collapse {
         padding: 10px 0 16px;
     }
 
 
-    /* -----------------------------
-       MENU LINK MOBILE
-    ----------------------------- */
+    /* ---------------------------------------------
+       NAVIGATION LINK
+    --------------------------------------------- */
 
     .portfolio-nav-link {
-        font-size: 1rem;
-        line-height: 1.4;
+        width: 100%;
 
         padding: 10px 12px !important;
+
+        font-size: 1rem;
+
+        line-height: 1.4;
 
         border-radius: 8px;
     }
@@ -255,9 +374,9 @@
     }
 
 
-    /* -----------------------------
+    /* ---------------------------------------------
        ACTIVE LINE MOBILE
-    ----------------------------- */
+    --------------------------------------------- */
 
     .portfolio-nav-link::after {
         left: 12px;
@@ -270,9 +389,9 @@
     }
 
 
-    /* -----------------------------
-       THEME BUTTON MOBILE
-    ----------------------------- */
+    /* ---------------------------------------------
+       THEME BUTTON
+    --------------------------------------------- */
 
     .theme-toggle {
         width: 42px;
@@ -285,19 +404,20 @@
 
 /* =====================================================
    SMALL PHONE
-   360px - 380px
+   <= 380px
 ===================================================== */
 
 @media (max-width: 380px) {
 
-    .portfolio-navbar .container,
-    .portfolio-navbar .container-fluid {
+    .portfolio-navbar .container {
         padding-left: 14px;
         padding-right: 14px;
     }
 
     .portfolio-brand {
         font-size: 1.1rem;
+
+        gap: 7px;
     }
 
     .brand-icon {
@@ -309,6 +429,11 @@
         height: 42px;
     }
 
+    .portfolio-toggler .navbar-toggler-icon {
+        width: 22px;
+        height: 17px;
+    }
+
     .portfolio-nav-link {
         font-size: 0.98rem;
     }
@@ -317,19 +442,19 @@
 
 /* =====================================================
    VERY SMALL PHONE
-   320px - 359px
+   <= 359px
 ===================================================== */
 
 @media (max-width: 359px) {
 
-    .portfolio-navbar .container,
-    .portfolio-navbar .container-fluid {
+    .portfolio-navbar .container {
         padding-left: 12px;
         padding-right: 12px;
     }
 
     .portfolio-brand {
         font-size: 1rem;
+
         gap: 7px;
     }
 
@@ -340,6 +465,11 @@
     .portfolio-toggler {
         width: 40px;
         height: 40px;
+    }
+
+    .portfolio-toggler .navbar-toggler-icon {
+        width: 21px;
+        height: 16px;
     }
 
     .portfolio-nav-link {
