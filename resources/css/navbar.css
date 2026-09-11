@@ -102,3 +102,81 @@
 .portfolio-toggler {
     border-color: rgba(255, 255, 255, 0.2);
 }
+/* =====================================================
+   RESPONSIVE NAVBAR - MOBILE
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+    .portfolio-navbar {
+        padding: 0;
+    }
+
+    .portfolio-navbar .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* Nama / logo */
+    .portfolio-brand {
+        font-size: 1.25rem;
+        gap: 8px;
+    }
+
+    .brand-icon {
+        font-size: 1.2rem;
+    }
+
+    /* Tombol hamburger */
+    .portfolio-toggler {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(22, 131, 255, 0.35);
+        border-radius: 12px;
+
+        background: rgba(15, 40, 80, 0.65);
+    }
+
+    .portfolio-toggler:focus {
+        box-shadow: 0 0 0 3px rgba(22, 131, 255, 0.15);
+    }
+
+    /* Area menu ketika hamburger dibuka */
+    .portfolio-navbar .navbar-collapse {
+        padding: 12px 0 16px;
+    }
+
+    /* Link menu */
+    .portfolio-nav-link {
+        font-size: 1rem;
+        padding: 0.85rem 0.75rem !important;
+
+        border-radius: 10px;
+    }
+
+    .portfolio-nav-link:hover {
+        background: rgba(22, 131, 255, 0.08);
+    }
+
+    /* Garis aktif */
+    .portfolio-nav-link::after {
+        left: 0.75rem;
+        right: auto;
+        bottom: 5px;
+
+        width: 35px;
+    }
+
+    /* Theme button */
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        margin-top: 8px;
+    }
+}
