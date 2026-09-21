@@ -1,0 +1,263 @@
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-skills-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 44px;
+    padding: 0 16px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.admin-skills-back-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.admin-skills-form-card {
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+}
+
+.admin-skills-form-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 21px 22px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-skills-form-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    border-radius: 11px;
+    background: #f1f5f9;
+
+    color: #334155;
+}
+
+.admin-skills-form-header span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #94a3b8;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.admin-skills-form-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+    font-size: 1.12rem;
+    font-weight: 700;
+}
+
+.admin-skills-form-header p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+    font-size: 0.82rem;
+}
+
+
+/* FORM GRID */
+
+.admin-skills-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    padding: 24px 22px;
+}
+
+.admin-skills-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-skills-form-group label {
+    color: #334155;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.admin-skills-input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.admin-skills-input-wrapper > i {
+    position: absolute;
+    left: 14px;
+
+    color: #94a3b8;
+    font-size: 0.86rem;
+    pointer-events: none;
+}
+
+.admin-skills-input-wrapper input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 42px;
+
+    border: 1px solid #dbe3ec;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-size: 0.86rem;
+
+    transition: all 0.2s ease;
+}
+
+.admin-skills-input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+.admin-skills-input-wrapper input:focus {
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.12);
+}
+
+.admin-skills-input-suffix {
+    position: absolute;
+    right: 14px;
+
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.admin-skills-form-group small {
+    color: #94a3b8;
+    font-size: 0.72rem;
+}
+
+
+/* ACTIONS */
+
+.admin-skills-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    padding: 18px 22px;
+
+    border-top: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.admin-skills-cancel-btn,
+.admin-skills-save-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 42px;
+    padding: 0 16px;
+
+    border-radius: 9px;
+
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.admin-skills-cancel-btn {
+    border: 1px solid #dbe3ec;
+    background: #ffffff;
+    color: #475569;
+}
+
+.admin-skills-cancel-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.admin-skills-save-btn {
+    border: 1px solid #0f172a;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.admin-skills-save-btn:hover {
+    background: #1e293b;
+    border-color: #1e293b;
+}
+
+
+/* =========================================================
+   FORM RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .admin-skills-form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 20px 17px;
+    }
+
+    .admin-skills-form-header {
+        padding: 18px 17px;
+    }
+
+    .admin-skills-form-actions {
+        flex-direction: column-reverse;
+        padding: 16px 17px;
+    }
+
+    .admin-skills-cancel-btn,
+    .admin-skills-save-btn {
+        width: 100%;
+    }
+
+    .admin-skills-back-btn {
+        width: 100%;
+    }
+
+}

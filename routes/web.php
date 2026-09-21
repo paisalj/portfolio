@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,21 @@ Route::get('/admin/about/edit', [AboutController::class, 'edit'])
 
 Route::put('/admin/about', [AboutController::class, 'update'])
     ->name('admin.about.update');
+
+    Route::get('/admin/skills', [SkillController::class, 'index'])
+    ->name('admin.skills');
+
+Route::get('/admin/skills/create', [SkillController::class, 'create'])
+    ->name('admin.skills.create');
+
+Route::post('/admin/skills', [SkillController::class, 'store'])
+    ->name('admin.skills.store');
+
+Route::get('/admin/skills/{skill}/edit', [SkillController::class, 'edit'])
+    ->name('admin.skills.edit');
+
+Route::put('/admin/skills/{skill}', [SkillController::class, 'update'])
+    ->name('admin.skills.update');
+
+Route::delete('/admin/skills/{skill}', [SkillController::class, 'destroy'])
+    ->name('admin.skills.destroy');

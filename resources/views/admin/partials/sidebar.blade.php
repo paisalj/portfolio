@@ -50,7 +50,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.skills') }}" class="admin-nav-link">
             <i class="fa-solid fa-code"></i>
             <span>Skills</span>
         </a>
