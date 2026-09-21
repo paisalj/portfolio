@@ -56,7 +56,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.projects') }}" class="admin-nav-link">
             <i class="fa-solid fa-folder-open"></i>
             <span>Projects</span>
         </a>

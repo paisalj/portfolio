@@ -5,9 +5,13 @@ import Swal from 'sweetalert2';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const deleteForms = document.querySelectorAll('.delete-skill-form');
+    // =====================================================
+    // DELETE SKILL
+    // =====================================================
 
-    deleteForms.forEach(function (form) {
+    const deleteSkillForms = document.querySelectorAll('.delete-skill-form');
+
+    deleteSkillForms.forEach(function (form) {
 
         form.addEventListener('submit', function (event) {
 
@@ -16,6 +20,40 @@ document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({
                 title: 'Hapus Skill?',
                 text: 'Skill ini akan dihapus dari portfolio.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+                reverseButtons: true,
+                focusCancel: true
+            }).then(function (result) {
+
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+
+            });
+
+        });
+
+    });
+
+
+    // =====================================================
+    // DELETE PROJECT
+    // =====================================================
+
+    const deleteProjectForms = document.querySelectorAll('.delete-project-form');
+
+    deleteProjectForms.forEach(function (form) {
+
+        form.addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+            Swal.fire({
+                title: 'Hapus Project?',
+                text: 'Project ini akan dihapus dari portfolio.',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Ya, Hapus',

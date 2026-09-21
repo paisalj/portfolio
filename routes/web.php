@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\SkillController;
-
+use App\Http\Controllers\Admin\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | PORTFOLIO
@@ -94,3 +94,21 @@ Route::put('/admin/skills/{skill}', [SkillController::class, 'update'])
 
 Route::delete('/admin/skills/{skill}', [SkillController::class, 'destroy'])
     ->name('admin.skills.destroy');
+
+    Route::get('/admin/projects', [ProjectController::class, 'index'])
+    ->name('admin.projects');
+
+Route::get('/admin/projects/create', [ProjectController::class, 'create'])
+    ->name('admin.projects.create');
+
+Route::post('/admin/projects', [ProjectController::class, 'store'])
+    ->name('admin.projects.store');
+
+Route::get('/admin/projects/{project}/edit', [ProjectController::class, 'edit'])
+    ->name('admin.projects.edit');
+
+Route::put('/admin/projects/{project}', [ProjectController::class, 'update'])
+    ->name('admin.projects.update');
+
+Route::delete('/admin/projects/{project}', [ProjectController::class, 'destroy'])
+    ->name('admin.projects.destroy');
