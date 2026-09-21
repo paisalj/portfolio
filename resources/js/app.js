@@ -102,3 +102,31 @@ deleteExperienceForms.forEach(function (form) {
     });
 
 });
+const deleteEducationForms = document.querySelectorAll('.delete-education-form');
+
+deleteEducationForms.forEach(function (form) {
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        Swal.fire({
+            title: 'Hapus Education?',
+            text: 'Data pendidikan ini akan dihapus dari portfolio.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus',
+            cancelButtonText: 'Batal',
+            reverseButtons: true,
+            focusCancel: true
+        }).then(function (result) {
+
+            if (result.isConfirmed) {
+                form.submit();
+            }
+
+        });
+
+    });
+
+});

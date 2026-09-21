@@ -68,7 +68,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.education') }}" class="admin-nav-link">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>Education</span>
         </a>
