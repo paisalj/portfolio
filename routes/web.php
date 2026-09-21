@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,13 @@ Route::get('/admin/home/edit', [HomeController::class, 'edit'])
 
 Route::put('/admin/home', [HomeController::class, 'update'])
     ->name('admin.home.update');
+
+    // ABOUT
+Route::get('/admin/about', [AboutController::class, 'index'])
+    ->name('admin.about');
+
+Route::get('/admin/about/edit', [AboutController::class, 'edit'])
+    ->name('admin.about.edit');
+
+Route::put('/admin/about', [AboutController::class, 'update'])
+    ->name('admin.about.update');

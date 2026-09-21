@@ -35,6 +35,13 @@
             <span>Home</span>
         </a>
         <a
+            href="{{ route('admin.about') }}"
+            class="admin-nav-link {{ request()->routeIs('admin.about') ? 'active' : '' }}"
+        >
+            <i class="fa-solid fa-user"></i>
+            <span>About</span>
+        </a>
+        <a
             href="{{ route('admin.profile') }}"
             class="admin-nav-link {{ request()->routeIs('admin.profile*') ? 'active' : '' }}"
         >
