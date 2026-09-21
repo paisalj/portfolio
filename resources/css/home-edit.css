@@ -1,0 +1,838 @@
+/* =========================================================
+   HOME EDIT PAGE
+========================================================= */
+
+.admin-home-edit-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   OUTER CARD
+   CARD BESAR PEMBUNGKUS SELURUH HALAMAN
+========================================================= */
+
+.admin-home-edit-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    margin-bottom: 38px;
+    padding: 28px 24px 24px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.045);
+
+    overflow: visible;
+}
+
+
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.admin-home-edit-page .admin-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 28px;
+}
+
+.admin-home-edit-page .admin-page-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #64748b;
+}
+
+.admin-home-edit-page .admin-page-header h1 {
+    margin: 0;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    color: #0f172a;
+}
+
+.admin-home-edit-page .admin-page-header p {
+    margin: 8px 0 0;
+
+    font-size: 0.92rem;
+    line-height: 1.6;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.admin-home-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding: 0 16px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-home-back-btn:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #0f172a;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.admin-home-edit-page .admin-alert {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    font-size: 0.88rem;
+}
+
+.admin-home-edit-page .admin-alert-error {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #991b1b;
+}
+
+.admin-home-edit-page .admin-alert-error > i {
+    margin-top: 2px;
+}
+
+.admin-home-edit-page .admin-alert-error ul {
+    margin: 6px 0 0;
+
+    padding-left: 18px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-home-edit-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.admin-home-edit-card {
+    margin-bottom: 20px;
+
+    padding: 24px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 22px rgba(15, 23, 42, 0.035);
+}
+
+.admin-home-edit-card:last-of-type {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.admin-home-edit-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 24px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+.admin-home-edit-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f1f5f9;
+    color: #334155;
+
+    font-size: 1rem;
+}
+
+.admin-home-edit-card-header h2 {
+    margin: 0;
+
+    font-size: 1.05rem;
+    font-weight: 750;
+
+    color: #0f172a;
+}
+
+.admin-home-edit-card-header p {
+    margin: 4px 0 0;
+
+    font-size: 0.83rem;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.admin-home-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.admin-form-grid-3 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.admin-form-group {
+    margin-bottom: 20px;
+}
+
+.admin-home-form-grid .admin-form-group {
+    margin-bottom: 0;
+}
+
+.admin-form-group label,
+.admin-media-box > label {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+
+    color: #334155;
+}
+
+.admin-form-group label i,
+.admin-media-box > label i {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   INPUT / TEXTAREA
+========================================================= */
+
+.admin-home-edit-form input[type="text"],
+.admin-home-edit-form input[type="url"],
+.admin-home-edit-form textarea {
+    width: 100%;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-home-edit-form input[type="text"],
+.admin-home-edit-form input[type="url"] {
+    height: 46px;
+
+    padding: 0 13px;
+}
+
+.admin-home-edit-form textarea {
+    min-height: 130px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+}
+
+.admin-home-edit-form input:focus,
+.admin-home-edit-form textarea:focus {
+    border-color: #64748b;
+
+    box-shadow:
+        0 0 0 3px rgba(100, 116, 139, 0.10);
+}
+
+.admin-home-edit-form input::placeholder,
+.admin-home-edit-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+.admin-form-group small,
+.admin-media-box small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 0.75rem;
+
+    line-height: 1.5;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.admin-home-media-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.admin-media-box {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CURRENT IMAGE
+========================================================= */
+
+.admin-current-image {
+    width: 100%;
+
+    min-height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    overflow: hidden;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+
+    background: #f8fafc;
+}
+
+.admin-current-image img {
+    display: block;
+
+    width: 100%;
+    max-height: 280px;
+
+    object-fit: cover;
+}
+
+.admin-no-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 220px;
+
+    color: #94a3b8;
+
+    text-align: center;
+}
+
+.admin-no-image i {
+    font-size: 2rem;
+}
+
+.admin-no-image span {
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.admin-home-edit-form input[type="file"] {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 0.82rem;
+}
+
+.admin-home-edit-form input[type="file"]::file-selector-button {
+    margin-right: 10px;
+
+    padding: 7px 11px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #e2e8f0;
+    color: #334155;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CURRENT CV
+========================================================= */
+
+.admin-current-cv {
+    min-height: 220px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 14px;
+
+    padding: 20px;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+
+    background: #f8fafc;
+}
+
+.admin-cv-file {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.admin-cv-file > i {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #fee2e2;
+    color: #dc2626;
+
+    font-size: 1.25rem;
+}
+
+.admin-cv-file strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 0.88rem;
+
+    color: #334155;
+}
+
+.admin-cv-file a {
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    color: #475569;
+
+    text-decoration: none;
+}
+
+.admin-cv-file a:hover {
+    color: #0f172a;
+
+    text-decoration: underline;
+}
+
+.admin-no-cv {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #94a3b8;
+
+    text-align: center;
+}
+
+.admin-no-cv i {
+    font-size: 2rem;
+}
+
+.admin-no-cv span {
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.admin-home-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding-top: 2px;
+}
+
+.admin-home-cancel-btn,
+.admin-home-save-btn {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.admin-home-cancel-btn {
+    border: 1px solid #dbe2ea;
+
+    background: #ffffff;
+    color: #475569;
+}
+
+.admin-home-cancel-btn:hover {
+    background: #f8fafc;
+
+    color: #0f172a;
+
+    transform: translateY(-1px);
+}
+
+.admin-home-save-btn {
+    border: 1px solid #0f172a;
+
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.admin-home-save-btn:hover {
+    background: #1e293b;
+
+    border-color: #1e293b;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .admin-home-edit-container {
+        padding: 24px 20px 20px;
+    }
+
+    .admin-form-grid-3 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .admin-home-edit-container {
+        padding: 20px 14px 16px;
+
+        border-radius: 16px;
+    }
+
+    .admin-home-edit-container::before {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: -8px;
+
+        border-radius: 16px;
+    }
+
+
+    /* HEADER */
+
+    .admin-home-edit-page .admin-page-header {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 15px;
+
+        margin-bottom: 22px;
+    }
+
+    .admin-home-edit-page .admin-page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .admin-home-edit-page .admin-page-header p {
+        font-size: 0.87rem;
+    }
+
+    .admin-home-back-btn {
+        width: 100%;
+    }
+
+
+    /* CARDS */
+
+    .admin-home-edit-card {
+        padding: 18px;
+
+        border-radius: 14px;
+
+        margin-bottom: 16px;
+    }
+
+    .admin-home-edit-card-header {
+        align-items: flex-start;
+
+        margin-bottom: 20px;
+
+        padding-bottom: 16px;
+    }
+
+    .admin-home-edit-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* FORM */
+
+    .admin-home-form-grid,
+    .admin-home-media-grid,
+    .admin-form-grid-3 {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .admin-home-form-grid .admin-form-group,
+    .admin-form-grid-3 .admin-form-group {
+        margin-bottom: 18px;
+    }
+
+
+    /* IMAGE / CV */
+
+    .admin-current-image,
+    .admin-current-cv {
+        min-height: 180px;
+    }
+
+    .admin-no-image {
+        min-height: 180px;
+    }
+
+
+    /* ACTIONS */
+
+    .admin-home-form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .admin-home-cancel-btn,
+    .admin-home-save-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .admin-home-edit-container {
+        padding: 16px 10px 12px;
+
+        border-radius: 14px;
+    }
+
+    .admin-home-edit-container::before {
+        top: 7px;
+        left: 7px;
+        right: 7px;
+        bottom: -7px;
+
+        border-radius: 14px;
+    }
+
+    .admin-home-edit-page .admin-page-header h1 {
+        font-size: 1.45rem;
+    }
+
+    .admin-home-edit-page .admin-page-header p {
+        font-size: 0.84rem;
+    }
+
+    .admin-home-edit-card {
+        padding: 15px;
+    }
+
+    .admin-home-edit-card-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .admin-home-edit-card-header p {
+        font-size: 0.78rem;
+    }
+
+    .admin-home-edit-form input[type="text"],
+    .admin-home-edit-form input[type="url"] {
+        height: 44px;
+    }
+
+}

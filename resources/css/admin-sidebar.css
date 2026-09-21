@@ -1,0 +1,181 @@
+/* =====================================================
+   ADMIN SIDEBAR
+===================================================== */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+
+    background: #030c1d;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 1000;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    margin-bottom: 35px;
+}
+
+.admin-brand-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background: rgba(22, 131, 255, 0.14);
+
+    color: #1683ff;
+    font-size: 1rem;
+}
+
+.admin-brand-text h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.admin-brand-text span {
+    display: block;
+    margin-top: 2px;
+
+    color: #64748b;
+    font-size: 0.7rem;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.admin-nav-link {
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 0 13px;
+
+    border-radius: 9px;
+
+    color: #94a3b8;
+    font-size: 0.86rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.admin-nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.admin-nav-link:hover {
+    color: #ffffff;
+    background: rgba(22, 131, 255, 0.08);
+}
+
+.admin-nav-link.active {
+    color: #ffffff;
+    background: rgba(22, 131, 255, 0.18);
+
+    box-shadow:
+        inset 3px 0 0 #1683ff;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.admin-sidebar-bottom {
+    margin-top: auto;
+}
+
+.admin-logout {
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 0 13px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 0.86rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.admin-logout i {
+    width: 20px;
+    text-align: center;
+}
+
+.admin-logout:hover {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.08);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .admin-sidebar {
+        width: 240px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    .admin-sidebar.show {
+        transform: translateX(0);
+    }
+
+}

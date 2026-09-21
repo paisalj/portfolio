@@ -9,3 +9,12 @@
 @import './contact.css';
 @import './footer.css';
 @import './admin-login.css';
+
+@import './admin-sidebar.css';
+@import './admin-navbar.css';
+/* ADMIN */
+@import './admin.css';
+@import './admin-profile-index.css';
+@import './profile-edit.css';
+@import './home-edit.css';
+@import './home-index.css';
