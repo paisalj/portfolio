@@ -73,3 +73,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+const deleteExperienceForms = document.querySelectorAll('.delete-experience-form');
+
+deleteExperienceForms.forEach(function (form) {
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        Swal.fire({
+            title: 'Hapus Experience?',
+            text: 'Experience ini akan dihapus dari portfolio.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus',
+            cancelButtonText: 'Batal',
+            reverseButtons: true,
+            focusCancel: true
+        }).then(function (result) {
+
+            if (result.isConfirmed) {
+                form.submit();
+            }
+
+        });
+
+    });
+
+});

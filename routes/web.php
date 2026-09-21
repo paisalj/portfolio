@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ExperienceController;
 /*
 |--------------------------------------------------------------------------
 | PORTFOLIO
@@ -112,3 +113,21 @@ Route::put('/admin/projects/{project}', [ProjectController::class, 'update'])
 
 Route::delete('/admin/projects/{project}', [ProjectController::class, 'destroy'])
     ->name('admin.projects.destroy');
+
+    Route::get('/admin/experience', [ExperienceController::class, 'index'])
+    ->name('admin.experience');
+
+Route::get('/admin/experience/create', [ExperienceController::class, 'create'])
+    ->name('admin.experience.create');
+
+Route::post('/admin/experience', [ExperienceController::class, 'store'])
+    ->name('admin.experience.store');
+
+Route::get('/admin/experience/{experience}/edit', [ExperienceController::class, 'edit'])
+    ->name('admin.experience.edit');
+
+Route::put('/admin/experience/{experience}', [ExperienceController::class, 'update'])
+    ->name('admin.experience.update');
+
+Route::delete('/admin/experience/{experience}', [ExperienceController::class, 'destroy'])
+    ->name('admin.experience.destroy');

@@ -62,7 +62,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.experience') }}" class="admin-nav-link">
             <i class="fa-solid fa-briefcase"></i>
             <span>Experience</span>
         </a>
