@@ -17,7 +17,6 @@
 
                     <span></span>
 
-                    HELLO, I'M
 
                 </div>
 

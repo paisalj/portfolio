@@ -62,6 +62,11 @@
                         Education
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link portfolio-nav-link" href="#certificates">
+                        Certificates
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link portfolio-nav-link" href="#contact">

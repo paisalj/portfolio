@@ -1,21 +1,24 @@
 /* =====================================================
-   NAVBAR
+   PORTFOLIO NAVBAR
 ===================================================== */
 
 .portfolio-navbar {
     position: fixed;
     top: 0;
     left: 0;
-
-    width: 100%;
+    right: 0;
     z-index: 1000;
 
-    background: rgba(3, 12, 29, 0.88);
+    background: rgba(3, 12, 29, 0.84);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -24,7 +27,7 @@
 ===================================================== */
 
 .portfolio-navbar .container {
-    min-height: 72px;
+    min-height: 76px;
 
     display: flex;
     align-items: center;
@@ -36,35 +39,68 @@
 ===================================================== */
 
 .portfolio-brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-
     gap: 10px;
 
     color: #ffffff !important;
+    text-decoration: none;
 
-    font-size: 1.45rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
 
     white-space: nowrap;
 
-    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .portfolio-brand:hover {
     color: #ffffff !important;
+    transform: translateY(-1px);
 }
+
+
+/* =====================================================
+   BRAND ICON
+===================================================== */
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(22, 131, 255, 0.1);
+    border: 1px solid rgba(22, 131, 255, 0.2);
+
+    color: #1683ff;
+
+    font-size: 0.9rem;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.portfolio-brand:hover .brand-icon {
+    background: rgba(22, 131, 255, 0.15);
+    border-color: rgba(22, 131, 255, 0.35);
+    transform: rotate(-3deg);
+}
+
+
+/* BRAND NAME */
 
 .portfolio-brand > span:last-child > span {
     color: #1683ff;
-}
-
-.brand-icon {
-    color: #1683ff;
-
-    font-size: 1.35rem;
-
-    line-height: 1;
 }
 
 
@@ -72,59 +108,78 @@
    NAVIGATION
 ===================================================== */
 
+.portfolio-navbar .navbar-nav {
+    gap: 5px;
+}
+
 .portfolio-nav-link {
     position: relative;
 
-    color: #cbd5e1 !important;
+    display: inline-flex !important;
+    align-items: center;
 
-    padding: 1.4rem 1rem !important;
+    min-height: 42px;
 
-    font-size: 1rem;
-    font-weight: 500;
+    padding: 0 12px !important;
+
+    color: #91a4bd !important;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    border-radius: 9px;
 
     transition:
-        color 0.3s ease,
-        background 0.3s ease;
-}
-
-.portfolio-nav-link:hover {
-    color: #ffffff !important;
+        color 0.25s ease,
+        background 0.25s ease;
 }
 
 
-/* =====================================================
-   NAVIGATION ACTIVE LINE
-===================================================== */
+/* UNDERLINE */
 
 .portfolio-nav-link::after {
     content: "";
 
     position: absolute;
 
-    left: 1rem;
-    right: 1rem;
-    bottom: 7px;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
 
     height: 2px;
+
+    border-radius: 999px;
 
     background: #1683ff;
 
     transform: scaleX(0);
-
     transform-origin: center;
 
-    transition: transform 0.3s ease;
-
-    box-shadow: 0 0 10px #1683ff;
+    transition: transform 0.25s ease;
 }
 
-.portfolio-nav-link:hover::after,
-.portfolio-nav-link.active::after {
+
+/* HOVER */
+
+.portfolio-nav-link:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.portfolio-nav-link:hover::after {
     transform: scaleX(1);
 }
 
+
+/* ACTIVE */
+
 .portfolio-nav-link.active {
-    color: #1683ff !important;
+    color: #ffffff !important;
+    background: rgba(22, 131, 255, 0.08);
+}
+
+.portfolio-nav-link.active::after {
+    transform: scaleX(1);
 }
 
 
@@ -133,352 +188,227 @@
 ===================================================== */
 
 .theme-toggle {
-    width: 42px;
-    height: 42px;
-
-    padding: 0;
-
-    border: 1px solid rgba(59, 130, 246, 0.3);
-
-    border-radius: 12px;
-
-    background: rgba(15, 40, 80, 0.7);
-
-    color: #ffffff;
+    width: 40px;
+    height: 40px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
+    margin-left: 6px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #9fb2c9;
+
+    font-size: 0.85rem;
+
+    cursor: pointer;
+
     transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .theme-toggle:hover {
-    background: #1683ff;
+    color: #ffffff;
 
-    box-shadow:
-        0 0 20px rgba(22, 131, 255, 0.5);
+    background: rgba(22, 131, 255, 0.1);
+    border-color: rgba(22, 131, 255, 0.3);
 
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
-/* =====================================================
-   THEME ICON
-===================================================== */
 
-.theme-toggle i {
-    display: inline-flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    color: #ffffff !important;
-
-    font-size: 1rem;
-
-    line-height: 1;
-
-    visibility: visible !important;
-    opacity: 1 !important;
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 
 /* =====================================================
-   HAMBURGER BUTTON
+   MOBILE TOGGLE
 ===================================================== */
 
 .portfolio-toggler {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
 
-    padding: 0;
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    border-radius: 10px;
-
-    background: rgba(15, 40, 80, 0.7);
-
-    color: #ffffff;
-
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+
+    background: rgba(255, 255, 255, 0.035) !important;
+
+    box-shadow: none !important;
 }
 
 .portfolio-toggler:hover {
-    background: rgba(22, 131, 255, 0.15);
-
-    border-color: rgba(22, 131, 255, 0.5);
+    background: rgba(22, 131, 255, 0.1) !important;
+    border-color: rgba(22, 131, 255, 0.3) !important;
 }
 
 .portfolio-toggler:focus {
-    box-shadow:
-        0 0 0 3px rgba(22, 131, 255, 0.15);
+    box-shadow: none !important;
 }
 
 
-/* =====================================================
-   HAMBURGER ICON
-===================================================== */
-
-/*
-   Bootstrap tetap menggunakan:
-   <span class="navbar-toggler-icon"></span>
-
-   Kita hanya mengganti tampilan icon-nya.
-*/
+/* Bootstrap hamburger */
 
 .portfolio-toggler .navbar-toggler-icon {
-    width: 24px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 
-    display: block;
+    background-image: var(--bs-navbar-toggler-icon-bg);
 
-    position: relative;
-
-    background-image: none !important;
-
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-
-    border-radius: 1px;
-}
-
-.portfolio-toggler .navbar-toggler-icon::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    width: 100%;
-    height: 2px;
-
-    background: #ffffff;
-
-    border-radius: 1px;
-
-    transform: translateY(-50%);
+    filter: brightness(0) invert(1);
 }
 
 
 /* =====================================================
    TABLET
-   768px - 991px
 ===================================================== */
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (max-width: 1100px) {
 
-    .portfolio-navbar .container {
-        min-height: 68px;
-
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
-    .portfolio-brand {
-        font-size: 1.3rem;
-    }
-
-    .brand-icon {
-        font-size: 1.25rem;
+    .portfolio-navbar .navbar-nav {
+        gap: 2px;
     }
 
     .portfolio-nav-link {
-        font-size: 1rem;
+        padding-left: 9px !important;
+        padding-right: 9px !important;
 
-        padding: 0.9rem 0.8rem !important;
+        font-size: 0.74rem;
     }
 
-    .portfolio-navbar .navbar-collapse {
-        padding: 12px 0 16px;
+    .portfolio-nav-link::after {
+        left: 9px;
+        right: 9px;
     }
+
 }
 
 
 /* =====================================================
    MOBILE
-   <= 767px
 ===================================================== */
 
-@media (max-width: 767.98px) {
-
-    .portfolio-navbar {
-        min-height: 64px;
-    }
-
-
-    /* ---------------------------------------------
-       CONTAINER
-    --------------------------------------------- */
+@media (max-width: 991px) {
 
     .portfolio-navbar .container {
-        width: 100%;
-        max-width: 100%;
-
-        min-height: 64px;
-
-        padding-left: 16px;
-        padding-right: 16px;
-
-        margin: 0;
+        min-height: 70px;
     }
-
-
-    /* ---------------------------------------------
-       BRAND
-    --------------------------------------------- */
-
-    .portfolio-brand {
-        font-size: 1.15rem;
-
-        gap: 8px;
-    }
-
-    .brand-icon {
-        font-size: 1.15rem;
-    }
-
-
-    /* ---------------------------------------------
-       HAMBURGER
-    --------------------------------------------- */
 
     .portfolio-toggler {
-        width: 44px;
-        height: 44px;
-
-        flex-shrink: 0;
-
-        border-radius: 10px;
+        display: inline-flex;
     }
 
 
-    /* ---------------------------------------------
-       COLLAPSE MENU
-    --------------------------------------------- */
+    /* COLLAPSED MENU */
 
     .portfolio-navbar .navbar-collapse {
-        padding: 10px 0 16px;
+        width: 100%;
+
+        margin-top: 10px;
+        padding: 10px;
+
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 15px;
+
+        background: rgba(5, 17, 36, 0.97);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.25);
     }
 
 
-    /* ---------------------------------------------
-       NAVIGATION LINK
-    --------------------------------------------- */
+    /* MENU */
+
+    .portfolio-navbar .navbar-nav {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+    }
+
 
     .portfolio-nav-link {
         width: 100%;
 
-        padding: 10px 12px !important;
+        min-height: 46px;
 
-        font-size: 1rem;
+        justify-content: flex-start;
 
-        line-height: 1.4;
+        padding: 0 14px !important;
 
-        border-radius: 8px;
+        border-radius: 10px;
+
+        font-size: 0.86rem;
     }
-
-    .portfolio-nav-link:hover {
-        background: rgba(22, 131, 255, 0.08);
-    }
-
-
-    /* ---------------------------------------------
-       ACTIVE LINE MOBILE
-    --------------------------------------------- */
 
     .portfolio-nav-link::after {
-        left: 12px;
-        right: auto;
+        display: none;
+    }
 
-        bottom: 5px;
-
-        width: 30px;
-        height: 2px;
+    .portfolio-nav-link:hover,
+    .portfolio-nav-link.active {
+        background: rgba(22, 131, 255, 0.09);
     }
 
 
-    /* ---------------------------------------------
-       THEME BUTTON
-    --------------------------------------------- */
+    /* THEME */
+
+    .portfolio-navbar .nav-item:last-child {
+        margin-top: 6px;
+        padding-top: 10px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
 
     .theme-toggle {
-        width: 42px;
-        height: 42px;
-
-        margin-top: 8px;
+        margin-left: 0;
     }
+
 }
 
 
 /* =====================================================
-   SMALL PHONE
-   <= 380px
+   SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
     .portfolio-navbar .container {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-
-    .portfolio-brand {
-        font-size: 1.1rem;
-
-        gap: 7px;
-    }
-
-    .brand-icon {
-        font-size: 1.1rem;
-    }
-
-    .portfolio-toggler {
-        width: 42px;
-        height: 42px;
-    }
-
-    .portfolio-toggler .navbar-toggler-icon {
-        width: 22px;
-        height: 17px;
-    }
-
-    .portfolio-nav-link {
-        font-size: 0.98rem;
-    }
-}
-
-
-/* =====================================================
-   VERY SMALL PHONE
-   <= 359px
-===================================================== */
-
-@media (max-width: 359px) {
-
-    .portfolio-navbar .container {
-        padding-left: 12px;
-        padding-right: 12px;
+        min-height: 66px;
     }
 
     .portfolio-brand {
         font-size: 1rem;
-
-        gap: 7px;
     }
 
     .brand-icon {
-        font-size: 1rem;
+        width: 34px;
+        height: 34px;
+
+        font-size: 0.8rem;
     }
 
     .portfolio-toggler {
@@ -486,12 +416,32 @@
         height: 40px;
     }
 
-    .portfolio-toggler .navbar-toggler-icon {
-        width: 21px;
-        height: 16px;
+    .portfolio-navbar .navbar-collapse {
+        margin-top: 8px;
+        padding: 10px;
     }
 
     .portfolio-nav-link {
-        font-size: 0.95rem;
+        min-height: 44px;
+        font-size: 0.84rem;
     }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portfolio-navbar,
+    .portfolio-brand,
+    .brand-icon,
+    .portfolio-nav-link,
+    .theme-toggle,
+    .portfolio-toggler {
+        transition: none;
+    }
+
 }
