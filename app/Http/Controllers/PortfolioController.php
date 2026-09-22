@@ -25,7 +25,6 @@ class PortfolioController extends Controller
 
         // PROJECTS
         $projects = Project::with('skills')
-            ->where('is_featured', true)
             ->latest()
             ->get();
 
