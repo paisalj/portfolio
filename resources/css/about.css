@@ -4,11 +4,8 @@
 
 .about-section {
     position: relative;
-
     padding: 110px 0;
-
     overflow: hidden;
-
     background:
         radial-gradient(
             circle at 80% 50%,
@@ -16,38 +13,37 @@
             transparent 35%
         ),
         #030d21;
-
     color: #ffffff;
 }
 
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
 .about-glow {
     position: absolute;
-
     border-radius: 50%;
-
     filter: blur(100px);
-
     pointer-events: none;
+    animation: aboutGlowMove 8s ease-in-out infinite alternate;
 }
 
 .about-glow-1 {
     width: 280px;
     height: 280px;
-
     left: -150px;
     top: 30%;
-
     background: rgba(0, 91, 255, 0.10);
 }
 
 .about-glow-2 {
     width: 250px;
     height: 250px;
-
     right: -120px;
     bottom: 10%;
-
     background: rgba(81, 0, 255, 0.08);
+    animation-delay: 2s;
 }
 
 
@@ -57,119 +53,109 @@
 
 .section-label {
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     margin-bottom: 15px;
-
     color: #1683ff;
-
     font-size: 0.9rem;
-
     font-weight: 600;
-
     letter-spacing: 2px;
 }
 
 .section-label span {
     width: 32px;
     height: 2px;
-
     background: #1683ff;
-
-    box-shadow:
-        0 0 12px rgba(22, 131, 255, 0.8);
+    box-shadow: 0 0 12px rgba(22, 131, 255, 0.8);
 }
 
 
 /* =====================================================
-   ABOUT TITLE
+   ABOUT LEFT
 ===================================================== */
+
+.about-left {
+    animation: aboutFadeLeft 0.9s ease both;
+}
 
 .about-title {
     margin-bottom: 25px;
-
     font-size: clamp(2.3rem, 4vw, 3.5rem);
-
     line-height: 1.15;
-
     font-weight: 800;
-
     letter-spacing: -1px;
 }
 
 .about-title span {
     color: #1683ff;
-
-    text-shadow:
-        0 0 20px rgba(22, 131, 255, 0.15);
+    text-shadow: 0 0 20px rgba(22, 131, 255, 0.15);
 }
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
 
 .about-description {
     max-width: 600px;
-
     margin-bottom: 18px;
-
     color: #aebed3;
-
     font-size: 1rem;
-
     line-height: 1.85;
+}
+
+.about-description p {
+    margin: 0;
 }
 
 
 /* =====================================================
-   INFORMATION
+   ABOUT INFORMATION
 ===================================================== */
 
 .about-info-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 12px;
-
     margin-top: 30px;
 }
 
 .about-info-card {
     display: flex;
-
     align-items: center;
-
     gap: 14px;
-
     min-height: 75px;
-
     padding: 13px 15px;
 
     border: 1px solid rgba(59, 130, 246, 0.18);
-
     border-radius: 12px;
 
     background: rgba(7, 24, 48, 0.55);
-
     backdrop-filter: blur(10px);
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.about-info-card:nth-child(1) {
+    animation: aboutInfoUp 0.7s ease 0.15s both;
+}
+
+.about-info-card:nth-child(2) {
+    animation: aboutInfoUp 0.7s ease 0.25s both;
+}
+
+.about-info-card:nth-child(3) {
+    animation: aboutInfoUp 0.7s ease 0.35s both;
+}
+
+.about-info-card:nth-child(4) {
+    animation: aboutInfoUp 0.7s ease 0.45s both;
 }
 
 .about-info-card:hover {
-    transform: translateY(-4px);
-
+    transform: translateY(-5px);
     border-color: rgba(22, 131, 255, 0.55);
-
     background: rgba(11, 35, 70, 0.75);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
 }
 
 .about-info-icon {
@@ -179,75 +165,58 @@
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
     background: rgba(22, 131, 255, 0.12);
-
     color: #1683ff;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.about-info-card:hover .about-info-icon {
+    transform: scale(1.08) rotate(5deg);
+    background: rgba(22, 131, 255, 0.20);
 }
 
 .about-info-card small {
     display: block;
-
     margin-bottom: 3px;
-
     color: #7185a1;
-
     font-size: 0.72rem;
 }
 
 .about-info-card strong {
     display: block;
-
     color: #e8f0fa;
-
     font-size: 0.88rem;
-
     font-weight: 600;
 }
 
 
 /* =====================================================
-   ABOUT VISUAL
+   ABOUT RIGHT
 ===================================================== */
+
+.about-right {
+    animation: aboutFadeRight 0.9s ease 0.15s both;
+}
 
 .about-visual {
     position: relative;
-
     min-height: 550px;
 }
 
 
-/* Glow behind visual */
-
-.about-visual-glow {
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: rgba(0, 91, 255, 0.08);
-
-    filter: blur(80px);
-}
-
-
 /* =====================================================
-   DEVELOPER CARD
+   MAIN DEVELOPER CARD
 ===================================================== */
 
-.developer-card {
+.about-main-card {
     position: absolute;
 
     left: 50%;
@@ -271,18 +240,26 @@
             rgba(3, 14, 33, 0.98)
         );
 
-    border: 1px solid rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.40);
 
     box-shadow:
-        0 30px 70px rgba(0, 0, 0, 0.4),
+        0 30px 70px rgba(0, 0, 0, 0.40),
         0 0 45px rgba(22, 131, 255, 0.10);
 
     z-index: 2;
+
+    animation:
+        aboutCardFloat 5s ease-in-out infinite,
+        aboutCardAppear 0.9s ease 0.2s both;
 }
 
-.developer-card-grid {
-    position: absolute;
 
+/* Grid effect */
+
+.about-main-card::before {
+    content: "";
+
+    position: absolute;
     inset: 0;
 
     opacity: 0.25;
@@ -299,16 +276,50 @@
         );
 
     background-size: 35px 35px;
+
+    pointer-events: none;
 }
 
-.developer-icon {
+
+/* Moving shine */
+
+.about-main-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -120%;
+    left: -40%;
+
+    width: 45%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    animation: aboutCardShine 6s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MAIN CARD CONTENT
+===================================================== */
+
+.about-code-icon {
     position: relative;
 
     width: 90px;
     height: 90px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -323,7 +334,7 @@
             rgba(22, 131, 255, 0.04)
         );
 
-    border: 1px solid rgba(22, 131, 255, 0.3);
+    border: 1px solid rgba(22, 131, 255, 0.30);
 
     color: #1683ff;
 
@@ -331,13 +342,15 @@
 
     box-shadow:
         0 0 30px rgba(22, 131, 255, 0.12);
+
+    z-index: 2;
+
+    animation: aboutIconPulse 3s ease-in-out infinite;
 }
 
-.developer-content {
+.about-card-label {
     position: relative;
-}
 
-.developer-content > span {
     color: #1683ff;
 
     font-size: 0.75rem;
@@ -345,9 +358,13 @@
     letter-spacing: 2px;
 
     font-weight: 600;
+
+    z-index: 2;
 }
 
-.developer-content h3 {
+.about-main-card h3 {
+    position: relative;
+
     margin: 12px 0;
 
     font-size: 2rem;
@@ -355,43 +372,32 @@
     line-height: 1.2;
 
     font-weight: 800;
+
+    z-index: 2;
 }
 
-.developer-content h3 span {
+.about-main-card h3 span {
     color: #1683ff;
 }
 
-.developer-content p {
+.about-main-card p {
+    position: relative;
+
     color: #91a6c2;
 
     font-size: 0.9rem;
 
     line-height: 1.7;
-}
 
-.developer-line {
-    position: absolute;
-
-    left: 35px;
-    right: 35px;
-    bottom: 28px;
-
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #1683ff,
-        transparent
-    );
+    z-index: 2;
 }
 
 
 /* =====================================================
-   QUOTE
+   QUOTE CARD
 ===================================================== */
 
-.about-quote {
+.about-quote-card {
     position: absolute;
 
     top: 20px;
@@ -403,16 +409,20 @@
 
     border-radius: 15px;
 
-    background: rgba(7, 24, 48, 0.82);
+    background: rgba(7, 24, 48, 0.88);
 
     border: 1px solid rgba(59, 130, 246, 0.25);
 
     backdrop-filter: blur(12px);
 
     z-index: 5;
+
+    animation:
+        aboutQuoteIn 0.8s ease 0.6s both,
+        aboutQuoteFloat 4s ease-in-out 1.4s infinite;
 }
 
-.quote-icon {
+.about-quote-icon {
     color: #1683ff;
 
     font-size: 1.5rem;
@@ -420,7 +430,7 @@
     margin-bottom: 8px;
 }
 
-.about-quote p {
+.about-quote-card p {
     margin: 0;
 
     color: #c7d5e6;
@@ -432,10 +442,10 @@
 
 
 /* =====================================================
-   FEATURE CARDS
+   FLOATING FEATURE CARDS
 ===================================================== */
 
-.about-feature {
+.about-floating-card {
     position: absolute;
 
     width: 205px;
@@ -450,27 +460,31 @@
 
     border-radius: 14px;
 
-    background: rgba(5, 20, 42, 0.90);
+    background: rgba(5, 20, 42, 0.92);
 
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.20);
 
     backdrop-filter: blur(12px);
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 
     z-index: 5;
 }
 
-.about-feature:hover {
-    transform: translateY(-5px);
+.about-floating-card:hover {
+    transform: translateY(-7px) scale(1.02);
 
-    border-color: rgba(22, 131, 255, 0.5);
+    border-color: rgba(22, 131, 255, 0.55);
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.25);
+        0 15px 35px rgba(0, 0, 0, 0.28),
+        0 0 20px rgba(22, 131, 255, 0.08);
 }
 
-.feature-icon {
+.about-floating-icon {
     width: 38px;
     height: 38px;
 
@@ -486,9 +500,18 @@
     background: rgba(22, 131, 255, 0.12);
 
     color: #1683ff;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
-.about-feature strong {
+.about-floating-card:hover .about-floating-icon {
+    transform: rotate(-5deg) scale(1.08);
+    background: rgba(22, 131, 255, 0.20);
+}
+
+.about-floating-card strong {
     display: block;
 
     margin-bottom: 4px;
@@ -498,7 +521,7 @@
     font-size: 0.78rem;
 }
 
-.about-feature small {
+.about-floating-card span {
     display: block;
 
     color: #7f93ae;
@@ -508,24 +531,189 @@
     line-height: 1.5;
 }
 
-.feature-1 {
+
+/* =====================================================
+   FLOATING CARD POSITIONS
+===================================================== */
+
+.about-card-problem {
     left: 0;
     bottom: 115px;
+
+    animation:
+        aboutFeatureIn 0.7s ease 0.75s both,
+        aboutFeatureFloat 4s ease-in-out 1.4s infinite;
 }
 
-.feature-2 {
+.about-card-teamwork {
     right: 0;
     bottom: 115px;
+
+    animation:
+        aboutFeatureIn 0.7s ease 0.85s both,
+        aboutFeatureFloat 4s ease-in-out 1.8s infinite;
 }
 
-.feature-3 {
+.about-card-learning {
     left: 0;
     bottom: 15px;
+
+    animation:
+        aboutFeatureIn 0.7s ease 0.95s both,
+        aboutFeatureFloat 4s ease-in-out 2.2s infinite;
 }
 
-.feature-4 {
+.about-card-code {
     right: 0;
     bottom: 15px;
+
+    animation:
+        aboutFeatureIn 0.7s ease 1.05s both,
+        aboutFeatureFloat 4s ease-in-out 2.6s infinite;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes aboutFadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aboutFadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aboutCardAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes aboutCardFloat {
+    0%,
+    100% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, calc(-50% - 7px));
+    }
+}
+
+@keyframes aboutCardShine {
+    0% {
+        left: -50%;
+    }
+
+    45%,
+    100% {
+        left: 140%;
+    }
+}
+
+@keyframes aboutIconPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 25px rgba(22, 131, 255, 0.10);
+    }
+
+    50% {
+        box-shadow:
+            0 0 38px rgba(22, 131, 255, 0.24);
+    }
+}
+
+@keyframes aboutQuoteIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes aboutQuoteFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes aboutFeatureIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aboutFeatureFloat {
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -5px;
+    }
+}
+
+@keyframes aboutInfoUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aboutGlowMove {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(25px, -20px) scale(1.08);
+    }
 }
 
 
@@ -539,8 +727,12 @@
         padding: 90px 0;
     }
 
+    .about-right {
+        margin-top: 25px;
+    }
+
     .about-visual {
-        margin-top: 20px;
+        min-height: 560px;
     }
 
 }
@@ -556,66 +748,87 @@
         padding: 75px 0;
     }
 
+    .about-title {
+        font-size: 2.35rem;
+    }
+
     .about-info-grid {
         grid-template-columns: 1fr;
     }
 
     .about-visual {
         min-height: 700px;
-
         margin-top: 20px;
     }
 
-    .developer-card {
+    .about-main-card {
         width: 280px;
-
         min-height: 350px;
-
         padding: 30px;
     }
 
-    .developer-icon {
+    .about-code-icon {
         width: 70px;
         height: 70px;
-
         font-size: 2rem;
+        margin-bottom: 25px;
     }
 
-    .developer-content h3 {
+    .about-main-card h3 {
         font-size: 1.7rem;
     }
 
-    .about-quote {
+    .about-quote-card {
         top: 0;
         right: 0;
-
         width: 210px;
+        padding: 16px;
     }
 
-    .about-feature {
+    .about-floating-card {
         width: 180px;
-
         padding: 10px;
     }
 
-    .feature-1 {
+    .about-card-problem {
         left: 0;
         bottom: 105px;
     }
 
-    .feature-2 {
+    .about-card-teamwork {
         right: 0;
         bottom: 105px;
     }
 
-    .feature-3 {
+    .about-card-learning {
         left: 0;
         bottom: 10px;
     }
 
-    .feature-4 {
+    .about-card-code {
         right: 0;
         bottom: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-glow,
+    .about-left,
+    .about-right,
+    .about-main-card,
+    .about-quote-card,
+    .about-floating-card,
+    .about-info-card,
+    .about-code-icon {
+        animation: none !important;
+        transition: none !important;
     }
 
 }

@@ -7,38 +7,51 @@
 
         <div class="row align-items-center g-5">
 
-            {{-- =========================
+            {{-- =========================================
                 ABOUT LEFT
-            ========================== --}}
-            <div class="col-lg-6">
+            ========================================== --}}
+            <div class="col-lg-6 about-left">
 
+                {{-- LABEL --}}
                 <div class="section-label">
                     <span></span>
                     ABOUT ME
                 </div>
 
+                {{-- TITLE --}}
                 <h2 class="about-title">
                     Get to know
-                    <span>me better</span>
+                    <span>me</span>
+                    better
                 </h2>
 
-                <p class="about-description">
-                    {{ $about->bio }}
-                </p>
+                {{-- DESCRIPTION --}}
+                <div class="about-description">
 
-                <p class="about-description">
-                    Saya memiliki ketertarikan yang besar dalam dunia
-                    teknologi, khususnya pengembangan aplikasi web.
-                    Saya selalu berusaha untuk belajar hal baru,
-                    meningkatkan kemampuan, dan menciptakan solusi
-                    yang bermanfaat melalui kode.
-                </p>
+                    @if($about?->description)
+                        <p>
+                            {{ $about->description }}
+                        </p>
+                    @else
+                        <p>
+                            Saya memiliki ketertarikan yang besar dalam dunia
+                            teknologi, khususnya pengembangan aplikasi web.
+                            Saya selalu berusaha untuk belajar hal baru,
+                            meningkatkan kemampuan, dan menciptakan solusi
+                            yang bermanfaat melalui kode.
+                        </p>
+                    @endif
+
+                </div>
 
 
-                {{-- INFORMATION CARDS --}}
+                {{-- =========================================
+                    ABOUT INFORMATION
+                ========================================== --}}
                 <div class="about-info-grid">
 
-                    @if($about->location)
+                    {{-- LOCATION --}}
+                    @if($about?->location)
 
                         <div class="about-info-card">
 
@@ -48,7 +61,10 @@
 
                             <div>
                                 <small>Location</small>
-                                <strong>{{ $about->location }}</strong>
+
+                                <strong>
+                                    {{ $about->location }}
+                                </strong>
                             </div>
 
                         </div>
@@ -56,171 +72,198 @@
                     @endif
 
 
-                    <div class="about-info-card">
+                    {{-- FOCUS --}}
+                    @if($about?->focus)
 
-                        <div class="about-info-icon">
-                            <i class="fa-solid fa-code"></i>
+                        <div class="about-info-card">
+
+                            <div class="about-info-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div>
+                                <small>Focus</small>
+
+                                <strong>
+                                    {{ $about->focus }}
+                                </strong>
+                            </div>
+
                         </div>
 
-                        <div>
-                            <small>Focus</small>
-                            <strong>Web Development</strong>
+                    @endif
+
+
+                    {{-- FRAMEWORK --}}
+                    @if($about?->framework)
+
+                        <div class="about-info-card">
+
+                            <div class="about-info-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+
+                            <div>
+                                <small>Framework</small>
+
+                                <strong>
+                                    {{ $about->framework }}
+                                </strong>
+                            </div>
+
                         </div>
 
-                    </div>
+                    @endif
 
 
-                    <div class="about-info-card">
+                    {{-- DATABASE --}}
+                    @if($about?->database)
 
-                        <div class="about-info-icon">
-                            <i class="fa-solid fa-layer-group"></i>
+                        <div class="about-info-card">
+
+                            <div class="about-info-icon">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+
+                            <div>
+                                <small>Database</small>
+
+                                <strong>
+                                    {{ $about->database }}
+                                </strong>
+                            </div>
+
                         </div>
 
-                        <div>
-                            <small>Framework</small>
-                            <strong>Laravel</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-info-card">
-
-                        <div class="about-info-icon">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-
-                        <div>
-                            <small>Database</small>
-                            <strong>MySQL</strong>
-                        </div>
-
-                    </div>
+                    @endif
 
                 </div>
 
             </div>
 
 
-            {{-- =========================
+            {{-- =========================================
                 ABOUT RIGHT
-            ========================== --}}
-            <div class="col-lg-6">
+            ========================================== --}}
+            <div class="col-lg-6 about-right">
 
                 <div class="about-visual">
 
-                    <div class="about-visual-glow"></div>
-
                     {{-- MAIN CARD --}}
-                    <div class="developer-card">
+                    <div class="about-main-card">
 
-                        <div class="developer-card-grid"></div>
-
-                        <div class="developer-icon">
+                        <div class="about-code-icon">
                             <i class="fa-solid fa-code"></i>
                         </div>
 
-                        <div class="developer-content">
-
-                            <span>WEB DEVELOPER</span>
-
-                            <h3>
-                                Build.
-                                <span>Learn.</span>
-                                Create.
-                            </h3>
-
-                            <p>
-                                Turning ideas into modern web
-                                applications through clean and
-                                meaningful code.
-                            </p>
-
+                        <div class="about-card-label">
+                            WEB DEVELOPER
                         </div>
 
-                        <div class="developer-line"></div>
-
-                    </div>
-
-
-                    {{-- QUOTE --}}
-                    <div class="about-quote">
-
-                        <div class="quote-icon">
-                            <i class="fa-solid fa-quote-left"></i>
-                        </div>
+                        <h3>
+                            Build.
+                            <span>Learn.</span>
+                            Create.
+                        </h3>
 
                         <p>
-                            Selalu berusaha memberikan hasil terbaik
-                            dalam setiap project yang dikerjakan.
+                            Saya terus mengembangkan kemampuan dalam
+                            membangun aplikasi web yang modern,
+                            responsif, dan terstruktur.
                         </p>
 
                     </div>
 
 
-                    {{-- FEATURE CARDS --}}
+                    {{-- VALUES / QUOTE --}}
+                    @if($about?->values)
 
-                    <div class="about-feature feature-1">
+                        <div class="about-quote-card">
 
-                        <div class="feature-icon">
+                            <div class="about-quote-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+
+                            <p>
+                                {{ $about->values }}
+                            </p>
+
+                        </div>
+
+                    @endif
+
+
+                    {{-- PROBLEM SOLVING --}}
+                    <div class="about-floating-card about-card-problem">
+
+                        <div class="about-floating-icon">
                             <i class="fa-regular fa-lightbulb"></i>
                         </div>
 
                         <div>
                             <strong>Problem Solving</strong>
-                            <small>
-                                Mencari solusi terbaik untuk setiap
-                                tantangan.
-                            </small>
+
+                            <span>
+                                Mencari solusi terbaik
+                                untuk setiap tantangan.
+                            </span>
                         </div>
 
                     </div>
 
 
-                    <div class="about-feature feature-2">
+                    {{-- TEAMWORK --}}
+                    <div class="about-floating-card about-card-teamwork">
 
-                        <div class="feature-icon">
+                        <div class="about-floating-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
 
                         <div>
                             <strong>Teamwork</strong>
-                            <small>
-                                Bekerja sama untuk hasil yang lebih baik.
-                            </small>
+
+                            <span>
+                                Bekerja sama untuk hasil
+                                yang lebih baik.
+                            </span>
                         </div>
 
                     </div>
 
 
-                    <div class="about-feature feature-3">
+                    {{-- CONTINUOUS LEARNING --}}
+                    <div class="about-floating-card about-card-learning">
 
-                        <div class="feature-icon">
+                        <div class="about-floating-icon">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
 
                         <div>
                             <strong>Continuous Learning</strong>
-                            <small>
-                                Selalu belajar teknologi terbaru.
-                            </small>
+
+                            <span>
+                                Selalu belajar teknologi
+                                terbaru.
+                            </span>
                         </div>
 
                     </div>
 
 
-                    <div class="about-feature feature-4">
+                    {{-- CLEAN CODE --}}
+                    <div class="about-floating-card about-card-code">
 
-                        <div class="feature-icon">
+                        <div class="about-floating-icon">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
 
                         <div>
                             <strong>Clean Code</strong>
-                            <small>
-                                Menulis kode yang rapi dan mudah
-                                dipelihara.
-                            </small>
+
+                            <span>
+                                Menulis kode yang rapi
+                                dan mudah dipelihara.
+                            </span>
                         </div>
 
                     </div>
