@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\CertificateController;
 /*
 |--------------------------------------------------------------------------
 | PORTFOLIO
@@ -150,3 +151,21 @@ Route::put('/admin/education/{education}', [EducationController::class, 'update'
 
 Route::delete('/admin/education/{education}', [EducationController::class, 'destroy'])
     ->name('admin.education.destroy');
+
+    Route::get('/admin/certificates', [CertificateController::class, 'index'])
+    ->name('admin.certificates');
+
+Route::get('/admin/certificates/create', [CertificateController::class, 'create'])
+    ->name('admin.certificates.create');
+
+Route::post('/admin/certificates', [CertificateController::class, 'store'])
+    ->name('admin.certificates.store');
+
+Route::get('/admin/certificates/{certificate}/edit', [CertificateController::class, 'edit'])
+    ->name('admin.certificates.edit');
+
+Route::put('/admin/certificates/{certificate}', [CertificateController::class, 'update'])
+    ->name('admin.certificates.update');
+
+Route::delete('/admin/certificates/{certificate}', [CertificateController::class, 'destroy'])
+    ->name('admin.certificates.destroy');

@@ -74,7 +74,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.certificates') }}" class="admin-nav-link">
             <i class="fa-solid fa-certificate"></i>
             <span>Certificates</span>
         </a>
