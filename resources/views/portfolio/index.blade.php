@@ -33,6 +33,8 @@
 
     @include('portfolio.sections.education')
 
+    @include('portfolio.sections.certificate')
+
     @include('portfolio.sections.contact')
 
     @include('portfolio.sections.footer')
