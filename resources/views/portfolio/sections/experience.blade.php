@@ -5,7 +5,9 @@
 
     <div class="container position-relative">
 
-        {{-- HEADER --}}
+        {{-- =========================================
+            HEADER
+        ========================================== --}}
         <div class="experience-header">
 
             <div class="section-label">
@@ -19,23 +21,28 @@
 
             <p class="experience-subtitle">
                 Pengalaman yang membantu saya mengembangkan kemampuan
-                dalam pengembangan aplikasi dan bekerja dalam tim.
+                dalam pengembangan aplikasi web, pemecahan masalah,
+                dan bekerja dalam tim.
             </p>
 
         </div>
 
 
-        {{-- EXPERIENCE LIST --}}
+        {{-- =========================================
+            EXPERIENCE LIST
+        ========================================== --}}
         <div class="experience-list">
 
             @forelse($experiences as $experience)
 
-                <div class="experience-item">
+                <article class="experience-item">
 
                     {{-- TIMELINE --}}
                     <div class="experience-timeline">
 
-                        <div class="experience-dot"></div>
+                        <div class="experience-dot">
+                            <span></span>
+                        </div>
 
                         @if(!$loop->last)
                             <div class="experience-line"></div>
@@ -44,30 +51,45 @@
                     </div>
 
 
-                    {{-- DATE --}}
-                    <div class="experience-date">
+                    {{-- PERIOD --}}
+                    <div class="experience-period">
 
-                        <span>
-                            {{ $experience->start_date?->format('M Y') }}
+                        <span class="experience-period-start">
+                            {{ $experience->start_date?->format('M Y') ?? '-' }}
                         </span>
 
-                        <strong>
+                        <span class="experience-period-separator">
+                            —
+                        </span>
+
+                        <span class="experience-period-end">
+
                             @if($experience->is_current)
+
                                 Present
+
                             @else
-                                {{ $experience->end_date?->format('M Y') }}
+
+                                {{ $experience->end_date?->format('M Y') ?? '-' }}
+
                             @endif
-                        </strong>
+
+                        </span>
 
                     </div>
 
 
-                    {{-- CONTENT --}}
+                    {{-- EXPERIENCE CARD --}}
                     <div class="experience-card">
 
-                        <div class="experience-card-header">
+                        {{-- CARD TOP --}}
+                        <div class="experience-card-top">
 
-                            <div>
+                            <div class="experience-card-heading">
+
+                                <span class="experience-card-label">
+                                    PROFESSIONAL EXPERIENCE
+                                </span>
 
                                 <h3>
                                     {{ $experience->position }}
@@ -79,51 +101,81 @@
 
                             </div>
 
+
+                            {{-- LOCATION --}}
                             @if($experience->location)
 
-                                <span class="experience-location">
+                                <div class="experience-location">
+
                                     <i class="fa-solid fa-location-dot"></i>
-                                    {{ $experience->location }}
-                                </span>
+
+                                    <span>
+                                        {{ $experience->location }}
+                                    </span>
+
+                                </div>
 
                             @endif
 
                         </div>
 
 
+                        {{-- DESCRIPTION --}}
                         @if($experience->description)
 
-                            <p>
-                                {{ $experience->description }}
-                            </p>
+                            <div class="experience-description">
+
+                                <p>
+                                    {{ $experience->description }}
+                                </p>
+
+                            </div>
 
                         @endif
 
-                        <div class="experience-badge">
 
-                            <i class="fa-solid fa-briefcase"></i>
+                        {{-- CARD FOOTER --}}
+                        <div class="experience-card-footer">
 
-                            Professional Experience
+                            <div class="experience-status">
+
+                                <span class="experience-status-dot"></span>
+
+                                @if($experience->is_current)
+                                    Currently Working
+                                @else
+                                    Completed
+                                @endif
+
+                            </div>
+
+                            <div class="experience-icon">
+
+                                <i class="fa-solid fa-briefcase"></i>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                </article>
 
             @empty
 
                 <div class="experience-empty">
 
-                    <i class="fa-solid fa-briefcase"></i>
+                    <div class="experience-empty-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
 
                     <h3>
                         No Experience Yet
                     </h3>
 
                     <p>
-                        Pengalaman yang ditambahkan akan ditampilkan
-                        di bagian ini.
+                        Pengalaman yang ditambahkan melalui Admin
+                        akan ditampilkan di sini.
                     </p>
 
                 </div>
