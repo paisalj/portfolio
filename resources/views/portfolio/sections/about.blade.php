@@ -23,7 +23,7 @@
                 </h2>
 
                 <p class="about-description">
-                    {{ $profile->bio }}
+                    {{ $about->bio }}
                 </p>
 
                 <p class="about-description">
@@ -38,7 +38,7 @@
                 {{-- INFORMATION CARDS --}}
                 <div class="about-info-grid">
 
-                    @if($profile->location)
+                    @if($about->location)
 
                         <div class="about-info-card">
 
@@ -48,7 +48,7 @@
 
                             <div>
                                 <small>Location</small>
-                                <strong>{{ $profile->location }}</strong>
+                                <strong>{{ $about->location }}</strong>
                             </div>
 
                         </div>

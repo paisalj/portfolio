@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Home;
+use App\Models\About;
 use App\Models\Skill;
 use App\Models\Project;
 use App\Models\Experience;
@@ -21,8 +23,17 @@ class DashboardController extends Controller
             'educations' => educations::count(),
             'certificates' => Certificate::count(),
             'messages' => Message::count(),
+            'unread_messages' => Message::where('is_read', false)->count(),
         ];
 
-        return view('admin.dashboard', compact('stats'));
+        $latestMessages = Message::latest()->take(5)->get();
+
+        $latestProjects = Project::latest()->take(5)->get();
+
+        return view('admin.dashboard.index', compact(
+            'stats',
+            'latestMessages',
+            'latestProjects'
+        ));
     }
 }

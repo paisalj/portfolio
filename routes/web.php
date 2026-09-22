@@ -47,9 +47,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])
 */
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])
-    ->middleware('auth')
     ->name('admin.dashboard');
-
 // Admin Profile
 Route::get('/admin/profile', [ProfileController::class, 'index'])
     ->middleware('auth')
