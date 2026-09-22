@@ -95,40 +95,153 @@
 
 
             {{-- RIGHT --}}
-            <div class="col-lg-7">
+{{-- RIGHT --}}
+<div class="col-lg-7">
 
-                <div class="contact-action-card">
+    <div class="contact-action-card">
 
-                    <div class="contact-action-icon">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </div>
+        <div class="contact-action-icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
 
-                    <h3>
-                        Let's start a conversation
-                    </h3>
+        <h3>
+            Let's start a conversation
+        </h3>
 
-                    <p>
-                        Punya pertanyaan, ide project, atau peluang
-                        kerja? Kirimkan pesan dan mari kita berdiskusi.
-                    </p>
+        <p>
+            Punya pertanyaan, ide project, atau peluang
+            kerja? Kirimkan pesan dan mari kita berdiskusi.
+        </p>
 
 
-                    @if($profile->email)
+        {{-- SUCCESS MESSAGE --}}
+        @if(session('contact_success'))
 
-                        <a
-                            href="mailto:{{ $profile->email }}"
-                            class="contact-main-button"
-                        >
-                            Send Me an Email
+            <div class="contact-success-message">
+                <i class="fa-solid fa-circle-check"></i>
+                {{ session('contact_success') }}
+            </div>
 
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+        @endif
 
-                    @endif
 
+        {{-- VALIDATION ERROR --}}
+        @if($errors->any())
+
+            <div class="contact-error-message">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                <div>
+                    <strong>Pesan belum dapat dikirim.</strong>
+
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
 
             </div>
+
+        @endif
+
+
+        {{-- CONTACT FORM --}}
+        <form
+            action="{{ route('contact.store') }}"
+            method="POST"
+            class="contact-form"
+        >
+
+            @csrf
+
+            <div class="contact-form-group">
+
+                <label for="contact-name">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    value="{{ old('name') }}"
+                    placeholder="Masukkan nama Anda"
+                    required
+                >
+
+            </div>
+
+
+            <div class="contact-form-group">
+
+                <label for="contact-email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    value="{{ old('email') }}"
+                    placeholder="nama@email.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="contact-form-group">
+
+                <label for="contact-subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="contact-subject"
+                    name="subject"
+                    value="{{ old('subject') }}"
+                    placeholder="Contoh: Peluang kerja"
+                >
+
+            </div>
+
+
+            <div class="contact-form-group">
+
+                <label for="contact-message">
+                    Pesan
+                </label>
+
+                <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tulis pesan Anda..."
+                    required
+                >{{ old('message') }}</textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="contact-main-button"
+            >
+
+                Kirim Pesan
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
         </div>
 

@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | PORTFOLIO
@@ -169,3 +171,15 @@ Route::put('/admin/certificates/{certificate}', [CertificateController::class, '
 
 Route::delete('/admin/certificates/{certificate}', [CertificateController::class, 'destroy'])
     ->name('admin.certificates.destroy');
+
+    Route::get('/admin/messages', [MessageController::class, 'index'])
+    ->name('admin.messages');
+
+Route::get('/admin/messages/{message}', [MessageController::class, 'show'])
+    ->name('admin.messages.show');
+
+Route::delete('/admin/messages/{message}', [MessageController::class, 'destroy'])
+    ->name('admin.messages.destroy');
+
+    Route::post('/contact', [ContactController::class, 'store'])
+    ->name('contact.store');

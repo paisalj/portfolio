@@ -80,7 +80,7 @@
         </a>
 
 
-        <a href="#" class="admin-nav-link">
+        <a href="{{ route('admin.messages') }}" class="admin-nav-link">
             <i class="fa-solid fa-envelope"></i>
             <span>Messages</span>
         </a>

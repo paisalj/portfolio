@@ -158,3 +158,31 @@ deleteCertificateForms.forEach(function (form) {
     });
 
 });
+const deleteMessageForms = document.querySelectorAll('.delete-message-form');
+
+deleteMessageForms.forEach(function (form) {
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        Swal.fire({
+            title: 'Hapus Pesan?',
+            text: 'Pesan ini akan dihapus dari inbox admin.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus',
+            cancelButtonText: 'Batal',
+            reverseButtons: true,
+            focusCancel: true
+        }).then(function (result) {
+
+            if (result.isConfirmed) {
+                form.submit();
+            }
+
+        });
+
+    });
+
+});
