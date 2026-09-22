@@ -18,96 +18,146 @@
             </h2>
 
             <p class="education-subtitle">
-                Latar belakang pendidikan dan bidang yang menjadi dasar
-                perjalanan saya di dunia teknologi.
+                Latar belakang pendidikan yang menjadi dasar
+                perjalanan saya dalam dunia teknologi dan pengembangan web.
             </p>
 
         </div>
 
 
-        {{-- EDUCATION LIST --}}
-        <div class="education-list">
+        {{-- EDUCATION TIMELINE --}}
+        <div class="education-timeline">
 
             @forelse($educations as $education)
 
-                <div class="education-card">
+                <article class="education-item">
 
-                    {{-- ICON --}}
-                    <div class="education-icon">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                    {{-- TIMELINE --}}
+                    <div class="education-timeline-side">
+
+                        <div class="education-timeline-dot">
+                            <span></span>
+                        </div>
+
+                        @if(!$loop->last)
+                            <div class="education-timeline-line"></div>
+                        @endif
+
                     </div>
 
 
-                    {{-- CONTENT --}}
-                    <div class="education-content">
+                    {{-- PERIOD --}}
+                    <div class="education-period">
 
-                        <div class="education-top">
-
-                            <span class="education-label">
-                                EDUCATION
+                        @if($education->start_date)
+                            <span>
+                                {{ $education->start_date->format('Y') }}
                             </span>
+                        @endif
 
-                            @if($education->start_date || $education->end_date)
+                        @if($education->start_date && $education->end_date)
+                            <span class="education-period-separator">
+                                —
+                            </span>
+                        @endif
 
-                                <span class="education-period">
+                        @if($education->end_date)
+                            <span>
+                                {{ $education->end_date->format('Y') }}
+                            </span>
+                        @endif
 
-                                    @if($education->start_date)
-                                        {{ $education->start_date?->format('Y') }}
-                                    @endif
+                    </div>
 
-                                    @if($education->end_date)
-                                        -
-                                        {{ $education->end_date?->format('Y') }}
-                                    @endif
 
-                                </span>
+                    {{-- CARD --}}
+                    <div class="education-card">
+
+                        <div class="education-card-top">
+
+                            <div class="education-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <div class="education-card-label">
+                                EDUCATION
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-card-content">
+
+                            <h3>
+                                {{ $education->institution }}
+                            </h3>
+
+                            @if($education->degree)
+
+                                <h4>
+                                    {{ $education->degree }}
+                                </h4>
+
+                            @endif
+
+
+                            @if($education->field_of_study)
+
+                                <div class="education-field">
+
+                                    <i class="fa-solid fa-book-open"></i>
+
+                                    <span>
+                                        {{ $education->field_of_study }}
+                                    </span>
+
+                                </div>
+
+                            @endif
+
+
+                            @if($education->description)
+
+                                <p class="education-description">
+                                    {{ $education->description }}
+                                </p>
 
                             @endif
 
                         </div>
 
 
-                        <h3>
-                            {{ $education->institution }}
-                        </h3>
+                        {{-- CARD FOOTER --}}
+                        <div class="education-card-footer">
 
+                            <span>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Education Completed
+                            </span>
 
-                        @if($education->degree)
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <h4>
-                                {{ $education->degree }}
-                            </h4>
-
-                        @endif
-
-
-                        @if($education->field_of_study)
-
-                            <p>
-                                <i class="fa-solid fa-book-open"></i>
-
-                                {{ $education->field_of_study }}
-                            </p>
-
-                        @endif
+                        </div>
 
                     </div>
 
-                </div>
+                </article>
 
             @empty
 
                 <div class="education-empty">
 
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="education-empty-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
 
                     <h3>
                         No Education Yet
                     </h3>
 
                     <p>
-                        Data pendidikan yang ditambahkan akan
-                        ditampilkan di bagian ini.
+                        Data pendidikan yang ditambahkan melalui Admin
+                        akan ditampilkan di sini.
                     </p>
 
                 </div>
@@ -120,7 +170,9 @@
         {{-- BOTTOM --}}
         <div class="education-bottom">
 
-            <i class="fa-solid fa-code"></i>
+            <div class="education-bottom-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
 
             <span>
                 Learning today, building tomorrow.
