@@ -29,48 +29,98 @@
         <div class="row g-4 align-items-stretch">
 
             {{-- LEFT --}}
-            <div class="col-lg-5">
+{{-- LEFT --}}
+<div class="col-lg-5">
 
-                <div class="contact-info-card">
+    <div class="contact-info-card">
 
-                    <div class="contact-card-label">
-                        CONTACT INFORMATION
-                    </div>
+        <div class="contact-card-label">
+            GET IN TOUCH
+        </div>
 
-                    <h3>
-                        Have a project<br>
-                        <span>in mind?</span>
-                    </h3>
+        <h3>
+            Let's build
+            <span>something great.</span>
+        </h3>
 
-                    <p>
-                        Jangan ragu untuk menghubungi saya.
-                        Saya akan dengan senang hati berdiskusi
-                        mengenai project atau peluang yang tersedia.
-                    </p>
+        <p class="contact-info-description">
+            Saya terbuka untuk peluang kerja, project,
+            maupun kolaborasi dalam pengembangan aplikasi web.
+            Jika memiliki ide atau peluang yang ingin didiskusikan,
+            silakan kirimkan pesan melalui form di samping.
+        </p>
 
 
-                    {{-- LOCATION --}}
-                    @if($about?->location)
+        {{-- LOCATION --}}
+        @if($about?->location)
 
-                        <div class="contact-info">
+            <div class="contact-info">
 
-                            <div class="contact-info-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
 
-                            <div>
-                                <small>Location</small>
-                                <strong>{{ $about->location }}</strong>
-                            </div>
-
-                        </div>
-
-                    @endif
-
+                <div>
+                    <small>Location</small>
+                    <strong>{{ $about->location }}</strong>
                 </div>
 
             </div>
 
+        @endif
+
+
+        {{-- AVAILABLE FOR --}}
+        <div class="contact-info">
+
+            <div class="contact-info-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+                <small>Available for</small>
+                <strong>Job Opportunities · Projects</strong>
+            </div>
+
+        </div>
+
+
+        {{-- FOCUS --}}
+        @if($about?->focus)
+
+            <div class="contact-info">
+
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+                    <small>Current Focus</small>
+                    <strong>{{ $about->focus }}</strong>
+                </div>
+
+            </div>
+
+        @endif
+
+
+        {{-- BOTTOM CTA --}}
+        <div class="contact-mini-cta">
+
+            <div class="contact-mini-cta-icon">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div>
+                <span>Open to new opportunities</span>
+                <small>Let's start a conversation.</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
             {{-- RIGHT --}}
             <div class="col-lg-7">
