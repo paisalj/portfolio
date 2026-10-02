@@ -114,31 +114,29 @@
                 <div class="admin-home-preview-body">
 
 
-                    {{-- =========================================
-                        PROFILE IMAGE
-                    ========================================== --}}
-                    <div class="admin-home-avatar">
+{{-- =========================================
+    PROFILE IMAGE
+========================================== --}}
+<div class="admin-home-avatar">
 
-                        @if($home->profile_image)
+    @if($home->profile_image)
 
-                            <img
-                                src="{{ asset('storage/' . $home->profile_image) }}"
-                                alt="{{ $home->name }}"
-                            >
+        <img
+            src="{{ asset($home->profile_image) }}"
+            alt="{{ $home->name }}"
+        >
 
-                        @else
+    @else
 
-                            <div class="admin-home-avatar-placeholder">
+        <div class="admin-home-avatar-placeholder">
 
-                                <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-user"></i>
 
-                            </div>
+        </div>
 
-                        @endif
+    @endif
 
-                    </div>
-
-
+</div>
 
                     {{-- =========================================
                         MAIN INFORMATION

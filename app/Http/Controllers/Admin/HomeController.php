@@ -83,15 +83,16 @@ class HomeController extends Controller
             $fileName = 'profile-' . time() . '.' .
                 $file->getClientOriginalExtension();
 
-            $file->storeAs(
-                'home',
-                $fileName,
-                'public'
-            );
+            $uploadPath = public_path('uploads/home');
 
-            $validated['profile_image'] = 'home/' . $fileName;
+            if (!file_exists($uploadPath)) {
+                mkdir($uploadPath, 0755, true);
+            }
+
+            $file->move($uploadPath, $fileName);
+
+            $validated['profile_image'] = 'uploads/home/' . $fileName;
         }
-
 
         /*
         |--------------------------------------------------------------------------
@@ -106,20 +107,20 @@ class HomeController extends Controller
             $fileName = 'cv-' . time() . '.' .
                 $file->getClientOriginalExtension();
 
-            $file->storeAs(
-                'cv',
-                $fileName,
-                'public'
-            );
+            $uploadPath = public_path('uploads/cv');
 
-            $validated['cv_file'] = 'cv/' . $fileName;
+            if (!file_exists($uploadPath)) {
+                mkdir($uploadPath, 0755, true);
+            }
+
+            $file->move($uploadPath, $fileName);
+
+            $validated['cv_file'] = 'uploads/cv/' . $fileName;
         }
-
 
         $home->fill($validated);
 
         $home->save();
-
 
         return redirect()
             ->route('admin.home')

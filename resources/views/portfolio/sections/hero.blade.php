@@ -189,7 +189,7 @@
                             <div class="hero-profile-image-wrapper">
 
                                 <img
-                                    src="{{ asset('storage/' . $home->profile_image) }}"
+                                    src="{{ asset($home->profile_image) }}"
                                     alt="{{ $home?->name ?? 'Profile Photo' }}"
                                     class="hero-profile-image"
                                 >
