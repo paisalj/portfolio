@@ -21,13 +21,31 @@
                 </div>
 
 
-                {{-- NAME --}}
-                <h1 class="hero-title">
+{{-- NAME + MOBILE PROFILE --}}
+<div class="hero-mobile-intro">
 
-                    {{ $home?->name ?? 'Paisal Johen' }}
+    @if($home?->profile_image)
 
-                </h1>
+        <div class="hero-mobile-profile">
+            <img
+                src="{{ asset($home->profile_image) }}"
+                alt="{{ $home?->name ?? 'Profile Photo' }}"
+            >
+        </div>
 
+    @else
+
+        <div class="hero-mobile-profile hero-mobile-profile-placeholder">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+    @endif
+
+    <h1 class="hero-title">
+        {{ $home?->name ?? 'Paisal Johen' }}
+    </h1>
+
+</div>
 
                 {{-- ROLE --}}
                 <div class="hero-role">
