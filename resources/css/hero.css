@@ -670,10 +670,6 @@
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media (max-width: 767px) {
 
     .hero-section {
@@ -681,137 +677,33 @@
     }
 
     .hero-content {
-        position: relative;
         min-height: auto;
         padding: 65px 0 90px;
     }
 
-    /* LEFT CONTENT */
-
     .hero-left {
-        text-align: left;
+        text-align: center;
     }
 
     .hero-badge {
-        justify-content: flex-start;
+        justify-content: center;
         margin-bottom: 18px;
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | PROFILE PHOTO BESIDE NAME
-    |--------------------------------------------------------------------------
-    */
-
-    .hero-right {
-        position: absolute;
-        top: 104px;
-        left: 0;
-        width: 72px;
-        margin: 0;
-        z-index: 10;
-    }
-
-    .hero-profile-visual {
-        width: 72px;
-        min-height: 72px;
-        height: 72px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Hide large desktop decorations */
-
-    .hero-profile-circle,
-    .hero-profile-ring,
-    .hero-tech-badge,
-    .hero-decoration {
-        display: none;
-    }
-
-    /* Small profile */
-
-    .hero-profile-card {
-        width: 68px;
-        height: 68px;
-
-        padding: 3px;
-
-        border-radius: 50%;
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(22, 131, 255, 0.95),
-                rgba(37, 99, 235, 0.35)
-            );
-
-        box-shadow:
-            0 8px 25px rgba(0, 0, 0, 0.35),
-            0 0 25px rgba(22, 131, 255, 0.18);
-    }
-
-    .hero-profile-image-wrapper {
-        width: 100%;
-        height: 100%;
-
-        border-radius: 50%;
-
-        border: 2px solid #07152b;
-    }
-
-    .hero-profile-image {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-        object-position: center top;
-    }
-
-    .hero-profile-placeholder {
-        width: 100%;
-        height: 100%;
-
-        border-radius: 50%;
-
-        font-size: 25px;
-    }
-
-    /*
-    |--------------------------------------------------------------------------
-    | NAME
-    |--------------------------------------------------------------------------
-    */
-
     .hero-title {
-        padding-left: 84px;
-
-        font-size: clamp(36px, 10vw, 48px);
+        font-size: clamp(40px, 11vw, 52px);
         line-height: 1;
-
-        min-height: 72px;
-
-        display: flex;
-        align-items: center;
     }
 
     .hero-role {
-        margin-top: 10px;
-        font-size: 28px;
+        margin-top: 12px;
+        font-size: 27px;
     }
 
     .hero-description {
         font-size: 15px;
         line-height: 1.7;
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | BUTTONS
-    |--------------------------------------------------------------------------
-    */
 
     .hero-buttons {
         width: 100%;
@@ -828,7 +720,76 @@
 
     .hero-social {
         margin-top: 24px;
-        justify-content: flex-start;
+        justify-content: center;
+    }
+
+    /* FOTO */
+    .hero-right {
+        margin-top: 45px;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .hero-profile-visual {
+        width: 100%;
+        min-height: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-profile-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-profile-ring {
+        width: 245px;
+        height: 245px;
+    }
+
+    .hero-profile-card {
+        width: 190px;
+        height: 245px;
+    }
+
+    .hero-tech-badge {
+        min-height: 36px;
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    .hero-tech-badge i {
+        font-size: 14px;
+    }
+
+    .hero-tech-laravel {
+        top: 20px;
+        right: 8%;
+    }
+
+    .hero-tech-php {
+        top: 85px;
+        right: 2%;
+    }
+
+    .hero-tech-mysql {
+        bottom: 65px;
+        right: 5%;
+    }
+
+    .hero-tech-bootstrap {
+        bottom: 15px;
+        left: 8%;
+    }
+
+    .decoration-1,
+    .decoration-2 {
+        display: none;
     }
 
     .scroll-indicator {
@@ -836,9 +797,6 @@
     }
 }
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media (max-width: 480px) {
 
@@ -846,25 +804,8 @@
         padding-top: 50px;
     }
 
-    .hero-right {
-        top: 89px;
-    }
-
-    .hero-profile-visual {
-        width: 64px;
-        min-height: 64px;
-        height: 64px;
-    }
-
-    .hero-profile-card {
-        width: 60px;
-        height: 60px;
-    }
-
     .hero-title {
-        padding-left: 76px;
-        min-height: 64px;
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .hero-role {
@@ -876,5 +817,40 @@
         line-height: 1.7;
     }
 
+    .hero-profile-visual {
+        min-height: 270px;
+        height: 270px;
+    }
+
+    .hero-profile-circle {
+        width: 235px;
+        height: 235px;
+    }
+
+    .hero-profile-ring {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-profile-card {
+        width: 170px;
+        height: 220px;
+    }
+
+    .hero-tech-laravel {
+        top: 15px;
+    }
+
+    .hero-tech-php {
+        top: 70px;
+    }
+
+    .hero-tech-mysql {
+        bottom: 55px;
+    }
+
+    .hero-tech-bootstrap {
+        bottom: 10px;
+    }
 
 }
