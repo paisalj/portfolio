@@ -681,15 +681,124 @@
     }
 
     .hero-content {
+        position: relative;
         min-height: auto;
         padding: 65px 0 90px;
     }
 
+    /* LEFT CONTENT */
+
+    .hero-left {
+        text-align: left;
+    }
+
+    .hero-badge {
+        justify-content: flex-start;
+        margin-bottom: 18px;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | PROFILE PHOTO BESIDE NAME
+    |--------------------------------------------------------------------------
+    */
+
+    .hero-right {
+        position: absolute;
+        top: 104px;
+        left: 0;
+        width: 72px;
+        margin: 0;
+        z-index: 10;
+    }
+
+    .hero-profile-visual {
+        width: 72px;
+        min-height: 72px;
+        height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hide large desktop decorations */
+
+    .hero-profile-circle,
+    .hero-profile-ring,
+    .hero-tech-badge,
+    .hero-decoration {
+        display: none;
+    }
+
+    /* Small profile */
+
+    .hero-profile-card {
+        width: 68px;
+        height: 68px;
+
+        padding: 3px;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(22, 131, 255, 0.95),
+                rgba(37, 99, 235, 0.35)
+            );
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(22, 131, 255, 0.18);
+    }
+
+    .hero-profile-image-wrapper {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        border: 2px solid #07152b;
+    }
+
+    .hero-profile-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .hero-profile-placeholder {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        font-size: 25px;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | NAME
+    |--------------------------------------------------------------------------
+    */
+
     .hero-title {
-        font-size: clamp(42px, 13vw, 62px);
+        padding-left: 84px;
+
+        font-size: clamp(36px, 10vw, 48px);
+        line-height: 1;
+
+        min-height: 72px;
+
+        display: flex;
+        align-items: center;
     }
 
     .hero-role {
+        margin-top: 10px;
         font-size: 28px;
     }
 
@@ -697,6 +806,12 @@
         font-size: 15px;
         line-height: 1.7;
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | BUTTONS
+    |--------------------------------------------------------------------------
+    */
 
     .hero-buttons {
         width: 100%;
@@ -713,79 +828,13 @@
 
     .hero-social {
         margin-top: 24px;
-    }
-
-    .hero-right {
-        margin-top: 45px;
-    }
-
-    .hero-profile-visual {
-        min-height: 440px;
-    }
-
-    .hero-profile-card {
-        width: 250px;
-        height: 315px;
-    }
-
-    .hero-profile-circle {
-        width: 330px;
-        height: 330px;
-    }
-
-    .hero-profile-ring {
-        width: 310px;
-        height: 310px;
-    }
-
-    .hero-tech-badge {
-        min-height: 40px;
-        padding: 0 11px;
-
-        font-size: 11px;
-        gap: 6px;
-    }
-
-    .hero-tech-badge i {
-        font-size: 15px;
-    }
-
-    .hero-tech-laravel {
-        top: 45px;
-        right: 0;
-    }
-
-    .hero-tech-php {
-        top: 135px;
-        right: -5px;
-    }
-
-    .hero-tech-mysql {
-        bottom: 105px;
-        right: 0;
-    }
-
-    .hero-tech-bootstrap {
-        bottom: 35px;
-        left: 0;
-    }
-
-    .decoration-1 {
-        top: 45px;
-        left: 4%;
-    }
-
-    .decoration-2 {
-        right: 5%;
-        bottom: 40px;
+        justify-content: flex-start;
     }
 
     .scroll-indicator {
         display: none;
     }
-
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -797,129 +846,35 @@
         padding-top: 50px;
     }
 
+    .hero-right {
+        top: 89px;
+    }
+
+    .hero-profile-visual {
+        width: 64px;
+        min-height: 64px;
+        height: 64px;
+    }
+
+    .hero-profile-card {
+        width: 60px;
+        height: 60px;
+    }
+
     .hero-title {
-        font-size: 43px;
+        padding-left: 76px;
+        min-height: 64px;
+        font-size: 38px;
     }
 
     .hero-role {
         font-size: 24px;
     }
 
-    .hero-profile-visual {
-        min-height: 390px;
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
     }
 
-    .hero-profile-card {
-        width: 215px;
-        height: 275px;
-    }
 
-    .hero-profile-circle {
-        width: 285px;
-        height: 285px;
-    }
-
-    .hero-profile-ring {
-        width: 270px;
-        height: 270px;
-    }
-
-    .hero-tech-laravel {
-        top: 38px;
-    }
-
-    .hero-tech-php {
-        top: 112px;
-    }
-
-    .hero-tech-mysql {
-        bottom: 90px;
-    }
-
-    .hero-tech-bootstrap {
-        bottom: 25px;
-    }
-/* =========================================================
-   MOBILE PROFILE
-========================================================= */
-
-.hero-mobile-intro {
-    display: none;
-}
-
-@media (max-width: 767px) {
-
-    .hero-mobile-intro {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-bottom: 18px;
-    }
-
-    .hero-mobile-profile {
-        width: 72px;
-        height: 72px;
-        flex: 0 0 72px;
-        border-radius: 50%;
-        overflow: hidden;
-
-        border: 2px solid rgba(22, 131, 255, 0.85);
-
-        background: #08182f;
-
-        box-shadow:
-            0 0 0 5px rgba(22, 131, 255, 0.08),
-            0 0 25px rgba(22, 131, 255, 0.22);
-    }
-
-    .hero-mobile-profile img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-    }
-
-    .hero-mobile-profile-placeholder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        color: #1683ff;
-        font-size: 25px;
-    }
-
-    .hero-mobile-intro .hero-title {
-        margin: 0;
-        font-size: clamp(38px, 11vw, 52px);
-        line-height: 0.95;
-    }
-
-    /* Sembunyikan foto besar versi desktop */
-    .hero-right {
-        display: none;
-    }
-
-    .hero-role {
-        margin-top: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .hero-mobile-intro {
-        gap: 12px;
-        margin-bottom: 16px;
-    }
-
-    .hero-mobile-profile {
-        width: 64px;
-        height: 64px;
-        flex-basis: 64px;
-    }
-
-    .hero-mobile-intro .hero-title {
-        font-size: 40px;
-    }
-
-}
 }

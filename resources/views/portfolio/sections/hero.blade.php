@@ -10,8 +10,7 @@
             {{-- =====================================================
                 HERO LEFT
             ====================================================== --}}
-            <div class="col-lg-6 hero-left">
-
+<div class="col-lg-6 hero-left order-lg-1">
                 {{-- BADGE --}}
                 <div class="hero-badge">
 
@@ -21,31 +20,13 @@
                 </div>
 
 
-{{-- NAME + MOBILE PROFILE --}}
-<div class="hero-mobile-intro">
+                {{-- NAME --}}
+                <h1 class="hero-title">
 
-    @if($home?->profile_image)
+                    {{ $home?->name ?? 'Paisal Johen' }}
 
-        <div class="hero-mobile-profile">
-            <img
-                src="{{ asset($home->profile_image) }}"
-                alt="{{ $home?->name ?? 'Profile Photo' }}"
-            >
-        </div>
+                </h1>
 
-    @else
-
-        <div class="hero-mobile-profile hero-mobile-profile-placeholder">
-            <i class="fa-solid fa-user"></i>
-        </div>
-
-    @endif
-
-    <h1 class="hero-title">
-        {{ $home?->name ?? 'Paisal Johen' }}
-    </h1>
-
-</div>
 
                 {{-- ROLE --}}
                 <div class="hero-role">
@@ -187,7 +168,7 @@
             {{-- =====================================================
                 HERO RIGHT
             ====================================================== --}}
-            <div class="col-lg-6 hero-right">
+<div class="col-lg-6 hero-right order-lg-2">
 
                 <div class="hero-profile-visual">
 
