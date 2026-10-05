@@ -21,12 +21,29 @@
 
 
                 {{-- NAME --}}
-                <h1 class="hero-title">
+{{-- NAME + MOBILE PROFILE --}}
+<div class="hero-mobile-heading">
 
-                    {{ $home?->name ?? 'Paisal Johen' }}
+    <h1 class="hero-title">
+        {{ $home?->name ?? 'Paisal Johen' }}
+    </h1>
 
-                </h1>
+    @if($home?->profile_image)
+        <div class="hero-mobile-profile">
 
+            <img
+                src="{{ asset($home->profile_image) }}"
+                alt="{{ $home?->name ?? 'Profile Photo' }}"
+            >
+
+        </div>
+    @else
+        <div class="hero-mobile-profile hero-mobile-placeholder">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    @endif
+
+</div>
 
                 {{-- ROLE --}}
                 <div class="hero-role">
@@ -85,7 +102,7 @@
                     @if($home?->cv_file)
 
                         <a
-                            href="{{ asset('storage/' . $home->cv_file) }}"
+                            href="{{ asset($home->cv_file) }}"
                             class="btn hero-btn-cv"
                             target="_blank"
                             rel="noopener noreferrer"

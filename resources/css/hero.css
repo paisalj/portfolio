@@ -601,6 +601,14 @@
    TABLET
 ========================================================= */
 
+/* =====================================================
+   MOBILE HERO
+===================================================== */
+
+.hero-mobile-heading {
+    display: none;
+}
+
 @media (max-width: 767px) {
 
     .hero-section {
@@ -614,7 +622,6 @@
 
     .hero-left {
         text-align: left;
-        position: relative;
     }
 
     .hero-badge {
@@ -622,81 +629,120 @@
         margin-bottom: 18px;
     }
 
-    /* Nama + foto */
-    .hero-title {
-        padding-right: 105px;
-        font-size: clamp(38px, 10vw, 50px);
-        line-height: 1;
-        min-height: 100px;
+    /* ================================================
+       NAMA + FOTO
+    ================================================= */
+
+    .hero-mobile-heading {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
     }
 
-    /* FOTO DI SEBELAH KANAN NAMA */
-    .hero-right {
-        position: absolute;
-        top: 88px;
-        right: 0;
-        width: 95px;
+    .hero-mobile-heading .hero-title {
+        flex: 1;
+        min-width: 0;
         margin: 0;
-        z-index: 10;
+        font-size: clamp(38px, 10vw, 50px);
+        line-height: 1;
     }
 
-    .hero-profile-visual {
-        width: 95px;
-        min-height: 95px;
-        height: 95px;
+    .hero-mobile-profile {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 112px;
+        padding: 3px;
+
+        border-radius: 48px 48px 16px 16px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(22,131,255,0.95),
+                rgba(37,99,235,0.35)
+            );
+
+        box-shadow:
+            0 10px 28px rgba(0,0,0,0.35),
+            0 0 25px rgba(22,131,255,0.16);
+
+        overflow: hidden;
+    }
+
+    .hero-mobile-profile img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center top;
+
+        border-radius: 45px 45px 13px 13px;
+        border: 2px solid #07152b;
+    }
+
+    .hero-mobile-placeholder {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        color: #1683ff;
+        font-size: 30px;
     }
 
-    .hero-profile-circle {
-        width: 105px;
-        height: 105px;
+    /* ================================================
+       FOTO DESKTOP DISIMPAN DI MOBILE
+    ================================================= */
+
+    .hero-right {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+
+        width: 100%;
+        margin-top: 45px;
     }
 
-    .hero-profile-ring {
-        width: 100px;
-        height: 100px;
+    .hero-profile-visual {
+        min-height: 0;
     }
 
-    .hero-profile-card {
-        width: 90px;
-        height: 110px;
-        padding: 4px;
-        border-radius: 50% 50% 18px 18px;
-    }
-
-    .hero-profile-image-wrapper {
-        border-radius: 46% 46% 14px 14px;
-    }
-
-    .hero-profile-placeholder {
-        border-radius: 46% 46% 14px 14px;
-        font-size: 28px;
-    }
-
-    /* Badge teknologi tetap disembunyikan di HP */
-    .hero-tech-badge,
-    .hero-decoration {
+    /* Sembunyikan foto desktop */
+    .hero-right {
         display: none;
     }
 
+    /* ================================================
+       ROLE
+    ================================================= */
+
     .hero-role {
-        margin-top: 12px;
+        margin-top: 18px;
         font-size: 27px;
+        line-height: 1.15;
     }
+
+    /* ================================================
+       DESCRIPTION
+    ================================================= */
 
     .hero-description {
         font-size: 15px;
         line-height: 1.7;
+        margin-top: 20px;
     }
+
+    /* ================================================
+       BUTTON
+    ================================================= */
 
     .hero-buttons {
         width: 100%;
         flex-direction: column;
         gap: 10px;
+        margin-top: 28px;
     }
 
     .hero-btn-primary,
@@ -706,10 +752,18 @@
         min-height: 50px;
     }
 
+    /* ================================================
+       SOCIAL
+    ================================================= */
+
     .hero-social {
-        margin-top: 24px;
         justify-content: flex-start;
+        margin-top: 24px;
     }
+
+    /* ================================================
+       SCROLL
+    ================================================= */
 
     .scroll-indicator {
         display: none;
@@ -717,43 +771,28 @@
 }
 
 
+/* =====================================================
+   HP KECIL
+===================================================== */
+
 @media (max-width: 480px) {
 
     .hero-content {
         padding-top: 45px;
     }
 
-    .hero-title {
-        padding-right: 90px;
+    .hero-mobile-heading {
+        gap: 10px;
+    }
+
+    .hero-mobile-heading .hero-title {
         font-size: 39px;
-        min-height: 90px;
     }
 
-    .hero-right {
-        top: 77px;
-        right: 0;
+    .hero-mobile-profile {
+        flex-basis: 82px;
         width: 82px;
-    }
-
-    .hero-profile-visual {
-        width: 82px;
-        min-height: 82px;
-        height: 82px;
-    }
-
-    .hero-profile-circle {
-        width: 92px;
-        height: 92px;
-    }
-
-    .hero-profile-ring {
-        width: 87px;
-        height: 87px;
-    }
-
-    .hero-profile-card {
-        width: 78px;
-        height: 96px;
+        height: 102px;
     }
 
     .hero-role {
@@ -762,5 +801,6 @@
 
     .hero-description {
         font-size: 14px;
+        line-height: 1.7;
     }
 }
