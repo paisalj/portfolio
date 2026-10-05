@@ -90,11 +90,12 @@
             </div>
 
 
-            {{-- FORM --}}
-            <form
-                action="{{ route('admin.about.update') }}"
-                method="POST"
-            >
+<form
+    action="{{ route('admin.about.update') }}"
+    method="POST"
+    enctype="multipart/form-data"
+>
+
 
                 @csrf
                 @method('PUT')
@@ -122,7 +123,45 @@
                         </small>
 
                     </div>
+{{-- ABOUT IMAGE --}}
+<div class="admin-about-edit-form-group admin-about-edit-full">
 
+    <label for="image">
+        Foto About
+    </label>
+
+    @if($about?->image)
+
+        <div style="margin-bottom: 15px;">
+
+            <img
+                src="{{ asset($about->image) }}"
+                alt="Foto About"
+                style="
+                    width: 180px;
+                    height: 180px;
+                    object-fit: cover;
+                    border-radius: 18px;
+                    border: 1px solid rgba(214, 168, 74, 0.35);
+                "
+            >
+
+        </div>
+
+    @endif
+
+    <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/jpeg,image/png,image/webp"
+    >
+
+    <small>
+        Gunakan foto profesional untuk bagian About. Format JPG, PNG, atau WebP, maksimal 2 MB.
+    </small>
+
+</div>
 
                     {{-- LOCATION --}}
                     <div class="admin-about-edit-form-group">

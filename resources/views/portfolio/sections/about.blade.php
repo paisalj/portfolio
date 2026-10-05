@@ -145,13 +145,34 @@
             {{-- =========================================
                 ABOUT RIGHT
             ========================================== --}}
-            <div class="col-lg-6 about-right">
+<div class="about-visual">
 
-                <div class="about-visual">
+    {{-- ABOUT PHOTO --}}
+    @if($about?->image)
 
-                    {{-- MAIN CARD --}}
-                    <div class="about-main-card">
+        <div class="about-photo-wrapper">
 
+            <div class="about-photo-glow"></div>
+
+            <div class="about-photo-ring"></div>
+
+            <div class="about-photo-card">
+
+                <img
+                    src="{{ asset($about->image) }}"
+                    alt="Foto {{ $home?->name ?? 'Paisal Johen' }}"
+                    class="about-photo"
+                >
+
+            </div>
+
+        </div>
+
+    @endif
+
+
+    {{-- MAIN CARD --}}
+    <div class="about-main-card">
                         <div class="about-code-icon">
                             <i class="fa-solid fa-code"></i>
                         </div>

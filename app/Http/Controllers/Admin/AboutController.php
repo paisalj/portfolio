@@ -40,12 +40,39 @@ class AboutController extends Controller
             'framework' => ['nullable', 'string', 'max:255'],
             'database' => ['nullable', 'string', 'max:255'],
             'values' => ['nullable', 'string'],
+
+            'image' => [
+                'nullable',
+                'image',
+                'mimes:jpg,jpeg,png,webp',
+                'max:2048',
+            ],
         ]);
 
         $about = About::first();
 
         if (!$about) {
             $about = new About();
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Upload About Image
+        |--------------------------------------------------------------------------
+        */
+
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+
+            $filename = time() . '_' . $image->getClientOriginalName();
+
+            $image->move(
+                public_path('uploads/about'),
+                $filename
+            );
+
+            $validated['image'] = 'uploads/about/' . $filename;
         }
 
         $about->fill($validated);

@@ -13,5 +13,6 @@ class About extends Model
         'framework',
         'database',
         'values',
+        'image',
     ];
 }
