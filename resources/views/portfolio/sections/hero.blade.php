@@ -1,19 +1,28 @@
 <section id="home" class="hero-section">
 
     {{-- =====================================================
-        BACKGROUND EFFECT
+        ANIMATED BACKGROUND
     ====================================================== --}}
 
-    <div class="hero-grid"></div>
+    <div class="hero-bg-grid"></div>
+
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <div class="hero-particle hero-particle-1"></div>
+    <div class="hero-particle hero-particle-2"></div>
+    <div class="hero-particle hero-particle-3"></div>
+    <div class="hero-particle hero-particle-4"></div>
+    <div class="hero-particle hero-particle-5"></div>
 
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
 
 
-    <div class="container position-relative">
+    <div class="container position-relative hero-container">
 
         <div class="row align-items-center hero-content">
-
 
             {{-- =====================================================
                 HERO LEFT
@@ -21,60 +30,22 @@
 
             <div class="col-lg-6 hero-left">
 
-
-                {{-- HELLO --}}
+                {{-- SMALL LABEL --}}
                 <div class="hero-badge">
-
                     <span></span>
-
                     HELLO, I'M
-
                 </div>
 
 
-                {{-- =================================================
-                    NAME + MOBILE PROFILE
-                ================================================== --}}
+                {{-- NAME --}}
+                <h1 class="hero-title">
 
-                <div class="hero-mobile-heading">
+                    {{ $home?->name ?? 'Paisal Johen' }}
 
-                    <h1 class="hero-title">
-
-                        {{ $home?->name ?? 'Paisal Johen' }}
-
-                    </h1>
+                </h1>
 
 
-                    {{-- MOBILE PHOTO --}}
-
-                    @if($home?->profile_image)
-
-                        <div class="hero-mobile-profile">
-
-                            <img
-                                src="{{ asset($home->profile_image) }}"
-                                alt="{{ $home?->name ?? 'Paisal Johen' }}"
-                            >
-
-                        </div>
-
-                    @else
-
-                        <div class="hero-mobile-profile hero-mobile-placeholder">
-
-                            <i class="fa-solid fa-user"></i>
-
-                        </div>
-
-                    @endif
-
-                </div>
-
-
-                {{-- =================================================
-                    ROLE
-                ================================================== --}}
-
+                {{-- ROLE --}}
                 <div class="hero-role">
 
                     {{ $home?->title ?? 'Web Developer' }}
@@ -84,10 +55,7 @@
                 </div>
 
 
-                {{-- =================================================
-                    DESCRIPTION
-                ================================================== --}}
-
+                {{-- DESCRIPTION --}}
                 <p class="hero-description">
 
                     {{ $home?->hero_description ?? 'Saya adalah Web Developer yang memiliki minat dalam pengembangan aplikasi web menggunakan Laravel, PHP, MySQL, dan Bootstrap.' }}
@@ -101,38 +69,24 @@
 
                 <div class="hero-buttons">
 
-
-                    {{-- PROJECT --}}
-
                     <a
                         href="#projects"
                         class="btn hero-btn-primary"
                     >
-
                         <i class="fa-solid fa-briefcase"></i>
-
                         View Projects
-
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </a>
 
-
-                    {{-- CONTACT --}}
 
                     <a
                         href="#contact"
                         class="btn hero-btn-outline"
                     >
-
                         <i class="fa-regular fa-envelope"></i>
-
                         Contact Me
-
                     </a>
 
-
-                    {{-- CV --}}
 
                     @if($home?->cv_file)
 
@@ -142,11 +96,8 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-solid fa-file-arrow-down"></i>
-
                             Download CV
-
                         </a>
 
                     @endif
@@ -160,9 +111,6 @@
 
                 <div class="hero-social">
 
-
-                    {{-- GITHUB --}}
-
                     @if($home?->github_url)
 
                         <a
@@ -172,15 +120,11 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-github"></i>
-
                         </a>
 
                     @endif
 
-
-                    {{-- LINKEDIN --}}
 
                     @if($home?->linkedin_url)
 
@@ -191,15 +135,11 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-linkedin-in"></i>
-
                         </a>
 
                     @endif
 
-
-                    {{-- INSTAGRAM --}}
 
                     @if($home?->instagram_url)
 
@@ -210,9 +150,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-instagram"></i>
-
                         </a>
 
                     @endif
@@ -222,28 +160,23 @@
             </div>
 
 
-
             {{-- =====================================================
-                HERO RIGHT
+                HERO RIGHT / PROFILE
             ====================================================== --}}
 
             <div class="col-lg-6 hero-right">
 
                 <div class="hero-profile-visual">
 
-
-                    {{-- GOLD GLOW --}}
-
+                    {{-- GOLDEN GLOW --}}
                     <div class="hero-profile-glow"></div>
 
 
-                    {{-- OUTER RING --}}
-
+                    {{-- CIRCLE RING --}}
                     <div class="hero-profile-ring"></div>
 
 
                     {{-- PROFILE IMAGE --}}
-
                     @if($home?->profile_image)
 
                         <div class="hero-profile-card">
@@ -252,7 +185,7 @@
 
                                 <img
                                     src="{{ asset($home->profile_image) }}"
-                                    alt="{{ $home?->name ?? 'Paisal Johen' }}"
+                                    alt="{{ $home?->name ?? 'Profile Photo' }}"
                                     class="hero-profile-image"
                                 >
 
@@ -264,7 +197,7 @@
 
                         <div class="hero-profile-card">
 
-                            <div class="hero-profile-placeholder">
+                            <div class="hero-profile-image-wrapper hero-profile-placeholder">
 
                                 <i class="fa-solid fa-user"></i>
 
@@ -273,7 +206,6 @@
                         </div>
 
                     @endif
-
 
 
                     {{-- =================================================
@@ -315,14 +247,6 @@
 
                     </div>
 
-
-                    {{-- DECORATION --}}
-
-                    <div class="hero-decoration decoration-1"></div>
-
-                    <div class="hero-decoration decoration-2"></div>
-
-
                 </div>
 
             </div>
@@ -332,19 +256,13 @@
     </div>
 
 
-    {{-- =====================================================
-        SCROLL INDICATOR
-    ====================================================== --}}
+    {{-- SCROLL INDICATOR --}}
 
     <a
         href="#about"
         class="scroll-indicator"
     >
-
-        <span>Scroll Down</span>
-
-        <i class="fa-solid fa-arrow-down"></i>
-
+        <i class="fa-solid fa-chevron-down"></i>
     </a>
 
 </section>
