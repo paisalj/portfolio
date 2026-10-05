@@ -29,3 +29,22 @@
 @import './certificates-admin.css';
 @import './messages-admin.css';
 @import './dashboard-admin.css';
+
+html,
+body,
+body * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+textarea,
+select,
+button {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}

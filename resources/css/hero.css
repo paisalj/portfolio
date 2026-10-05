@@ -1025,7 +1025,7 @@
 
 /* =========================================================
    MOBILE
-   KHUSUS HP — DESKTOP & TABLET TIDAK DIUBAH
+   KHUSUS HP SAJA
 ========================================================= */
 
 @media (max-width: 767px) {
@@ -1036,7 +1036,7 @@
 
     .hero-content {
         min-height: auto;
-        padding: 65px 0 80px;
+        padding: 45px 0 75px;
     }
 
     .hero-left {
@@ -1044,12 +1044,9 @@
         margin-bottom: 0;
     }
 
-
-    /* HELLO I'M */
-
     .hero-badge {
         justify-content: center;
-        margin-bottom: 16px;
+        margin-bottom: 15px;
         font-size: 10px;
     }
 
@@ -1058,36 +1055,104 @@
     }
 
 
-    /* NAMA */
+    /* =====================================================
+       NAMA
+    ===================================================== */
 
     .hero-title {
-        width: 100%;
-        margin: 0;
-
-        text-align: center;
-
         font-size: clamp(38px, 11vw, 50px);
-
         line-height: 1;
-
         letter-spacing: -0.04em;
     }
 
 
-    /* FOTO BULAT DI BAWAH NAMA */
+    /* =====================================================
+       FOTO + RING + 4 BADGE
+       KHUSUS HP
+    ===================================================== */
 
-    .hero-mobile-profile {
+    .hero-right {
+        display: block !important;
+
+        width: 100%;
+
+        margin-top: 25px;
+
+        position: relative;
+
+        z-index: 5;
+    }
+
+    .hero-profile-visual {
+
+        position: relative;
+
+        width: 330px;
+        height: 330px;
+
+        min-height: 330px;
+
+        margin: 0 auto;
+
         display: flex;
 
-        width: 150px;
-        height: 150px;
-
-        margin: 24px auto 0;
-
-        padding: 5px;
-
         align-items: center;
+
         justify-content: center;
+    }
+
+
+    /* =====================================================
+       GLOW FOTO
+    ===================================================== */
+
+    .hero-profile-glow {
+
+        width: 285px;
+        height: 285px;
+
+        position: absolute;
+
+        border-radius: 50%;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       RING
+    ===================================================== */
+
+    .hero-profile-ring {
+
+        width: 270px;
+        height: 270px;
+
+        position: absolute;
+
+        display: block;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(214, 168, 74, 0.45);
+
+        box-shadow:
+            0 0 35px rgba(214, 168, 74, 0.08);
+    }
+
+
+    /* =====================================================
+       FOTO PROFILE
+    ===================================================== */
+
+    .hero-profile-card {
+
+        position: relative;
+
+        width: 220px;
+        height: 220px;
+
+        padding: 6px;
 
         border-radius: 50%;
 
@@ -1099,13 +1164,30 @@
             );
 
         box-shadow:
-            0 18px 45px rgba(0, 0, 0, 0.45),
-            0 0 35px rgba(214, 168, 74, 0.14);
+            0 20px 55px rgba(0, 0, 0, 0.50),
+            0 0 40px rgba(214, 168, 74, 0.14);
 
-        overflow: hidden;
+        z-index: 5;
     }
 
-    .hero-mobile-profile img {
+
+    .hero-profile-image-wrapper {
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+
+        border-radius: 50%;
+
+        background: #101318;
+
+        border: 3px solid #101318;
+    }
+
+
+    .hero-profile-image {
+
         width: 100%;
         height: 100%;
 
@@ -1116,58 +1198,143 @@
         object-position: center top;
 
         border-radius: 50%;
-
-        border: 3px solid #101318;
     }
 
-    .hero-mobile-placeholder {
-        width: 100%;
-        height: 100%;
+
+    .hero-profile-placeholder {
 
         display: flex;
 
         align-items: center;
         justify-content: center;
 
+        width: 100%;
+        height: 100%;
+
         border-radius: 50%;
 
         color: #d6a84a;
 
-        font-size: 45px;
+        font-size: 55px;
     }
 
 
-    /* SEMBUNYIKAN PROFILE DESKTOP DI HP */
+    /* =====================================================
+       4 BADGE MENGELILINGI FOTO
+    ===================================================== */
 
-    .hero-right {
-        display: none !important;
+    .hero-tech-badge {
+
+        position: absolute;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        min-height: 40px;
+
+        padding: 0 11px;
+
+        border: 1px solid rgba(214, 168, 74, 0.45);
+
+        border-radius: 10px;
+
+        background: rgba(12, 15, 20, 0.94);
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.35);
+
+        backdrop-filter: blur(10px);
+
+        color: #e6e8eb;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        z-index: 8;
     }
 
 
-    /* ROLE */
+    .hero-tech-badge i {
+
+        font-size: 15px;
+
+        color: #d6a84a;
+    }
+
+
+    /* =====================================================
+       LARAVEL - ATAS KANAN
+    ===================================================== */
+
+    .hero-tech-laravel {
+
+        top: 28px;
+
+        right: 8px;
+    }
+
+
+    /* =====================================================
+       PHP - KANAN
+    ===================================================== */
+
+    .hero-tech-php {
+
+        top: 145px;
+
+        right: -2px;
+    }
+
+
+    /* =====================================================
+       MYSQL - BAWAH KANAN
+    ===================================================== */
+
+    .hero-tech-mysql {
+
+        bottom: 30px;
+
+        right: 8px;
+    }
+
+
+    /* =====================================================
+       BOOTSTRAP - BAWAH KIRI
+    ===================================================== */
+
+    .hero-tech-bootstrap {
+
+        bottom: 8px;
+
+        left: 8px;
+    }
+
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
 
     .hero-role {
-        margin-top: 20px;
 
-        text-align: center;
+        margin-top: 25px;
 
         font-size: 25px;
 
-        line-height: 1.25;
+        line-height: 1.2;
     }
 
 
-    /* DESKRIPSI */
+    /* =====================================================
+       DESCRIPTION
+    ===================================================== */
 
     .hero-description {
-        max-width: 100%;
 
         margin-top: 18px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        text-align: center;
 
         font-size: 14px;
 
@@ -1175,9 +1342,12 @@
     }
 
 
-    /* BUTTON */
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
 
     .hero-buttons {
+
         width: 100%;
 
         flex-direction: column;
@@ -1186,50 +1356,56 @@
 
         gap: 9px;
 
-        margin-top: 26px;
+        margin-top: 25px;
     }
+
 
     .hero-btn-primary,
     .hero-btn-outline,
     .hero-btn-cv {
+
         width: 100%;
 
-        min-height: 49px;
-
-        justify-content: center;
+        min-height: 48px;
     }
 
 
-    /* SOCIAL */
+    /* =====================================================
+       SOCIAL
+    ===================================================== */
 
     .hero-social {
+
         justify-content: center;
 
-        margin-top: 22px;
+        margin-top: 20px;
 
         gap: 10px;
     }
 
-    .social-btn {
-        width: 42px;
-        height: 42px;
-    }
 
-
-    /* BACKGROUND */
+    /* =====================================================
+       BACKGROUND
+    ===================================================== */
 
     .hero-bg-grid {
+
         background-size: 45px 45px;
+
         opacity: 0.13;
     }
 
+
     .hero-particle {
+
         width: 3px;
         height: 3px;
     }
 
 
-    /* SCROLL */
+    /* =====================================================
+       SCROLL
+    ===================================================== */
 
     .scroll-indicator {
         display: none;
@@ -1239,79 +1415,151 @@
 
 /* =========================================================
    SMALL MOBILE
-   ≤ 480px
+   HP KECIL
 ========================================================= */
 
 @media (max-width: 480px) {
 
     .hero-content {
-        padding-top: 58px;
-        padding-bottom: 70px;
+
+        padding-top: 40px;
     }
 
-
-    /* HELLO */
-
-    .hero-badge {
-        margin-bottom: 14px;
-        font-size: 9px;
-    }
-
-
-    /* NAMA */
 
     .hero-title {
+
         font-size: 39px;
-        line-height: 1;
     }
 
 
-    /* FOTO BULAT */
+    /* =====================================================
+       AREA FOTO
+    ===================================================== */
 
-    .hero-mobile-profile {
-        width: 135px;
-        height: 135px;
+    .hero-right {
 
         margin-top: 22px;
-
-        padding: 4px;
     }
 
 
-    /* ROLE */
+    .hero-profile-visual {
+
+        width: 310px;
+        height: 310px;
+
+        min-height: 310px;
+    }
+
+
+    /* =====================================================
+       GLOW
+    ===================================================== */
+
+    .hero-profile-glow {
+
+        width: 270px;
+        height: 270px;
+    }
+
+
+    /* =====================================================
+       RING
+    ===================================================== */
+
+    .hero-profile-ring {
+
+        width: 250px;
+        height: 250px;
+    }
+
+
+    /* =====================================================
+       FOTO
+    ===================================================== */
+
+    .hero-profile-card {
+
+        width: 205px;
+        height: 205px;
+
+        padding: 5px;
+    }
+
+
+    /* =====================================================
+       BADGE
+    ===================================================== */
+
+    .hero-tech-badge {
+
+        min-height: 38px;
+
+        padding: 0 9px;
+
+        font-size: 10px;
+
+        gap: 6px;
+    }
+
+
+    .hero-tech-badge i {
+
+        font-size: 14px;
+    }
+
+
+    /* LARAVEL */
+
+    .hero-tech-laravel {
+
+        top: 27px;
+
+        right: 0;
+    }
+
+
+    /* PHP */
+
+    .hero-tech-php {
+
+        top: 137px;
+
+        right: -4px;
+    }
+
+
+    /* MYSQL */
+
+    .hero-tech-mysql {
+
+        bottom: 27px;
+
+        right: 0;
+    }
+
+
+    /* BOOTSTRAP */
+
+    .hero-tech-bootstrap {
+
+        bottom: 5px;
+
+        left: 0;
+    }
+
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
 
     .hero-role {
-        margin-top: 20px;
 
         font-size: 23px;
-
-        line-height: 1.25;
     }
 
-
-    /* DESKRIPSI */
 
     .hero-description {
-        margin-top: 17px;
 
         font-size: 13px;
-
-        line-height: 1.75;
-    }
-
-
-    /* BUTTON */
-
-    .hero-buttons {
-        margin-top: 24px;
-    }
-
-
-    /* SOCIAL */
-
-    .hero-social {
-        margin-top: 20px;
-
-        justify-content: center;
     }
 }
