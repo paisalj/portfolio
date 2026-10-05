@@ -108,7 +108,25 @@
                     @endif
 
                 </div>
+{{-- FOTO ABOUT --}}
+@if($about->image)
 
+    <div class="admin-about-image-section">
+
+        <span class="admin-about-section-label">
+            FOTO ABOUT
+        </span>
+
+        <div class="admin-about-image-preview">
+            <img
+                src="{{ asset($about->image) }}"
+                alt="Foto About"
+            >
+        </div>
+
+    </div>
+
+@endif
 
                 {{-- INFORMATION GRID --}}
                 <div class="admin-about-information-grid">
