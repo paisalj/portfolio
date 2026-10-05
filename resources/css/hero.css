@@ -5,9 +5,12 @@
 .hero-section {
     position: relative;
     min-height: calc(100vh - 76px);
+
     display: flex;
     align-items: center;
+
     overflow: hidden;
+
     background:
         radial-gradient(
             circle at 75% 45%,
@@ -15,6 +18,7 @@
             transparent 35%
         ),
         #020b1c;
+
     color: #ffffff;
 }
 
@@ -25,24 +29,31 @@
 
 .hero-glow {
     position: absolute;
+
     border-radius: 50%;
+
     pointer-events: none;
+
     filter: blur(10px);
 }
 
 .hero-glow-1 {
     width: 420px;
     height: 420px;
+
     top: -180px;
     right: -120px;
+
     background: rgba(37, 99, 235, 0.08);
 }
 
 .hero-glow-2 {
     width: 320px;
     height: 320px;
+
     bottom: -180px;
     left: -100px;
+
     background: rgba(14, 165, 233, 0.06);
 }
 
@@ -53,8 +64,11 @@
 
 .hero-content {
     position: relative;
+
     z-index: 2;
+
     min-height: calc(100vh - 76px);
+
     padding: 70px 0;
 }
 
@@ -65,6 +79,7 @@
 
 .hero-left {
     position: relative;
+
     z-index: 5;
 }
 
@@ -75,13 +90,17 @@
 
 .hero-badge {
     display: inline-flex;
+
     align-items: center;
+
     gap: 12px;
+
     margin-bottom: 20px;
 
     color: #1683ff;
 
     font-size: 15px;
+
     font-weight: 600;
 
     letter-spacing: 0.19em;
@@ -90,7 +109,9 @@
 .hero-badge span {
     width: 30px;
     height: 2px;
+
     background: #1683ff;
+
     border-radius: 999px;
 }
 
@@ -103,12 +124,28 @@
     margin: 0;
 
     font-size: clamp(52px, 6vw, 82px);
+
     line-height: 0.98;
 
     font-weight: 800;
+
     letter-spacing: -0.045em;
 
     color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE NAME + PROFILE
+   Hidden on desktop
+========================================================= */
+
+.hero-mobile-heading {
+    display: none;
+}
+
+.hero-mobile-profile {
+    display: none;
 }
 
 
@@ -120,6 +157,7 @@
     margin-top: 18px;
 
     font-size: clamp(28px, 3vw, 42px);
+
     line-height: 1.15;
 
     font-weight: 700;
@@ -129,10 +167,12 @@
 
 .typing-cursor {
     color: #1683ff;
+
     animation: heroCursor 0.9s infinite;
 }
 
 @keyframes heroCursor {
+
     0%,
     50% {
         opacity: 1;
@@ -158,6 +198,7 @@
     color: #94a3b8;
 
     font-size: 17px;
+
     line-height: 1.8;
 }
 
@@ -168,15 +209,20 @@
 
 .hero-buttons {
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: center;
+
     gap: 12px;
 
     margin-top: 32px;
 }
 
 
-/* GENERAL BUTTON */
+/* =========================================================
+   GENERAL BUTTON
+========================================================= */
 
 .hero-btn-primary,
 .hero-btn-outline,
@@ -186,6 +232,7 @@
     padding: 0 20px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -194,6 +241,7 @@
     border-radius: 11px;
 
     font-size: 15px;
+
     font-weight: 600;
 
     text-decoration: none;
@@ -206,17 +254,23 @@
 }
 
 
-/* PRIMARY */
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
 .hero-btn-primary {
     background: #1683ff;
+
     border: 1px solid #1683ff;
+
     color: #ffffff;
 }
 
 .hero-btn-primary:hover {
     background: #0d6edb;
+
     border-color: #0d6edb;
+
     color: #ffffff;
 
     transform: translateY(-2px);
@@ -226,34 +280,46 @@
 }
 
 
-/* OUTLINE */
+/* =========================================================
+   OUTLINE BUTTON
+========================================================= */
 
 .hero-btn-outline {
     background: rgba(255, 255, 255, 0.02);
+
     border: 1px solid rgba(59, 130, 246, 0.65);
+
     color: #ffffff;
 }
 
 .hero-btn-outline:hover {
     background: rgba(37, 99, 235, 0.12);
+
     border-color: #1683ff;
+
     color: #ffffff;
 
     transform: translateY(-2px);
 }
 
 
-/* CV */
+/* =========================================================
+   CV BUTTON
+========================================================= */
 
 .hero-btn-cv {
     background: rgba(255, 255, 255, 0.04);
+
     border: 1px solid #334155;
+
     color: #cbd5e1;
 }
 
 .hero-btn-cv:hover {
     background: #ffffff;
+
     border-color: #ffffff;
+
     color: #0f172a;
 
     transform: translateY(-2px);
@@ -266,7 +332,9 @@
 
 .hero-social {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     margin-top: 28px;
@@ -277,10 +345,12 @@
     height: 46px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     border: 1px solid rgba(59, 130, 246, 0.4);
+
     border-radius: 50%;
 
     background: rgba(15, 40, 78, 0.35);
@@ -299,6 +369,7 @@
 
 .social-btn:hover {
     background: #1683ff;
+
     border-color: #1683ff;
 
     color: #ffffff;
@@ -309,10 +380,12 @@
 
 /* =========================================================
    RIGHT PROFILE VISUAL
+   DESKTOP
 ========================================================= */
 
 .hero-right {
     position: relative;
+
     z-index: 2;
 }
 
@@ -320,9 +393,11 @@
     position: relative;
 
     width: 100%;
+
     min-height: 560px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -424,6 +499,7 @@
     display: block;
 
     object-fit: cover;
+
     object-position: center top;
 }
 
@@ -437,6 +513,7 @@
     height: 100%;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -463,7 +540,9 @@
     position: absolute;
 
     display: flex;
+
     align-items: center;
+
     gap: 9px;
 
     min-height: 46px;
@@ -471,6 +550,7 @@
     padding: 0 15px;
 
     border: 1px solid rgba(59, 130, 246, 0.45);
+
     border-radius: 12px;
 
     background: rgba(5, 18, 39, 0.92);
@@ -483,6 +563,7 @@
     color: #e2e8f0;
 
     font-size: 13px;
+
     font-weight: 600;
 
     z-index: 6;
@@ -490,29 +571,36 @@
 
 .hero-tech-badge i {
     font-size: 18px;
+
     color: #1683ff;
 }
 
 
-/* BADGE POSITIONS */
+/* =========================================================
+   BADGE POSITIONS
+========================================================= */
 
 .hero-tech-laravel {
     top: 70px;
+
     right: 4%;
 }
 
 .hero-tech-php {
     top: 190px;
+
     right: -2%;
 }
 
 .hero-tech-mysql {
     bottom: 150px;
+
     right: 1%;
 }
 
 .hero-tech-bootstrap {
     bottom: 60px;
+
     left: 6%;
 }
 
@@ -536,11 +624,13 @@
 
 .decoration-1 {
     top: 70px;
+
     left: 14%;
 }
 
 .decoration-2 {
     right: 16%;
+
     bottom: 65px;
 
     width: 10px;
@@ -556,6 +646,7 @@
     position: absolute;
 
     left: 50%;
+
     bottom: 22px;
 
     transform: translateX(-50%);
@@ -564,10 +655,12 @@
     height: 40px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border: 1px solid rgba(148, 163, 184, 0.5);
+
     border-radius: 50%;
 
     color: #cbd5e1;
@@ -581,6 +674,7 @@
 
 .scroll-indicator:hover {
     color: #ffffff;
+
     border-color: #1683ff;
 }
 
@@ -601,13 +695,80 @@
    TABLET
 ========================================================= */
 
-/* =====================================================
-   MOBILE HERO
-===================================================== */
+@media (max-width: 991px) {
 
-.hero-mobile-heading {
-    display: none;
+    .hero-content {
+        padding: 80px 0 100px;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .hero-badge {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-social {
+        justify-content: center;
+    }
+
+    .hero-right {
+        margin-top: 55px;
+    }
+
+    .hero-profile-visual {
+        min-height: 500px;
+    }
+
+    .hero-profile-card {
+        width: 300px;
+
+        height: 370px;
+    }
+
+    .hero-profile-circle {
+        width: 390px;
+
+        height: 390px;
+    }
+
+    .hero-profile-ring {
+        width: 370px;
+
+        height: 370px;
+    }
+
+    .hero-tech-laravel {
+        right: 12%;
+    }
+
+    .hero-tech-php {
+        right: 4%;
+    }
+
+    .hero-tech-mysql {
+        right: 8%;
+    }
+
+    .hero-tech-bootstrap {
+        left: 12%;
+    }
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 767px) {
 
@@ -617,6 +778,7 @@
 
     .hero-content {
         min-height: auto;
+
         padding: 55px 0 90px;
     }
 
@@ -626,33 +788,52 @@
 
     .hero-badge {
         justify-content: flex-start;
+
         margin-bottom: 18px;
     }
 
-    /* ================================================
-       NAMA + FOTO
-    ================================================= */
+
+    /* =====================================================
+       MOBILE NAME + PROFILE
+    ===================================================== */
 
     .hero-mobile-heading {
         display: flex;
+
         align-items: center;
+
         justify-content: space-between;
+
         gap: 12px;
+
         width: 100%;
     }
 
     .hero-mobile-heading .hero-title {
         flex: 1;
+
         min-width: 0;
+
         margin: 0;
+
         font-size: clamp(38px, 10vw, 50px);
+
         line-height: 1;
     }
 
+
+    /* =====================================================
+       MOBILE PROFILE
+    ===================================================== */
+
     .hero-mobile-profile {
+        display: flex;
+
         flex: 0 0 90px;
+
         width: 90px;
         height: 112px;
+
         padding: 3px;
 
         border-radius: 48px 48px 16px 16px;
@@ -660,13 +841,13 @@
         background:
             linear-gradient(
                 145deg,
-                rgba(22,131,255,0.95),
-                rgba(37,99,235,0.35)
+                rgba(22, 131, 255, 0.95),
+                rgba(37, 99, 235, 0.35)
             );
 
         box-shadow:
-            0 10px 28px rgba(0,0,0,0.35),
-            0 0 25px rgba(22,131,255,0.16);
+            0 10px 28px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(22, 131, 255, 0.16);
 
         overflow: hidden;
     }
@@ -674,74 +855,74 @@
     .hero-mobile-profile img {
         width: 100%;
         height: 100%;
+
         display: block;
+
         object-fit: cover;
+
         object-position: center top;
 
         border-radius: 45px 45px 13px 13px;
+
         border: 2px solid #07152b;
     }
 
     .hero-mobile-placeholder {
-        display: flex;
         align-items: center;
         justify-content: center;
 
         color: #1683ff;
+
         font-size: 30px;
     }
 
-    /* ================================================
-       FOTO DESKTOP DISIMPAN DI MOBILE
-    ================================================= */
 
-    .hero-right {
-        position: relative;
-        top: auto;
-        right: auto;
-        left: auto;
+    /* =====================================================
+       DESKTOP PROFILE HIDDEN ON MOBILE
+    ===================================================== */
 
-        width: 100%;
-        margin-top: 45px;
+    .hero-section .hero-right {
+        display: none !important;
     }
 
-    .hero-profile-visual {
-        min-height: 0;
-    }
 
-    /* Sembunyikan foto desktop */
-    .hero-right {
-        display: none;
-    }
-
-    /* ================================================
+    /* =====================================================
        ROLE
-    ================================================= */
+    ===================================================== */
 
     .hero-role {
         margin-top: 18px;
+
         font-size: 27px;
+
         line-height: 1.15;
     }
 
-    /* ================================================
+
+    /* =====================================================
        DESCRIPTION
-    ================================================= */
+    ===================================================== */
 
     .hero-description {
-        font-size: 15px;
-        line-height: 1.7;
         margin-top: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
     }
 
-    /* ================================================
-       BUTTON
-    ================================================= */
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
 
     .hero-buttons {
         width: 100%;
+
         flex-direction: column;
+
         gap: 10px;
+
         margin-top: 28px;
     }
 
@@ -749,21 +930,25 @@
     .hero-btn-outline,
     .hero-btn-cv {
         width: 100%;
+
         min-height: 50px;
     }
 
-    /* ================================================
+
+    /* =====================================================
        SOCIAL
-    ================================================= */
+    ===================================================== */
 
     .hero-social {
         justify-content: flex-start;
+
         margin-top: 24px;
     }
 
-    /* ================================================
-       SCROLL
-    ================================================= */
+
+    /* =====================================================
+       SCROLL INDICATOR
+    ===================================================== */
 
     .scroll-indicator {
         display: none;
@@ -771,15 +956,20 @@
 }
 
 
-/* =====================================================
-   HP KECIL
-===================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 480px) {
 
     .hero-content {
         padding-top: 45px;
     }
+
+
+    /* =====================================================
+       NAME + PHOTO
+    ===================================================== */
 
     .hero-mobile-heading {
         gap: 10px;
@@ -789,18 +979,35 @@
         font-size: 39px;
     }
 
+
+    /* =====================================================
+       MOBILE PROFILE
+    ===================================================== */
+
     .hero-mobile-profile {
-        flex-basis: 82px;
+        flex: 0 0 82px;
+
         width: 82px;
         height: 102px;
     }
+
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
 
     .hero-role {
         font-size: 24px;
     }
 
+
+    /* =====================================================
+       DESCRIPTION
+    ===================================================== */
+
     .hero-description {
         font-size: 14px;
+
         line-height: 1.7;
     }
 }
