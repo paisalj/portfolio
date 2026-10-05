@@ -1,8 +1,10 @@
 <section id="home" class="hero-section">
 
-    {{-- =========================================================
-        BACKGROUND GLOW
-    ========================================================== --}}
+    {{-- =====================================================
+        BACKGROUND EFFECT
+    ====================================================== --}}
+
+    <div class="hero-grid"></div>
 
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
@@ -17,67 +19,56 @@
                 HERO LEFT
             ====================================================== --}}
 
-            <div class="col-lg-6 hero-left order-lg-1">
+            <div class="col-lg-6 hero-left">
 
 
-                {{-- =================================================
-                    BADGE
-                ================================================== --}}
-
+                {{-- HELLO --}}
                 <div class="hero-badge">
+
                     <span></span>
-                    <strong>WEB DEVELOPER</strong>
+
+                    HELLO, I'M
+
                 </div>
 
 
                 {{-- =================================================
-                    NAME
+                    NAME + MOBILE PROFILE
                 ================================================== --}}
 
-                <h1 class="hero-title">
+                <div class="hero-mobile-heading">
 
-                    {{ $home?->name ?? 'Paisal Johen' }}
+                    <h1 class="hero-title">
 
-                </h1>
+                        {{ $home?->name ?? 'Paisal Johen' }}
+
+                    </h1>
 
 
-                {{-- =================================================
-                    MOBILE PROFILE
-                    Hanya tampil di HP
-                ================================================== --}}
+                    {{-- MOBILE PHOTO --}}
 
-                @if($home?->profile_image)
+                    @if($home?->profile_image)
 
-                    <div class="hero-mobile-profile">
-
-                        <div class="hero-mobile-profile-ring"></div>
-
-                        <div class="hero-mobile-profile-image">
+                        <div class="hero-mobile-profile">
 
                             <img
                                 src="{{ asset($home->profile_image) }}"
-                                alt="{{ $home?->name ?? 'Profile Photo' }}"
+                                alt="{{ $home?->name ?? 'Paisal Johen' }}"
                             >
 
                         </div>
 
-                    </div>
+                    @else
 
-                @else
-
-                    <div class="hero-mobile-profile">
-
-                        <div class="hero-mobile-profile-ring"></div>
-
-                        <div class="hero-mobile-profile-image hero-mobile-placeholder">
+                        <div class="hero-mobile-profile hero-mobile-placeholder">
 
                             <i class="fa-solid fa-user"></i>
 
                         </div>
 
-                    </div>
+                    @endif
 
-                @endif
+                </div>
 
 
                 {{-- =================================================
@@ -111,17 +102,16 @@
                 <div class="hero-buttons">
 
 
-                    {{-- VIEW PROJECTS --}}
+                    {{-- PROJECT --}}
 
                     <a
                         href="#projects"
                         class="btn hero-btn-primary"
                     >
 
-                        <span>
-                            <i class="fa-solid fa-briefcase"></i>
-                            View Projects
-                        </span>
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        View Projects
 
                         <i class="fa-solid fa-arrow-right"></i>
 
@@ -142,7 +132,7 @@
                     </a>
 
 
-                    {{-- DOWNLOAD CV --}}
+                    {{-- CV --}}
 
                     @if($home?->cv_file)
 
@@ -227,40 +217,32 @@
 
                     @endif
 
-
                 </div>
 
             </div>
 
 
+
             {{-- =====================================================
                 HERO RIGHT
-                FOTO DESKTOP
             ====================================================== --}}
 
-            <div class="col-lg-6 hero-right order-lg-2">
-
+            <div class="col-lg-6 hero-right">
 
                 <div class="hero-profile-visual">
 
 
-                    {{-- =================================================
-                        BACKGROUND GLOW CIRCLE
-                    ================================================== --}}
+                    {{-- GOLD GLOW --}}
 
-                    <div class="hero-profile-circle"></div>
+                    <div class="hero-profile-glow"></div>
 
 
-                    {{-- =================================================
-                        DECORATIVE RING
-                    ================================================== --}}
+                    {{-- OUTER RING --}}
 
                     <div class="hero-profile-ring"></div>
 
 
-                    {{-- =================================================
-                        PROFILE IMAGE
-                    ================================================== --}}
+                    {{-- PROFILE IMAGE --}}
 
                     @if($home?->profile_image)
 
@@ -270,7 +252,7 @@
 
                                 <img
                                     src="{{ asset($home->profile_image) }}"
-                                    alt="{{ $home?->name ?? 'Profile Photo' }}"
+                                    alt="{{ $home?->name ?? 'Paisal Johen' }}"
                                     class="hero-profile-image"
                                 >
 
@@ -282,7 +264,7 @@
 
                         <div class="hero-profile-card">
 
-                            <div class="hero-profile-image-wrapper hero-profile-placeholder">
+                            <div class="hero-profile-placeholder">
 
                                 <i class="fa-solid fa-user"></i>
 
@@ -293,12 +275,10 @@
                     @endif
 
 
+
                     {{-- =================================================
                         TECHNOLOGY BADGES
                     ================================================== --}}
-
-
-                    {{-- LARAVEL --}}
 
                     <div class="hero-tech-badge hero-tech-laravel">
 
@@ -309,8 +289,6 @@
                     </div>
 
 
-                    {{-- PHP --}}
-
                     <div class="hero-tech-badge hero-tech-php">
 
                         <i class="fa-brands fa-php"></i>
@@ -319,8 +297,6 @@
 
                     </div>
 
-
-                    {{-- MYSQL --}}
 
                     <div class="hero-tech-badge hero-tech-mysql">
 
@@ -331,8 +307,6 @@
                     </div>
 
 
-                    {{-- BOOTSTRAP --}}
-
                     <div class="hero-tech-badge hero-tech-bootstrap">
 
                         <i class="fa-brands fa-bootstrap"></i>
@@ -342,9 +316,7 @@
                     </div>
 
 
-                    {{-- =================================================
-                        DECORATIONS
-                    ================================================== --}}
+                    {{-- DECORATION --}}
 
                     <div class="hero-decoration decoration-1"></div>
 
@@ -360,17 +332,18 @@
     </div>
 
 
-    {{-- =========================================================
+    {{-- =====================================================
         SCROLL INDICATOR
-    ========================================================== --}}
+    ====================================================== --}}
 
     <a
         href="#about"
         class="scroll-indicator"
-        aria-label="Scroll to About section"
     >
 
-        <i class="fa-solid fa-chevron-down"></i>
+        <span>Scroll Down</span>
+
+        <i class="fa-solid fa-arrow-down"></i>
 
     </a>
 
