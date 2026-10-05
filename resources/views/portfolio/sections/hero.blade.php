@@ -43,33 +43,89 @@
 
 </h1>
 
-
 {{-- =====================================================
     MOBILE PROFILE
-    FOTO KHUSUS UNTUK HP
+    FOTO + RING + TECHNOLOGY BADGES
 ====================================================== --}}
 
-@if($home?->profile_image)
+<div class="hero-mobile-profile">
 
-    <div class="hero-mobile-profile">
+    {{-- GOLDEN GLOW --}}
+    <div class="hero-profile-glow"></div>
 
-        <img
-            src="{{ asset($home->profile_image) }}"
-            alt="{{ $home?->name ?? 'Profile Photo' }}"
-        >
+    {{-- CIRCLE RING --}}
+    <div class="hero-profile-ring"></div>
+
+    {{-- PROFILE IMAGE --}}
+    @if($home?->profile_image)
+
+        <div class="hero-profile-card">
+
+            <div class="hero-profile-image-wrapper">
+
+                <img
+                    src="{{ asset($home->profile_image) }}"
+                    alt="{{ $home?->name ?? 'Profile Photo' }}"
+                    class="hero-profile-image"
+                >
+
+            </div>
+
+        </div>
+
+    @else
+
+        <div class="hero-profile-card">
+
+            <div class="hero-profile-image-wrapper hero-profile-placeholder">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
+
+    @endif
+
+
+    {{-- TECHNOLOGY BADGES --}}
+
+    <div class="hero-tech-badge hero-tech-laravel">
+
+        <i class="fa-brands fa-laravel"></i>
+
+        <span>Laravel</span>
 
     </div>
 
-@else
 
-    <div class="hero-mobile-profile hero-mobile-placeholder">
+    <div class="hero-tech-badge hero-tech-php">
 
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-brands fa-php"></i>
+
+        <span>PHP</span>
 
     </div>
 
-@endif
 
+    <div class="hero-tech-badge hero-tech-mysql">
+
+        <i class="fa-solid fa-database"></i>
+
+        <span>MySQL</span>
+
+    </div>
+
+
+    <div class="hero-tech-badge hero-tech-bootstrap">
+
+        <i class="fa-brands fa-bootstrap"></i>
+
+        <span>Bootstrap</span>
+
+    </div>
+
+</div>
 
 {{-- ROLE --}}
 <div class="hero-role">
