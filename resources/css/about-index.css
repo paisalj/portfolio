@@ -1,6 +1,5 @@
 /* =========================================================
    ABOUT INDEX - ADMIN
-   Mengikuti layout dan spacing halaman Home
    ========================================================= */
 
 .admin-about-page {
@@ -8,18 +7,15 @@
     padding: 0;
 }
 
-/* =========================================================
-   OUTER CONTAINER
-   ========================================================= */
-
 .admin-about-container {
     width: 100%;
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #dbe3ef;
     border-radius: 16px;
     padding: 26px;
-    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
 }
+
 
 /* =========================================================
    PAGE HEADER
@@ -31,34 +27,45 @@
     justify-content: space-between;
     gap: 24px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e5eaf1;
 }
 
 .admin-about-eyebrow {
-    display: inline-block;
-    margin-bottom: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
     color: #2563eb;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.11em;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+}
+
+.admin-about-eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 2px;
+    border-radius: 10px;
+    background: #2563eb;
 }
 
 .admin-about-header h1 {
     margin: 0;
     color: #0f172a;
-    font-size: 1.9rem;
+    font-size: 1.95rem;
     font-weight: 750;
     line-height: 1.2;
 }
 
 .admin-about-header p {
     max-width: 680px;
-    margin: 8px 0 0;
+    margin: 9px 0 0;
     color: #64748b;
-    font-size: 0.9rem;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    line-height: 1.7;
 }
+
 
 /* =========================================================
    EDIT BUTTON
@@ -70,14 +77,16 @@
     justify-content: center;
     gap: 8px;
     flex-shrink: 0;
-    padding: 10px 16px;
+    min-height: 42px;
+    padding: 0 16px;
     border: 1px solid #2563eb;
     border-radius: 9px;
     background: #2563eb;
     color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.84rem;
+    font-weight: 650;
     text-decoration: none;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.16);
     transition: all 0.2s ease;
 }
 
@@ -86,7 +95,9 @@
     border-color: #1d4ed8;
     color: #ffffff;
     transform: translateY(-1px);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.22);
 }
+
 
 /* =========================================================
    SUCCESS ALERT
@@ -102,24 +113,27 @@
     border-radius: 9px;
     background: #f0fdf4;
     color: #166534;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
 }
 
 .admin-about-alert i {
     font-size: 0.95rem;
 }
 
+
 /* =========================================================
-   ABOUT CONTENT CARD
+   MAIN ABOUT CARD
    ========================================================= */
 
 .admin-about-content-card {
     margin-top: 22px;
     overflow: hidden;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border: 1px solid #dbe3ef;
+    border-radius: 15px;
     background: #ffffff;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
 }
+
 
 /* =========================================================
    CARD HEADER
@@ -131,66 +145,90 @@
     justify-content: space-between;
     gap: 20px;
     padding: 21px 24px;
-    background: #f8fafc;
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #f1f5f9 100%
+        );
     border-bottom: 1px solid #e2e8f0;
 }
 
 .admin-about-card-label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     color: #2563eb;
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.11em;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
 }
 
 .admin-about-card-header h2 {
     margin: 0;
     color: #0f172a;
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     font-weight: 700;
 }
 
 .admin-about-status {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
+    gap: 7px;
+    padding: 6px 11px;
     border: 1px solid #bbf7d0;
     border-radius: 999px;
     background: #f0fdf4;
     color: #15803d;
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 650;
 }
 
 .admin-about-status i {
-    font-size: 0.42rem;
+    font-size: 0.4rem;
 }
+
 
 /* =========================================================
    DESCRIPTION
    ========================================================= */
 
 .admin-about-description-section {
-    padding: 23px 24px;
+    position: relative;
+    padding: 24px;
+}
+
+.admin-about-description-section::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 24px;
+    width: 3px;
+    border-radius: 10px;
+    background: #2563eb;
+}
+
+.admin-about-description-section .admin-about-section-label,
+.admin-about-description-section p {
+    margin-left: 17px;
 }
 
 .admin-about-section-label {
     display: block;
     margin-bottom: 9px;
     color: #64748b;
-    font-size: 0.66rem;
-    font-weight: 700;
+    font-size: 0.64rem;
+    font-weight: 800;
     letter-spacing: 0.1em;
 }
 
 .admin-about-description-section p {
-    max-width: 900px;
-    margin: 0;
+    max-width: 930px;
+    margin-top: 0;
+    margin-bottom: 0;
     color: #334155;
     font-size: 0.9rem;
-    line-height: 1.75;
+    line-height: 1.8;
     white-space: pre-line;
 }
 
@@ -198,6 +236,61 @@
     color: #94a3b8 !important;
     font-style: italic;
 }
+
+
+/* =========================================================
+   PHOTO SECTION
+   ========================================================= */
+
+.admin-about-image-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 0 24px 24px;
+    padding: 20px;
+    border: 1px solid #dbe3ef;
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #ffffff 100%
+        );
+}
+
+.admin-about-image-section .admin-about-section-label {
+    min-width: 95px;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.admin-about-image-preview {
+    position: relative;
+    width: 145px;
+    height: 180px;
+    padding: 4px;
+    overflow: hidden;
+    border-radius: 13px;
+    background: linear-gradient(
+        145deg,
+        #2563eb,
+        #60a5fa,
+        #dbeafe
+    );
+    box-shadow:
+        0 10px 24px rgba(37, 99, 235, 0.16);
+}
+
+.admin-about-image-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
 
 /* =========================================================
    INFORMATION GRID
@@ -211,21 +304,42 @@
 }
 
 .admin-about-info-item {
+    position: relative;
     display: flex;
     align-items: flex-start;
     gap: 13px;
     min-height: 84px;
     padding: 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 11px;
-    background: #f8fafc;
-    transition: all 0.2s ease;
+    overflow: hidden;
+    border: 1px solid #dfe6ef;
+    border-radius: 12px;
+    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-about-info-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #2563eb;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .admin-about-info-item:hover {
     border-color: #bfdbfe;
-    background: #f8fbff;
-    transform: translateY(-1px);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.07);
+    transform: translateY(-2px);
+}
+
+.admin-about-info-item:hover::after {
+    opacity: 1;
 }
 
 .admin-about-info-icon {
@@ -233,9 +347,9 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 38px;
-    height: 38px;
-    border-radius: 9px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     background: #eff6ff;
     color: #2563eb;
     font-size: 0.9rem;
@@ -249,15 +363,15 @@
     display: block;
     margin-bottom: 4px;
     color: #64748b;
-    font-size: 0.7rem;
+    font-size: 0.69rem;
     font-weight: 600;
 }
 
 .admin-about-info-item strong {
     display: block;
     color: #0f172a;
-    font-size: 0.88rem;
-    font-weight: 650;
+    font-size: 0.9rem;
+    font-weight: 700;
     line-height: 1.45;
     word-break: break-word;
 }
@@ -267,16 +381,34 @@
     font-weight: 500 !important;
 }
 
+
 /* =========================================================
    VALUES
    ========================================================= */
 
 .admin-about-values-section {
+    position: relative;
     margin: 0 24px 24px;
     padding: 20px;
+    overflow: hidden;
     border: 1px solid #e2e8f0;
-    border-radius: 11px;
-    background: #ffffff;
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf5 0%,
+            #ffffff 100%
+        );
+}
+
+.admin-about-values-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #d97706;
 }
 
 .admin-about-values-header {
@@ -298,7 +430,7 @@
 .admin-about-values-header h3 {
     margin: 0;
     color: #0f172a;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 700;
 }
 
@@ -309,6 +441,7 @@
     line-height: 1.75;
     white-space: pre-line;
 }
+
 
 /* =========================================================
    EMPTY STATE
@@ -377,6 +510,7 @@
     transform: translateY(-1px);
 }
 
+
 /* =========================================================
    TABLET
    ========================================================= */
@@ -395,7 +529,13 @@
         font-size: 1.7rem;
     }
 
+    .admin-about-image-section {
+        margin-left: 23px;
+        margin-right: 23px;
+    }
+
 }
+
 
 /* =========================================================
    MOBILE
@@ -438,9 +578,36 @@
         padding: 19px;
     }
 
+    .admin-about-description-section::before {
+        top: 19px;
+        bottom: 19px;
+        left: 19px;
+    }
+
+    .admin-about-description-section .admin-about-section-label,
+    .admin-about-description-section p {
+        margin-left: 15px;
+    }
+
     .admin-about-description-section p {
         font-size: 0.86rem;
         line-height: 1.7;
+    }
+
+    .admin-about-image-section {
+        flex-direction: column;
+        gap: 13px;
+        margin: 0 19px 19px;
+        padding: 18px;
+    }
+
+    .admin-about-image-section .admin-about-section-label {
+        margin: 0;
+    }
+
+    .admin-about-image-preview {
+        width: 135px;
+        height: 168px;
     }
 
     .admin-about-information-grid {
@@ -464,6 +631,7 @@
 
 }
 
+
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
@@ -476,7 +644,7 @@
     }
 
     .admin-about-eyebrow {
-        font-size: 0.64rem;
+        font-size: 0.62rem;
     }
 
     .admin-about-header h1 {
@@ -495,12 +663,34 @@
         padding: 17px;
     }
 
+    .admin-about-description-section::before {
+        top: 17px;
+        bottom: 17px;
+        left: 17px;
+    }
+
+    .admin-about-description-section .admin-about-section-label,
+    .admin-about-description-section p {
+        margin-left: 14px;
+    }
+
+    .admin-about-image-section {
+        margin: 0 17px 17px;
+        padding: 16px;
+    }
+
+    .admin-about-image-preview {
+        width: 125px;
+        height: 155px;
+    }
+
     .admin-about-information-grid {
         padding: 0 17px 17px;
     }
 
     .admin-about-values-section {
         margin: 0 17px 17px;
+        padding: 16px;
     }
 
     .admin-about-info-item {
@@ -508,55 +698,9 @@
     }
 
     .admin-about-info-icon {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
         font-size: 0.82rem;
-    }
-
-}
-/* =========================================================
-   FOTO ABOUT
-   Khusus tampilan foto pada About Index
-   ========================================================= */
-
-.admin-about-image-section {
-    padding: 0 24px 24px;
-}
-
-.admin-about-image-preview {
-    margin-top: 10px;
-}
-
-.admin-about-image-preview img {
-    display: block;
-    width: 120px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
-    background: #f8fafc;
-    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.08);
-}
-
-
-/* =========================================================
-   FOTO ABOUT - MOBILE
-   ========================================================= */
-
-@media (max-width: 767px) {
-
-    .admin-about-image-section {
-        padding: 0 19px 19px;
-    }
-
-}
-
-
-@media (max-width: 480px) {
-
-    .admin-about-image-section {
-        padding: 0 17px 17px;
     }
 
 }
