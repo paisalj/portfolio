@@ -36,99 +36,18 @@
                     HELLO, I'M
                 </div>
 
-{{-- NAME --}}
-<h1 class="hero-title">
 
-    {{ $home?->name ?? 'Paisal Johen' }}
+                {{-- NAME --}}
+                <h1 class="hero-title">
 
-</h1>
+                    {{ $home?->name ?? 'Paisal Johen' }}
 
-{{-- =====================================================
-    MOBILE PROFILE
-    FOTO + RING + TECHNOLOGY BADGES
-====================================================== --}}
-
-<div class="hero-mobile-profile">
-
-    {{-- GOLDEN GLOW --}}
-    <div class="hero-profile-glow"></div>
-
-    {{-- CIRCLE RING --}}
-    <div class="hero-profile-ring"></div>
-
-    {{-- PROFILE IMAGE --}}
-    @if($home?->profile_image)
-
-        <div class="hero-profile-card">
-
-            <div class="hero-profile-image-wrapper">
-
-                <img
-                    src="{{ asset($home->profile_image) }}"
-                    alt="{{ $home?->name ?? 'Profile Photo' }}"
-                    class="hero-profile-image"
-                >
-
-            </div>
-
-        </div>
-
-    @else
-
-        <div class="hero-profile-card">
-
-            <div class="hero-profile-image-wrapper hero-profile-placeholder">
-
-                <i class="fa-solid fa-user"></i>
-
-            </div>
-
-        </div>
-
-    @endif
+                </h1>
 
 
-    {{-- TECHNOLOGY BADGES --}}
+                {{-- ROLE --}}
+                <div class="hero-role">
 
-    <div class="hero-tech-badge hero-tech-laravel">
-
-        <i class="fa-brands fa-laravel"></i>
-
-        <span>Laravel</span>
-
-    </div>
-
-
-    <div class="hero-tech-badge hero-tech-php">
-
-        <i class="fa-brands fa-php"></i>
-
-        <span>PHP</span>
-
-    </div>
-
-
-    <div class="hero-tech-badge hero-tech-mysql">
-
-        <i class="fa-solid fa-database"></i>
-
-        <span>MySQL</span>
-
-    </div>
-
-
-    <div class="hero-tech-badge hero-tech-bootstrap">
-
-        <i class="fa-brands fa-bootstrap"></i>
-
-        <span>Bootstrap</span>
-
-    </div>
-
-</div>
-
-{{-- ROLE --}}
-<div class="hero-role">
                     {{ $home?->title ?? 'Web Developer' }}
 
                     <span class="typing-cursor">|</span>
