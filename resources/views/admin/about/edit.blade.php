@@ -132,18 +132,11 @@
 
     @if($about?->image)
 
-        <div style="margin-bottom: 15px;">
+        <div class="admin-about-image-preview">
 
             <img
                 src="{{ asset($about->image) }}"
                 alt="Foto About"
-                style="
-                    width: 180px;
-                    height: 180px;
-                    object-fit: cover;
-                    border-radius: 18px;
-                    border: 1px solid rgba(214, 168, 74, 0.35);
-                "
             >
 
         </div>
@@ -158,11 +151,10 @@
     >
 
     <small>
-        Gunakan foto profesional untuk bagian About. Format JPG, PNG, atau WebP, maksimal 2 MB.
+        Gunakan foto profesional untuk bagian About. Format JPG, PNG atau WebP, maksimal 2 MB.
     </small>
 
 </div>
-
                     {{-- LOCATION --}}
                     <div class="admin-about-edit-form-group">
 

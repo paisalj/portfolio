@@ -462,5 +462,53 @@
     .admin-about-edit-actions {
         padding: 16px 17px;
     }
+/* =========================================================
+   ABOUT IMAGE - EDIT PAGE
+   Hanya untuk tampilan foto About
+   ========================================================= */
 
+.admin-about-image-preview {
+    margin-top: 10px;
+}
+
+.admin-about-image-preview img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* FILE INPUT KHUSUS FOTO */
+
+.admin-about-edit-form-group input[type="file"] {
+    height: auto;
+    padding: 9px 12px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #475569;
+}
+
+.admin-about-edit-form-group input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #334155;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-about-edit-form-group input[type="file"]::file-selector-button:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #2563eb;
+}
 }
