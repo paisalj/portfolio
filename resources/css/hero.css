@@ -1297,75 +1297,98 @@
 
 @media (max-width: 480px) {
 
+    /* JARAK NAVBAR → HERO */
     .hero-content {
-        padding-top: 40px;
+        padding-top: 65px;
         padding-bottom: 70px;
     }
 
+    /* NAMA */
     .hero-title {
         font-size: 37px;
+        margin-bottom: 0;
     }
 
-    .hero-mobile-profile {
-        height: 370px;
+    /* =====================================================
+       FOTO MOBILE
+    ===================================================== */
 
-        margin-top: 18px;
+    .hero-mobile-profile {
+        height: 300px;
+
+        margin-top: 22px;
         margin-bottom: 5px;
     }
 
-    .hero-mobile-profile .hero-profile-card {
-        width: 310px;
-        height: 310px;
-    }
-
+    /* GLOW */
     .hero-mobile-profile .hero-profile-glow {
-        width: 340px;
-        height: 340px;
+        width: 270px;
+        height: 270px;
     }
 
+    /* RING */
     .hero-mobile-profile .hero-profile-ring {
-        width: 350px;
-        height: 350px;
+        width: 280px;
+        height: 280px;
     }
+
+    /* FOTO */
+    .hero-mobile-profile .hero-profile-card {
+        width: 240px;
+        height: 240px;
+    }
+
+    /* =====================================================
+       TECHNOLOGY BADGES
+    ===================================================== */
 
     .hero-mobile-profile .hero-tech-badge {
-        min-height: 40px;
+        min-height: 38px;
 
-        padding: 0 11px;
+        padding: 0 10px;
 
-        font-size: 11px;
+        font-size: 10px;
 
-        gap: 6px;
+        gap: 5px;
     }
 
     .hero-mobile-profile .hero-tech-badge i {
-        font-size: 15px;
+        font-size: 14px;
     }
 
+    /* LARAVEL - ATAS KANAN */
     .hero-mobile-profile .hero-tech-laravel {
-        top: 5px;
-        right: 0;
+        top: 10px;
+        right: 2%;
     }
 
+    /* PHP - KANAN */
     .hero-mobile-profile .hero-tech-php {
-        top: 115px;
+        top: 105px;
         right: 0;
     }
 
+    /* MYSQL - BAWAH KANAN */
     .hero-mobile-profile .hero-tech-mysql {
-        bottom: 65px;
-        right: 0;
+        bottom: 50px;
+        right: 1%;
     }
 
+    /* BOOTSTRAP - BAWAH KIRI */
     .hero-mobile-profile .hero-tech-bootstrap {
-        bottom: 10px;
-        left: 0;
+        bottom: 8px;
+        left: 1%;
     }
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
 
     .hero-role {
         font-size: 23px;
     }
 
+    /* DESCRIPTION */
     .hero-description {
         font-size: 13px;
     }
