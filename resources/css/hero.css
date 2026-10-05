@@ -76,6 +76,7 @@
 }
 
 @keyframes heroGridMove {
+
     from {
         transform: translateY(0);
     }
@@ -154,6 +155,7 @@
 }
 
 @keyframes heroOrbOne {
+
     0%,
     100% {
         transform: translate(0, 0) scale(1);
@@ -165,6 +167,7 @@
 }
 
 @keyframes heroOrbTwo {
+
     0%,
     100% {
         transform: translate(0, 0);
@@ -176,6 +179,7 @@
 }
 
 @keyframes heroOrbThree {
+
     0%,
     100% {
         transform: translateY(0);
@@ -241,6 +245,7 @@
 }
 
 @keyframes heroParticleFloat {
+
     0%,
     100% {
         transform: translateY(0);
@@ -252,6 +257,7 @@
 }
 
 @keyframes heroParticlePulse {
+
     0%,
     100% {
         opacity: 0.35;
@@ -302,6 +308,7 @@
 }
 
 @keyframes glowMoveOne {
+
     0%,
     100% {
         transform: translate(0, 0);
@@ -313,6 +320,7 @@
 }
 
 @keyframes glowMoveTwo {
+
     0%,
     100% {
         transform: translate(0, 0);
@@ -407,7 +415,7 @@
 
 /* =========================================================
    MOBILE PROFILE
-   Hidden by default
+   Default hidden on desktop
 ========================================================= */
 
 .hero-mobile-profile {
@@ -438,6 +446,7 @@
 }
 
 @keyframes heroCursor {
+
     0%,
     50% {
         opacity: 1;
@@ -487,6 +496,7 @@
 .hero-btn-primary,
 .hero-btn-outline,
 .hero-btn-cv {
+
     min-height: 50px;
 
     padding: 0 19px;
@@ -519,6 +529,7 @@
 ========================================================= */
 
 .hero-btn-primary {
+
     background: #d6a84a;
 
     border: 1px solid #d6a84a;
@@ -530,6 +541,7 @@
 }
 
 .hero-btn-primary:hover {
+
     background: #e3b85c;
 
     border-color: #e3b85c;
@@ -548,6 +560,7 @@
 ========================================================= */
 
 .hero-btn-outline {
+
     background: rgba(255, 255, 255, 0.02);
 
     border: 1px solid rgba(214, 168, 74, 0.45);
@@ -556,6 +569,7 @@
 }
 
 .hero-btn-outline:hover {
+
     background: rgba(214, 168, 74, 0.08);
 
     border-color: #d6a84a;
@@ -571,6 +585,7 @@
 ========================================================= */
 
 .hero-btn-cv {
+
     background: rgba(255, 255, 255, 0.025);
 
     border: 1px solid #303640;
@@ -579,6 +594,7 @@
 }
 
 .hero-btn-cv:hover {
+
     background: #ffffff;
 
     border-color: #ffffff;
@@ -594,6 +610,7 @@
 ========================================================= */
 
 .hero-social {
+
     display: flex;
 
     align-items: center;
@@ -604,6 +621,7 @@
 }
 
 .social-btn {
+
     width: 42px;
     height: 42px;
 
@@ -631,6 +649,7 @@
 }
 
 .social-btn:hover {
+
     background: #d6a84a;
 
     border-color: #d6a84a;
@@ -653,6 +672,7 @@
 }
 
 .hero-profile-visual {
+
     position: relative;
 
     width: 100%;
@@ -672,6 +692,7 @@
 ========================================================= */
 
 .hero-profile-glow {
+
     position: absolute;
 
     width: 420px;
@@ -693,6 +714,7 @@
 }
 
 @keyframes profileGlow {
+
     0%,
     100% {
         transform: scale(1);
@@ -711,6 +733,7 @@
 ========================================================= */
 
 .hero-profile-ring {
+
     position: absolute;
 
     width: 430px;
@@ -727,6 +750,7 @@
 }
 
 @keyframes profileRing {
+
     from {
         transform: rotate(0deg);
     }
@@ -743,6 +767,7 @@
 ========================================================= */
 
 .hero-profile-card {
+
     position: relative;
 
     width: 350px;
@@ -772,6 +797,7 @@
 ========================================================= */
 
 .hero-profile-image-wrapper {
+
     width: 100%;
     height: 100%;
 
@@ -785,6 +811,7 @@
 }
 
 .hero-profile-image {
+
     width: 100%;
     height: 100%;
 
@@ -803,6 +830,7 @@
 ========================================================= */
 
 .hero-profile-placeholder {
+
     display: flex;
 
     align-items: center;
@@ -821,6 +849,7 @@
 ========================================================= */
 
 .hero-tech-badge {
+
     position: absolute;
 
     display: flex;
@@ -854,6 +883,7 @@
 }
 
 .hero-tech-badge i {
+
     font-size: 17px;
 
     color: #d6a84a;
@@ -890,6 +920,7 @@
 ========================================================= */
 
 .scroll-indicator {
+
     position: absolute;
 
     left: 50%;
@@ -920,12 +951,14 @@
 }
 
 .scroll-indicator:hover {
+
     color: #d6a84a;
 
     border-color: #d6a84a;
 }
 
 @keyframes scrollBounce {
+
     0%,
     100% {
         transform: translate(-50%, 0);
@@ -992,39 +1025,31 @@
 
 /* =========================================================
    MOBILE
-   HP SAJA
+   KHUSUS HP — DESKTOP & TABLET TIDAK DIUBAH
 ========================================================= */
 
 @media (max-width: 767px) {
 
     .hero-section {
         min-height: auto;
-
-        align-items: flex-start;
     }
 
     .hero-content {
         min-height: auto;
-
-        padding: 35px 0 65px;
+        padding: 65px 0 80px;
     }
 
     .hero-left {
         text-align: center;
-
         margin-bottom: 0;
     }
 
 
-    /* =====================================================
-       BADGE
-    ===================================================== */
+    /* HELLO I'M */
 
     .hero-badge {
         justify-content: center;
-
-        margin-bottom: 14px;
-
+        margin-bottom: 16px;
         font-size: 10px;
     }
 
@@ -1033,45 +1058,36 @@
     }
 
 
-    /* =====================================================
-       NAME
-    ===================================================== */
+    /* NAMA */
 
     .hero-title {
         width: 100%;
-
         margin: 0;
-
-        font-size: clamp(34px, 9vw, 43px);
-
-        line-height: 1.12;
-
-        letter-spacing: -0.04em;
 
         text-align: center;
 
-        overflow-wrap: anywhere;
+        font-size: clamp(38px, 11vw, 50px);
+
+        line-height: 1;
+
+        letter-spacing: -0.04em;
     }
 
 
-    /* =====================================================
-       FOTO BULAT DI BAWAH NAMA
-    ===================================================== */
+    /* FOTO BULAT DI BAWAH NAMA */
 
     .hero-mobile-profile {
-        display: flex !important;
+        display: flex;
 
-        width: 155px;
-        height: 155px;
+        width: 150px;
+        height: 150px;
 
-        margin: 22px auto 0;
+        margin: 24px auto 0;
 
         padding: 5px;
 
         align-items: center;
         justify-content: center;
-
-        flex-shrink: 0;
 
         border-radius: 50%;
 
@@ -1083,80 +1099,83 @@
             );
 
         box-shadow:
-            0 15px 40px rgba(0, 0, 0, 0.40),
-            0 0 30px rgba(214, 168, 74, 0.16);
+            0 18px 45px rgba(0, 0, 0, 0.45),
+            0 0 35px rgba(214, 168, 74, 0.14);
 
         overflow: hidden;
     }
 
     .hero-mobile-profile img {
-        display: block;
-
         width: 100%;
         height: 100%;
+
+        display: block;
 
         object-fit: cover;
 
         object-position: center top;
 
-        border: 3px solid #101318;
-
         border-radius: 50%;
+
+        border: 3px solid #101318;
     }
 
     .hero-mobile-placeholder {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
         color: #d6a84a;
 
-        font-size: 42px;
+        font-size: 45px;
     }
 
 
-    /* =====================================================
-       SEMBUNYIKAN PROFILE DESKTOP
-    ===================================================== */
+    /* SEMBUNYIKAN PROFILE DESKTOP DI HP */
 
-    .hero-section .hero-right {
+    .hero-right {
         display: none !important;
     }
 
 
-    /* =====================================================
-       ROLE
-    ===================================================== */
+    /* ROLE */
 
     .hero-role {
-        margin-top: 22px;
-
-        font-size: 24px;
-
-        line-height: 1.3;
+        margin-top: 20px;
 
         text-align: center;
 
-        overflow-wrap: anywhere;
+        font-size: 25px;
+
+        line-height: 1.25;
     }
 
 
-    /* =====================================================
-       DESCRIPTION
-    ===================================================== */
+    /* DESKRIPSI */
 
     .hero-description {
         max-width: 100%;
 
-        margin: 17px auto 0;
+        margin-top: 18px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
 
         font-size: 14px;
 
         line-height: 1.75;
-
-        text-align: center;
     }
 
 
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
+    /* BUTTON */
 
     .hero-buttons {
         width: 100%;
@@ -1165,9 +1184,9 @@
 
         align-items: stretch;
 
-        gap: 10px;
+        gap: 9px;
 
-        margin-top: 24px;
+        margin-top: 26px;
     }
 
     .hero-btn-primary,
@@ -1175,33 +1194,33 @@
     .hero-btn-cv {
         width: 100%;
 
-        min-height: 48px;
+        min-height: 49px;
 
-        font-size: 14px;
+        justify-content: center;
     }
 
 
-    /* =====================================================
-       SOCIAL
-    ===================================================== */
+    /* SOCIAL */
 
     .hero-social {
         justify-content: center;
 
         margin-top: 22px;
 
-        gap: 12px;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 42px;
+        height: 42px;
     }
 
 
-    /* =====================================================
-       ANIMATED BACKGROUND — LEBIH RINGAN DI HP
-    ===================================================== */
+    /* BACKGROUND */
 
     .hero-bg-grid {
         background-size: 45px 45px;
-
-        opacity: 0.12;
+        opacity: 0.13;
     }
 
     .hero-particle {
@@ -1210,9 +1229,7 @@
     }
 
 
-    /* =====================================================
-       SCROLL
-    ===================================================== */
+    /* SCROLL */
 
     .scroll-indicator {
         display: none;
@@ -1222,77 +1239,79 @@
 
 /* =========================================================
    SMALL MOBILE
+   ≤ 480px
 ========================================================= */
 
 @media (max-width: 480px) {
 
     .hero-content {
-        padding-top: 28px;
-
-        padding-bottom: 55px;
+        padding-top: 58px;
+        padding-bottom: 70px;
     }
 
 
-    /* =====================================================
-       NAME
-    ===================================================== */
+    /* HELLO */
+
+    .hero-badge {
+        margin-bottom: 14px;
+        font-size: 9px;
+    }
+
+
+    /* NAMA */
 
     .hero-title {
-        font-size: clamp(32px, 8.8vw, 39px);
+        font-size: 39px;
+        line-height: 1;
     }
 
 
-    /* =====================================================
-       FOTO
-    ===================================================== */
+    /* FOTO BULAT */
 
     .hero-mobile-profile {
-        width: 140px;
-        height: 140px;
+        width: 135px;
+        height: 135px;
 
-        margin-top: 20px;
+        margin-top: 22px;
 
         padding: 4px;
     }
 
 
-    /* =====================================================
-       ROLE
-    ===================================================== */
+    /* ROLE */
 
     .hero-role {
         margin-top: 20px;
 
-        font-size: 22px;
+        font-size: 23px;
+
+        line-height: 1.25;
     }
 
 
-    /* =====================================================
-       DESCRIPTION
-    ===================================================== */
+    /* DESKRIPSI */
 
     .hero-description {
+        margin-top: 17px;
+
         font-size: 13px;
 
         line-height: 1.75;
     }
 
 
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
+    /* BUTTON */
 
     .hero-buttons {
-        margin-top: 22px;
+        margin-top: 24px;
     }
 
 
-    /* =====================================================
-       SOCIAL
-    ===================================================== */
+    /* SOCIAL */
 
-    .social-btn {
-        width: 40px;
-        height: 40px;
+    .hero-social {
+        margin-top: 20px;
+
+        justify-content: center;
     }
 }
