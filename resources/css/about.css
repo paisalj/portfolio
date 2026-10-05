@@ -23,37 +23,7 @@
 
 
 /* =====================================================
-   BACKGROUND GLOW
-===================================================== */
-
-.about-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    pointer-events: none;
-    animation: aboutGlowMove 8s ease-in-out infinite alternate;
-}
-
-.about-glow-1 {
-    width: 300px;
-    height: 300px;
-    left: -160px;
-    top: 25%;
-    background: rgba(214, 168, 74, 0.08);
-}
-
-.about-glow-2 {
-    width: 280px;
-    height: 280px;
-    right: -130px;
-    bottom: 10%;
-    background: rgba(214, 168, 74, 0.07);
-    animation-delay: 2s;
-}
-
-
-/* =====================================================
-   SUBTLE GRID
+   ANIMATED BACKGROUND
 ===================================================== */
 
 .about-section::before {
@@ -75,6 +45,69 @@
         );
 
     background-size: 70px 70px;
+
+    animation: aboutGridMove 18s linear infinite;
+}
+
+
+.about-section::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: -220px;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214, 168, 74, 0.045),
+            transparent 68%
+        );
+
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    animation: aboutBackgroundPulse 7s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.about-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+
+    animation:
+        aboutGlowMove 8s ease-in-out infinite alternate;
+}
+
+.about-glow-1 {
+    width: 300px;
+    height: 300px;
+
+    left: -160px;
+    top: 25%;
+
+    background: rgba(214, 168, 74, 0.08);
+}
+
+.about-glow-2 {
+    width: 280px;
+    height: 280px;
+
+    right: -130px;
+    bottom: 10%;
+
+    background: rgba(214, 168, 74, 0.07);
+
+    animation-delay: 2s;
 }
 
 
@@ -86,13 +119,19 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
     width: fit-content;
+
     margin-bottom: 17px;
     padding: 7px 13px;
+
     border: 1px solid rgba(214, 168, 74, 0.45);
     border-radius: 999px;
+
     background: rgba(214, 168, 74, 0.04);
+
     color: #d6a84a;
+
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -101,10 +140,15 @@
 .section-label span {
     width: 8px;
     height: 8px;
+
     border-radius: 50%;
+
     background: #d6a84a;
+
     box-shadow:
         0 0 10px rgba(214, 168, 74, 0.8);
+
+    animation: aboutLabelPulse 2.5s ease-in-out infinite;
 }
 
 
@@ -115,29 +159,39 @@
 .about-left {
     position: relative;
     z-index: 2;
-    animation: aboutFadeLeft 0.9s ease both;
+
+    animation:
+        aboutFadeLeft 0.9s ease both;
 }
 
 .about-title {
     max-width: 600px;
+
     margin-bottom: 24px;
+
     color: #f8fafc;
+
     font-size: clamp(2.5rem, 4vw, 3.65rem);
     line-height: 1.08;
+
     font-weight: 800;
     letter-spacing: -1.5px;
 }
 
 .about-title span {
     color: #d6a84a;
+
     text-shadow:
         0 0 25px rgba(214, 168, 74, 0.20);
 }
 
 .about-description {
     max-width: 600px;
+
     margin-bottom: 18px;
+
     color: #8fa3bc;
+
     font-size: 0.96rem;
     line-height: 1.85;
 }
@@ -153,18 +207,27 @@
 
 .about-info-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 13px;
+
     margin-top: 30px;
 }
 
 .about-info-card {
     position: relative;
+
     display: flex;
     align-items: center;
+
     gap: 14px;
+
     min-height: 76px;
+
     padding: 13px 15px;
+
     overflow: hidden;
 
     border: 1px solid rgba(214, 168, 74, 0.30);
@@ -191,20 +254,29 @@
 
 .about-info-card::before {
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 2px;
     height: 100%;
+
     background: #d6a84a;
+
     opacity: 0;
+
     transition: opacity 0.3s ease;
 }
 
 .about-info-card:hover {
     transform: translateY(-4px);
+
     border-color: rgba(214, 168, 74, 0.65);
+
     background: rgba(10, 29, 48, 0.92);
+
     box-shadow:
         0 12px 30px rgba(0, 0, 0, 0.25),
         0 0 20px rgba(214, 168, 74, 0.05);
@@ -215,24 +287,29 @@
 }
 
 .about-info-card:nth-child(1) {
-    animation: aboutInfoUp 0.7s ease 0.15s both;
+    animation:
+        aboutInfoUp 0.7s ease 0.15s both;
 }
 
 .about-info-card:nth-child(2) {
-    animation: aboutInfoUp 0.7s ease 0.25s both;
+    animation:
+        aboutInfoUp 0.7s ease 0.25s both;
 }
 
 .about-info-card:nth-child(3) {
-    animation: aboutInfoUp 0.7s ease 0.35s both;
+    animation:
+        aboutInfoUp 0.7s ease 0.35s both;
 }
 
 .about-info-card:nth-child(4) {
-    animation: aboutInfoUp 0.7s ease 0.45s both;
+    animation:
+        aboutInfoUp 0.7s ease 0.45s both;
 }
 
 .about-info-icon {
     width: 43px;
     height: 43px;
+
     flex-shrink: 0;
 
     display: flex;
@@ -243,6 +320,7 @@
     border-radius: 50%;
 
     background: rgba(214, 168, 74, 0.07);
+
     color: #d6a84a;
 
     font-size: 0.9rem;
@@ -254,19 +332,25 @@
 
 .about-info-card:hover .about-info-icon {
     transform: scale(1.08);
+
     background: rgba(214, 168, 74, 0.14);
 }
 
 .about-info-card small {
     display: block;
+
     margin-bottom: 3px;
+
     color: #71859e;
+
     font-size: 0.69rem;
 }
 
 .about-info-card strong {
     display: block;
+
     color: #edf2f7;
+
     font-size: 0.86rem;
     font-weight: 650;
 }
@@ -278,12 +362,16 @@
 
 .about-right {
     position: relative;
+
     z-index: 2;
-    animation: aboutFadeRight 0.9s ease 0.15s both;
+
+    animation:
+        aboutFadeRight 0.9s ease 0.15s both;
 }
 
 .about-visual {
     position: relative;
+
     min-height: 570px;
 }
 
@@ -294,6 +382,7 @@
 
 .about-photo-wrapper {
     position: absolute;
+
     top: 50%;
     left: 50%;
 
@@ -326,7 +415,8 @@
 
     z-index: 0;
 
-    animation: aboutPhotoGlow 5s ease-in-out infinite;
+    animation:
+        aboutPhotoGlow 5s ease-in-out infinite;
 }
 
 
@@ -348,7 +438,8 @@
 
     z-index: 1;
 
-    animation: aboutRingRotate 18s linear infinite;
+    animation:
+        aboutRingRotate 18s linear infinite;
 }
 
 
@@ -387,7 +478,9 @@
 }
 
 .about-photo-card:hover {
-    transform: rotate(1deg) translateY(-5px);
+    transform:
+        rotate(1deg)
+        translateY(-5px);
 
     box-shadow:
         0 35px 75px rgba(0, 0, 0, 0.52),
@@ -398,6 +491,7 @@
     content: "";
 
     position: absolute;
+
     inset: 5px;
 
     border-radius: 20px;
@@ -427,7 +521,7 @@
 .about-main-card {
     position: absolute;
 
-    top: 72px;
+    top: 18px;
     left: 50%;
 
     width: 190px;
@@ -439,6 +533,7 @@
 
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     border: 1px solid rgba(214, 168, 74, 0.65);
@@ -457,8 +552,10 @@
 
     z-index: 5;
 
-    animation: aboutBadgeFloat 4s ease-in-out infinite;
+    animation:
+        aboutBadgeFloat 4s ease-in-out infinite;
 }
+
 
 /* Hide old decorative card background */
 
@@ -657,6 +754,7 @@
 
 .about-floating-card:hover .about-floating-icon {
     transform: scale(1.08);
+
     background: rgba(214, 168, 74, 0.14);
 }
 
@@ -668,7 +766,6 @@
     color: #edf2f7;
 
     font-size: 0.73rem;
-
     font-weight: 700;
 }
 
@@ -764,6 +861,35 @@
     }
 }
 
+
+/* Background grid bergerak perlahan */
+
+@keyframes aboutGridMove {
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 70px 70px, 70px 70px;
+    }
+}
+
+
+/* Glow background berdenyut */
+
+@keyframes aboutBackgroundPulse {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: translateX(-50%) scale(1.12);
+    }
+}
+
 @keyframes aboutGlowMove {
     from {
         transform: translate(0, 0) scale(1);
@@ -854,6 +980,21 @@
     }
 }
 
+@keyframes aboutLabelPulse {
+    0%,
+    100% {
+        opacity: 0.65;
+        box-shadow:
+            0 0 7px rgba(214, 168, 74, 0.45);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 14px rgba(214, 168, 74, 0.9);
+    }
+}
+
 
 /* =====================================================
    TABLET
@@ -870,7 +1011,7 @@
     }
 
     .about-right {
-        margin-top: 25px;
+        margin-top: 15px;
     }
 
     .about-visual {
@@ -890,7 +1031,6 @@
     .about-card-code {
         left: 0;
     }
-
 }
 
 
@@ -901,7 +1041,7 @@
 @media (max-width: 767px) {
 
     .about-section {
-        padding: 75px 0;
+        padding: 70px 0;
     }
 
     .about-title {
@@ -915,7 +1055,9 @@
 
     .about-info-grid {
         grid-template-columns: 1fr;
+
         gap: 10px;
+
         margin-top: 24px;
     }
 
@@ -923,9 +1065,14 @@
         min-height: 70px;
     }
 
+    .about-right {
+        margin-top: 5px;
+    }
+
     .about-visual {
-        min-height: 720px;
-        margin-top: 35px;
+        min-height: 625px;
+
+        margin-top: 10px;
     }
 
     .about-photo-wrapper {
@@ -949,14 +1096,17 @@
     }
 
     .about-main-card {
-        top: 45px;
+        top: 12px;
+
         width: 175px;
+
         padding: 10px 13px;
     }
 
     .about-code-icon {
         width: 29px;
         height: 29px;
+
         font-size: 0.9rem;
     }
 
@@ -965,9 +1115,11 @@
     }
 
     .about-quote-card {
-        top: 125px;
+        top: 92px;
         right: 0;
+
         width: 190px;
+
         padding: 14px;
     }
 
@@ -977,12 +1129,14 @@
 
     .about-floating-card {
         width: 175px;
+
         padding: 10px;
     }
 
     .about-floating-icon {
         width: 34px;
         height: 34px;
+
         font-size: 0.78rem;
     }
 
@@ -997,26 +1151,29 @@
     .about-card-problem {
         left: 0;
         right: auto;
-        bottom: 205px;
+
+        bottom: 105px;
     }
 
     .about-card-teamwork {
         right: 0;
-        bottom: 205px;
+
+        bottom: 105px;
     }
 
     .about-card-learning {
         left: 0;
         right: auto;
-        bottom: 105px;
+
+        bottom: 10px;
     }
 
     .about-card-code {
         right: 0;
         left: auto;
-        bottom: 105px;
-    }
 
+        bottom: 10px;
+    }
 }
 
 
@@ -1027,7 +1184,7 @@
 @media (max-width: 480px) {
 
     .about-section {
-        padding: 65px 0;
+        padding: 60px 0;
     }
 
     .section-label {
@@ -1052,13 +1209,19 @@
         height: 39px;
     }
 
+    .about-right {
+        margin-top: 0;
+    }
+
     .about-visual {
-        min-height: 690px;
+        min-height: 590px;
+
+        margin-top: 5px;
     }
 
     .about-photo-wrapper {
         width: 270px;
-        height: 340px;
+        height: 330px;
     }
 
     .about-photo-ring {
@@ -1074,6 +1237,7 @@
     .about-photo-card {
         width: 205px;
         height: 260px;
+
         border-radius: 20px;
     }
 
@@ -1086,14 +1250,17 @@
     }
 
     .about-main-card {
-        top: 42px;
+        top: 8px;
+
         width: 160px;
+
         padding: 9px 11px;
     }
 
     .about-code-icon {
         width: 27px;
         height: 27px;
+
         font-size: 0.82rem;
     }
 
@@ -1102,8 +1269,10 @@
     }
 
     .about-quote-card {
-        top: 115px;
+        top: 82px;
+
         width: 170px;
+
         padding: 12px;
     }
 
@@ -1117,7 +1286,9 @@
 
     .about-floating-card {
         width: 158px;
+
         padding: 9px;
+
         gap: 8px;
     }
 
@@ -1134,19 +1305,15 @@
         font-size: 0.54rem;
     }
 
-    .about-card-problem {
-        bottom: 190px;
-    }
-
+    .about-card-problem,
     .about-card-teamwork {
-        bottom: 190px;
+        bottom: 95px;
     }
 
     .about-card-learning,
     .about-card-code {
-        bottom: 95px;
+        bottom: 5px;
     }
-
 }
 
 
@@ -1156,6 +1323,8 @@
 
 @media (prefers-reduced-motion: reduce) {
 
+    .about-section::before,
+    .about-section::after,
     .about-glow,
     .about-left,
     .about-right,
@@ -1164,9 +1333,9 @@
     .about-floating-card,
     .about-info-card,
     .about-photo-glow,
-    .about-photo-ring {
+    .about-photo-ring,
+    .section-label span {
         animation: none !important;
         transition: none !important;
     }
-
 }
