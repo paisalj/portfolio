@@ -51,23 +51,75 @@
 
     <div class="hero-mobile-profile">
 
-        <img
-            src="{{ asset($home->profile_image) }}"
-            alt="{{ $home?->name ?? 'Profile Photo' }}"
-        >
+        {{-- GLOW --}}
+        <div class="hero-profile-glow"></div>
+
+        {{-- RING --}}
+        <div class="hero-profile-ring"></div>
+
+        {{-- FOTO --}}
+        <div class="hero-profile-card">
+
+            <div class="hero-profile-image-wrapper">
+
+                <img
+                    src="{{ asset($home->profile_image) }}"
+                    alt="{{ $home?->name ?? 'Profile Photo' }}"
+                    class="hero-profile-image"
+                >
+
+            </div>
+
+        </div>
+
+        {{-- TECHNOLOGY BADGES --}}
+
+        <div class="hero-tech-badge hero-tech-laravel">
+            <i class="fa-brands fa-laravel"></i>
+            <span>Laravel</span>
+        </div>
+
+        <div class="hero-tech-badge hero-tech-php">
+            <i class="fa-brands fa-php"></i>
+            <span>PHP</span>
+        </div>
+
+        <div class="hero-tech-badge hero-tech-mysql">
+            <i class="fa-solid fa-database"></i>
+            <span>MySQL</span>
+        </div>
+
+        <div class="hero-tech-badge hero-tech-bootstrap">
+            <i class="fa-brands fa-bootstrap"></i>
+            <span>Bootstrap</span>
+        </div>
 
     </div>
 
 @else
 
-    <div class="hero-mobile-profile hero-mobile-placeholder">
+    <div class="hero-mobile-profile">
 
-        <i class="fa-solid fa-user"></i>
+        {{-- GLOW --}}
+        <div class="hero-profile-glow"></div>
+
+        {{-- RING --}}
+        <div class="hero-profile-ring"></div>
+
+        {{-- PLACEHOLDER --}}
+        <div class="hero-profile-card">
+
+            <div class="hero-profile-image-wrapper hero-profile-placeholder">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
 
     </div>
 
 @endif
-
 
 {{-- ROLE --}}
 <div class="hero-role">
