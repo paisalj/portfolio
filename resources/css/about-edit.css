@@ -462,6 +462,8 @@
     .admin-about-edit-actions {
         padding: 16px 17px;
     }
+    }
+
 /* =========================================================
    ABOUT IMAGE - EDIT PAGE
    Hanya untuk tampilan foto About
@@ -509,5 +511,4 @@
     border-color: #2563eb;
     background: #eff6ff;
     color: #2563eb;
-}
 }
