@@ -37,15 +37,67 @@
                 </div>
 
 
-                {{-- NAME --}}
+                {{-- =================================================
+                    NAME
+                ================================================== --}}
+
                 <h1 class="hero-title">
-
                     {{ $home?->name ?? 'Paisal Johen' }}
-
                 </h1>
 
 
-                {{-- ROLE --}}
+                {{-- =================================================
+                    MOBILE PROFILE
+                    Hanya tampil di HP
+                ================================================== --}}
+
+                @if($home?->profile_image)
+
+                    <div class="hero-mobile-profile">
+
+                        <div class="hero-mobile-profile-ring"></div>
+
+                        <div class="hero-mobile-profile-card">
+
+                            <div class="hero-mobile-profile-image-wrapper">
+
+                                <img
+                                    src="{{ asset($home->profile_image) }}"
+                                    alt="{{ $home?->name ?? 'Profile Photo' }}"
+                                    class="hero-mobile-profile-image"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                @else
+
+                    <div class="hero-mobile-profile">
+
+                        <div class="hero-mobile-profile-ring"></div>
+
+                        <div class="hero-mobile-profile-card">
+
+                            <div class="hero-mobile-profile-image-wrapper hero-mobile-profile-placeholder">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                @endif
+
+
+                {{-- =================================================
+                    ROLE
+                ================================================== --}}
+
                 <div class="hero-role">
 
                     {{ $home?->title ?? 'Web Developer' }}
@@ -55,7 +107,10 @@
                 </div>
 
 
-                {{-- DESCRIPTION --}}
+                {{-- =================================================
+                    DESCRIPTION
+                ================================================== --}}
+
                 <p class="hero-description">
 
                     {{ $home?->hero_description ?? 'Saya adalah Web Developer yang memiliki minat dalam pengembangan aplikasi web menggunakan Laravel, PHP, MySQL, dan Bootstrap.' }}
@@ -161,7 +216,7 @@
 
 
             {{-- =====================================================
-                HERO RIGHT / PROFILE
+                HERO RIGHT / PROFILE DESKTOP + TABLET
             ====================================================== --}}
 
             <div class="col-lg-6 hero-right">
@@ -256,7 +311,9 @@
     </div>
 
 
-    {{-- SCROLL INDICATOR --}}
+    {{-- =====================================================
+        SCROLL INDICATOR
+    ====================================================== --}}
 
     <a
         href="#about"
