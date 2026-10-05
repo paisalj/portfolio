@@ -473,15 +473,14 @@
 
 .admin-about-image-preview img {
     display: block;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid #cbd5e1;
     background: #f8fafc;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.08);
 }
-
 /* FILE INPUT KHUSUS FOTO */
 
 .admin-about-edit-form-group input[type="file"] {
