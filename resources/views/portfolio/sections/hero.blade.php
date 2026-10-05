@@ -93,6 +93,11 @@
             <i class="fa-brands fa-bootstrap"></i>
             <span>Bootstrap</span>
         </div>
+            <div class="hero-tech-badge hero-tech-TailwindCSS">
+            <i class="fa-brands fa-tailwindcss"></i>
+            <span>Tailwind CSS</span>
+        </div>
+
 
     </div>
 
