@@ -29,10 +29,13 @@
                 <div class="about-description">
 
                     @if($about?->description)
+
                         <p>
                             {{ $about->description }}
                         </p>
+
                     @else
+
                         <p>
                             Saya memiliki ketertarikan yang besar dalam dunia
                             teknologi, khususnya pengembangan aplikasi web.
@@ -40,6 +43,7 @@
                             meningkatkan kemampuan, dan menciptakan solusi
                             yang bermanfaat melalui kode.
                         </p>
+
                     @endif
 
                 </div>
@@ -145,34 +149,41 @@
             {{-- =========================================
                 ABOUT RIGHT
             ========================================== --}}
-<div class="about-visual">
+            <div class="col-lg-6 about-right">
 
-    {{-- ABOUT PHOTO --}}
-    @if($about?->image)
+                <div class="about-visual">
 
-        <div class="about-photo-wrapper">
+                    {{-- =========================================
+                        ABOUT PHOTO
+                    ========================================== --}}
+                    @if($about?->image)
 
-            <div class="about-photo-glow"></div>
+                        <div class="about-photo-wrapper">
 
-            <div class="about-photo-ring"></div>
+                            <div class="about-photo-glow"></div>
 
-            <div class="about-photo-card">
+                            <div class="about-photo-ring"></div>
 
-                <img
-                    src="{{ asset($about->image) }}"
-                    alt="Foto {{ $home?->name ?? 'Paisal Johen' }}"
-                    class="about-photo"
-                >
+                            <div class="about-photo-card">
 
-            </div>
+                                <img
+                                    src="{{ asset($about->image) }}"
+                                    alt="Foto {{ $home?->name ?? 'Paisal Johen' }}"
+                                    class="about-photo"
+                                >
 
-        </div>
+                            </div>
 
-    @endif
+                        </div>
+
+                    @endif
 
 
-    {{-- MAIN CARD --}}
-    <div class="about-main-card">
+                    {{-- =========================================
+                        MAIN DEVELOPER CARD
+                    ========================================== --}}
+                    <div class="about-main-card">
+
                         <div class="about-code-icon">
                             <i class="fa-solid fa-code"></i>
                         </div>
@@ -196,7 +207,9 @@
                     </div>
 
 
-                    {{-- VALUES / QUOTE --}}
+                    {{-- =========================================
+                        VALUES / QUOTE
+                    ========================================== --}}
                     @if($about?->values)
 
                         <div class="about-quote-card">
@@ -214,7 +227,9 @@
                     @endif
 
 
-                    {{-- PROBLEM SOLVING --}}
+                    {{-- =========================================
+                        PROBLEM SOLVING
+                    ========================================== --}}
                     <div class="about-floating-card about-card-problem">
 
                         <div class="about-floating-icon">
@@ -233,7 +248,9 @@
                     </div>
 
 
-                    {{-- TEAMWORK --}}
+                    {{-- =========================================
+                        TEAMWORK
+                    ========================================== --}}
                     <div class="about-floating-card about-card-teamwork">
 
                         <div class="about-floating-icon">
@@ -252,7 +269,9 @@
                     </div>
 
 
-                    {{-- CONTINUOUS LEARNING --}}
+                    {{-- =========================================
+                        CONTINUOUS LEARNING
+                    ========================================== --}}
                     <div class="about-floating-card about-card-learning">
 
                         <div class="about-floating-icon">
@@ -271,7 +290,9 @@
                     </div>
 
 
-                    {{-- CLEAN CODE --}}
+                    {{-- =========================================
+                        CLEAN CODE
+                    ========================================== --}}
                     <div class="about-floating-card about-card-code">
 
                         <div class="about-floating-icon">
