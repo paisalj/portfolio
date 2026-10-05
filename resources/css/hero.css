@@ -1022,30 +1022,31 @@
     }
 }
 
-
 /* =========================================================
-   MOBILE
+   MOBILE — KHUSUS HP
 ========================================================= */
 
 @media (max-width: 767px) {
 
     .hero-section {
         min-height: auto;
+        align-items: flex-start;
     }
 
     .hero-content {
         min-height: auto;
-        padding: 45px 0 75px;
+        padding: 35px 0 65px;
     }
 
     .hero-left {
-        text-align: left;
+        text-align: center;
         margin-bottom: 0;
     }
 
+    /* LABEL HELLO, I'M */
     .hero-badge {
-        justify-content: flex-start;
-        margin-bottom: 15px;
+        justify-content: center;
+        margin-bottom: 14px;
         font-size: 10px;
     }
 
@@ -1053,7 +1054,116 @@
         width: 25px;
     }
 
+    /* NAMA */
+    .hero-title {
+        width: 100%;
+        margin: 0;
+        font-size: clamp(34px, 9vw, 43px);
+        line-height: 1.12;
+        letter-spacing: -0.04em;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
 
+    /* FOTO BULAT DI BAWAH NAMA */
+    .hero-mobile-profile {
+        display: flex !important;
+        width: 155px;
+        height: 155px;
+        margin: 22px auto 0;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: linear-gradient(
+            145deg,
+            #d6a84a,
+            rgba(214, 168, 74, 0.25)
+        );
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(214, 168, 74, 0.16);
+        overflow: hidden;
+    }
+
+    .hero-mobile-profile img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid #101318;
+        border-radius: 50%;
+    }
+
+    .hero-mobile-placeholder {
+        color: #d6a84a;
+        font-size: 42px;
+    }
+
+    /* SEMBUNYIKAN FOTO DESKTOP DI HP */
+    .hero-section .hero-right {
+        display: none !important;
+    }
+
+    /* ROLE */
+    .hero-role {
+        margin-top: 22px;
+        font-size: 24px;
+        line-height: 1.3;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    /* DESKRIPSI */
+    .hero-description {
+        max-width: 100%;
+        margin: 17px auto 0;
+        font-size: 14px;
+        line-height: 1.75;
+        text-align: center;
+    }
+
+    /* TOMBOL */
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-outline,
+    .hero-btn-cv {
+        width: 100%;
+        min-height: 48px;
+        font-size: 14px;
+    }
+
+    /* SOSIAL MEDIA */
+    .hero-social {
+        justify-content: center;
+        margin-top: 22px;
+        gap: 12px;
+    }
+
+    /* ANIMASI LATAR TETAP ADA, TAPI LEBIH RINGAN */
+    .hero-bg-grid {
+        background-size: 45px 45px;
+        opacity: 0.12;
+    }
+
+    .hero-particle {
+        width: 3px;
+        height: 3px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
     /* =====================================================
        NAME
     ===================================================== */
@@ -1225,42 +1335,45 @@
     .scroll-indicator {
         display: none;
     }
-}
-
 
 /* =========================================================
-   SMALL MOBILE
+   HP KECIL
 ========================================================= */
 
 @media (max-width: 480px) {
 
     .hero-content {
-        padding-top: 40px;
+        padding-top: 28px;
+        padding-bottom: 55px;
     }
 
     .hero-title {
-        font-size: 39px;
+        font-size: clamp(32px, 8.8vw, 39px);
     }
 
-
-    /* FOTO BULAT HP KECIL */
-
     .hero-mobile-profile {
-
-        width: 135px;
-        height: 135px;
-
+        width: 140px;
+        height: 140px;
         margin-top: 20px;
-
         padding: 4px;
     }
 
-
     .hero-role {
-        font-size: 23px;
+        margin-top: 20px;
+        font-size: 22px;
     }
 
     .hero-description {
         font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        margin-top: 22px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
     }
 }
