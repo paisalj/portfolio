@@ -36,24 +36,45 @@
                     HELLO, I'M
                 </div>
 
-
-                {{-- NAME --}}
-                <h1 class="hero-title">
-
-                    {{ $home?->name ?? 'Paisal Johen' }}
-
-                </h1>
+{{-- NAME --}}
+<h1 class="hero-title">
+    {{ $home?->name ?? 'Paisal Johen' }}
+</h1>
 
 
-                {{-- ROLE --}}
-                <div class="hero-role">
+{{-- =====================================================
+    MOBILE PROFILE
+    FOTO KHUSUS UNTUK HP
+====================================================== --}}
 
-                    {{ $home?->title ?? 'Web Developer' }}
+@if($home?->profile_image)
 
-                    <span class="typing-cursor">|</span>
+    <div class="hero-mobile-profile">
 
-                </div>
+        <img
+            src="{{ asset($home->profile_image) }}"
+            alt="{{ $home?->name ?? 'Profile Photo' }}"
+        >
 
+    </div>
+
+@else
+
+    <div class="hero-mobile-profile hero-mobile-placeholder">
+
+        <i class="fa-solid fa-user"></i>
+
+    </div>
+
+@endif
+
+
+{{-- ROLE --}}
+<div class="hero-role">
+    {{ $home?->title ?? 'Web Developer' }}
+
+    <span class="typing-cursor">|</span>
+</div>
 
                 {{-- DESCRIPTION --}}
                 <p class="hero-description">
