@@ -15,30 +15,25 @@
 
     <div class="container position-relative">
 
-
         {{-- =================================================
-            HERO / INTRO
+            INTRO
         ================================================== --}}
 
         <div class="experience-intro">
 
+            {{-- LEFT CONTENT --}}
             <div class="experience-intro-content">
 
-                {{-- SECTION LABEL --}}
                 <div class="section-label">
                     <span></span>
                     MY EXPERIENCE
                 </div>
 
-
-                {{-- TITLE --}}
                 <h2 class="experience-title">
                     My Professional
                     <span>Journey</span>
                 </h2>
 
-
-                {{-- DESCRIPTION --}}
                 <p class="experience-subtitle">
                     Pengalaman saya dalam membangun dan mengembangkan
                     aplikasi web dengan berbagai teknologi modern,
@@ -46,13 +41,12 @@
                 </p>
 
 
-                {{-- =========================================
-                    EXPERIENCE STATS
-                ========================================== --}}
+                {{-- =================================================
+                    STATS
+                ================================================== --}}
 
                 <div class="experience-stats">
 
-                    {{-- EXPERIENCE --}}
                     <div class="experience-stat">
 
                         <div class="experience-stat-icon">
@@ -60,21 +54,13 @@
                         </div>
 
                         <div class="experience-stat-content">
-
-                            <strong>
-                                {{ $experiences->count() }}+
-                            </strong>
-
-                            <span>
-                                Experience
-                            </span>
-
+                            <strong>{{ $experiences->count() }}+</strong>
+                            <span>Experience</span>
                         </div>
 
                     </div>
 
 
-                    {{-- PROJECTS --}}
                     <div class="experience-stat">
 
                         <div class="experience-stat-icon">
@@ -82,21 +68,13 @@
                         </div>
 
                         <div class="experience-stat-content">
-
-                            <strong>
-                                {{ isset($projects) ? $projects->count() : 0 }}+
-                            </strong>
-
-                            <span>
-                                Projects
-                            </span>
-
+                            <strong>{{ isset($projects) ? $projects->count() : 0 }}+</strong>
+                            <span>Projects</span>
                         </div>
 
                     </div>
 
 
-                    {{-- COMPANIES --}}
                     <div class="experience-stat">
 
                         <div class="experience-stat-icon">
@@ -104,21 +82,15 @@
                         </div>
 
                         <div class="experience-stat-content">
-
                             <strong>
                                 {{ $experiences->pluck('company')->filter()->unique()->count() }}+
                             </strong>
-
-                            <span>
-                                Companies
-                            </span>
-
+                            <span>Companies</span>
                         </div>
 
                     </div>
 
 
-                    {{-- COMMITMENT --}}
                     <div class="experience-stat">
 
                         <div class="experience-stat-icon">
@@ -126,15 +98,8 @@
                         </div>
 
                         <div class="experience-stat-content">
-
-                            <strong>
-                                100%
-                            </strong>
-
-                            <span>
-                                Commitment
-                            </span>
-
+                            <strong>100%</strong>
+                            <span>Commitment</span>
                         </div>
 
                     </div>
@@ -145,115 +110,59 @@
 
 
             {{-- =================================================
-                CODE / LAPTOP VISUAL
+                CODE VISUAL
             ================================================== --}}
 
             <div class="experience-visual">
 
-                {{-- ORBITS --}}
                 <div class="experience-visual-orbit experience-visual-orbit-1"></div>
-
                 <div class="experience-visual-orbit experience-visual-orbit-2"></div>
-
                 <div class="experience-visual-orbit experience-visual-orbit-3"></div>
 
 
-                {{-- CODE WINDOW --}}
                 <div class="experience-code-window">
 
-                    {{-- CODE HEADER --}}
                     <div class="experience-code-header">
 
                         <div class="experience-code-dots">
-
                             <span></span>
                             <span></span>
                             <span></span>
-
                         </div>
 
-                        <span>
-                            experience.dev
-                        </span>
+                        <span>experience.dev</span>
 
                     </div>
 
 
-                    {{-- CODE BODY --}}
                     <div class="experience-code-body">
 
                         <div>
-
-                            <span class="code-number">
-                                01
-                            </span>
-
-                            <span class="code-keyword">
-                                const
-                            </span>
-
-                            <span class="code-variable">
-                                journey
-                            </span>
-
-                            <span class="code-symbol">
-                                =
-                            </span>
-
-                            <span class="code-bracket">
-                                {
-                            </span>
-
+                            <span class="code-number">01</span>
+                            <span class="code-keyword">const</span>
+                            <span class="code-variable">journey</span>
+                            <span class="code-symbol">=</span>
+                            <span class="code-bracket">{</span>
                         </div>
-
 
                         <div class="code-indent">
-
-                            <span class="code-property">
-                                learning:
-                            </span>
-
-                            <span class="code-string">
-                                "always"
-                            </span>
-
+                            <span class="code-property">learning:</span>
+                            <span class="code-string">"always"</span>
                         </div>
-
 
                         <div class="code-indent">
-
-                            <span class="code-property">
-                                building:
-                            </span>
-
-                            <span class="code-string">
-                                "web"
-                            </span>
-
+                            <span class="code-property">building:</span>
+                            <span class="code-string">"web"</span>
                         </div>
-
 
                         <div class="code-indent">
-
-                            <span class="code-property">
-                                improving:
-                            </span>
-
-                            <span class="code-value">
-                                true
-                            </span>
-
+                            <span class="code-property">improving:</span>
+                            <span class="code-value">true</span>
                         </div>
-
 
                         <div>
-
-                            <span class="code-bracket">
-                                };
-                            </span>
-
+                            <span class="code-bracket">};</span>
                         </div>
-
 
                         <div class="experience-code-cursor"></div>
 
@@ -262,27 +171,16 @@
                 </div>
 
 
-                {{-- FLOATING CODE ICON --}}
                 <div class="experience-visual-badge experience-visual-badge-code">
-
                     <i class="fa-solid fa-code"></i>
-
                 </div>
 
-
-                {{-- FLOATING DATABASE ICON --}}
                 <div class="experience-visual-badge experience-visual-badge-database">
-
                     <i class="fa-solid fa-database"></i>
-
                 </div>
 
-
-                {{-- FLOATING PHP ICON --}}
                 <div class="experience-visual-badge experience-visual-badge-php">
-
                     <i class="fa-brands fa-php"></i>
-
                 </div>
 
             </div>
@@ -299,27 +197,18 @@
             <div>
 
                 <div class="experience-work-label">
-
                     <span></span>
-
                     WORK EXPERIENCE
-
                 </div>
 
-
                 <h2 class="experience-work-title">
-
                     My Work
                     <span>Experience</span>
-
                 </h2>
 
-
                 <p class="experience-work-subtitle">
-
                     Perjalanan karir saya dalam dunia pengembangan web,
                     dari pengalaman pertama hingga saat ini.
-
                 </p>
 
             </div>
@@ -337,116 +226,46 @@
 
                 <article class="experience-item">
 
-
-                    {{-- =====================================
-                        TIMELINE
-                    ====================================== --}}
-
+                    {{-- TIMELINE --}}
                     <div class="experience-timeline">
 
                         <div class="experience-dot">
-
                             <span></span>
-
                         </div>
 
-
                         @if(!$loop->last)
-
                             <div class="experience-line"></div>
-
                         @endif
 
                     </div>
 
 
-                    {{-- =====================================
-                        OLD PERIOD AREA
-                        Disembunyikan dari layout utama.
-                        Tanggal sekarang berada di dalam card.
-                    ====================================== --}}
-
-                    <div class="experience-period">
-
-                        <span class="experience-period-start">
-
-                            {{ $experience->start_date?->format('M Y') ?? '-' }}
-
-                        </span>
-
-
-                        <span class="experience-period-separator">
-                            —
-                        </span>
-
-
-                        <span class="experience-period-end">
-
-                            @if($experience->is_current)
-
-                                Present
-
-                            @else
-
-                                {{ $experience->end_date?->format('M Y') ?? '-' }}
-
-                            @endif
-
-                        </span>
-
-                    </div>
-
-
-                    {{-- =====================================
-                        EXPERIENCE CARD
-                    ====================================== --}}
-
+                    {{-- EXPERIENCE CARD --}}
                     <div class="experience-card">
 
-
-                        {{-- =================================
-                            PERIOD INSIDE CARD
-                        ================================== --}}
-
+                        {{-- PERIOD --}}
                         <div class="experience-card-period">
 
                             <span>
-
                                 {{ $experience->start_date?->format('M Y') ?? '-' }}
-
                             </span>
 
-
-                            <strong>
-                                —
-                            </strong>
-
+                            <strong>—</strong>
 
                             <span>
-
                                 @if($experience->is_current)
-
                                     Present
-
                                 @else
-
                                     {{ $experience->end_date?->format('M Y') ?? '-' }}
-
                                 @endif
-
                             </span>
-
 
                             <span class="experience-period-type">
 
                                 @if($experience->is_current)
-
                                     Current
-
                                 @else
-
                                     Completed
-
                                 @endif
 
                             </span>
@@ -454,62 +273,38 @@
                         </div>
 
 
-                        {{-- =================================
-                            CARD MAIN
-                        ================================== --}}
-
+                        {{-- CARD MAIN --}}
                         <div class="experience-card-main">
 
-
-                            {{-- COMPANY ICON --}}
                             <div class="experience-company-icon">
-
                                 <i class="fa-solid fa-building"></i>
-
                             </div>
 
 
-                            {{-- CONTENT --}}
                             <div class="experience-card-content">
 
-
-                                {{-- LABEL --}}
                                 <span class="experience-card-label">
-
                                     PROFESSIONAL EXPERIENCE
-
                                 </span>
 
-
-                                {{-- POSITION --}}
                                 <h3>
-
                                     {{ $experience->position }}
-
                                 </h3>
 
-
-                                {{-- COMPANY --}}
                                 <h4>
-
                                     {{ $experience->company }}
-
                                 </h4>
 
 
-                                {{-- DESCRIPTION --}}
                                 @if($experience->description)
 
                                     <p class="experience-description">
-
                                         {{ $experience->description }}
-
                                     </p>
 
                                 @endif
 
 
-                                {{-- LOCATION --}}
                                 @if($experience->location)
 
                                     <div class="experience-location">
@@ -517,9 +312,7 @@
                                         <i class="fa-solid fa-location-dot"></i>
 
                                         <span>
-
                                             {{ $experience->location }}
-
                                         </span>
 
                                     </div>
@@ -529,47 +322,30 @@
                             </div>
 
 
-                            {{-- CARD ARROW --}}
                             <div class="experience-card-arrow">
-
                                 <i class="fa-solid fa-arrow-right"></i>
-
                             </div>
 
                         </div>
 
 
-                        {{-- =================================
-                            CARD FOOTER
-                        ================================== --}}
-
+                        {{-- CARD FOOTER --}}
                         <div class="experience-card-footer">
 
-
-                            {{-- STATUS --}}
                             <div class="experience-status">
 
                                 <span class="experience-status-dot"></span>
 
-
                                 @if($experience->is_current)
-
                                     Currently Working
-
                                 @else
-
                                     Completed
-
                                 @endif
 
                             </div>
 
-
-                            {{-- FOOTER ICON --}}
                             <div class="experience-card-footer-icon">
-
                                 <i class="fa-solid fa-briefcase"></i>
-
                             </div>
 
                         </div>
@@ -578,41 +354,24 @@
 
                 </article>
 
-
             @empty
-
-
-                {{-- =====================================
-                    EMPTY STATE
-                ====================================== --}}
 
                 <div class="experience-empty">
 
-
                     <div class="experience-empty-icon">
-
                         <i class="fa-solid fa-briefcase"></i>
-
                     </div>
 
-
                     <h3>
-
                         No Experience Yet
-
                     </h3>
 
-
                     <p>
-
                         Pengalaman yang ditambahkan melalui Admin
                         akan ditampilkan di sini.
-
                     </p>
 
-
                 </div>
-
 
             @endforelse
 
@@ -625,37 +384,25 @@
 
         <div class="experience-bottom">
 
-
             <div class="experience-bottom-icon">
-
                 <i class="fa-solid fa-rocket"></i>
-
             </div>
-
 
             <div class="experience-bottom-content">
 
                 <strong>
-
                     Terus belajar, terus berkembang.
-
                 </strong>
 
-
                 <p>
-
                     Setiap pengalaman adalah langkah untuk menjadi
                     versi terbaik dari diri saya.
-
                 </p>
 
             </div>
 
-
             <div class="experience-bottom-arrow">
-
                 <i class="fa-solid fa-arrow-right"></i>
-
             </div>
 
         </div>
