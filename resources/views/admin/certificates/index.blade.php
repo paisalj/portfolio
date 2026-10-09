@@ -84,7 +84,11 @@
                                         @if($certificate->image)
 
 <img
-    src="{{ asset('storage/' . $certificate->image) }}"
+    src="{{ asset(
+        str_starts_with($certificate->image, 'uploads/certificates/')
+            ? $certificate->image
+            : 'storage/' . $certificate->image
+    ) }}"
     alt="{{ $certificate->name }}"
     class="admin-certificate-image"
 >
