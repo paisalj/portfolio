@@ -83,11 +83,11 @@
 
                                         @if($certificate->image)
 
-                                            <img
-                                                src="{{ asset($certificate->image) }}"
-                                                alt="{{ $certificate->name }}"
-                                                class="admin-certificate-image"
-                                            >
+<img
+    src="{{ asset('storage/' . $certificate->image) }}"
+    alt="{{ $certificate->name }}"
+    class="admin-certificate-image"
+>
 
                                         @else
 
