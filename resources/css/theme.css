@@ -1,7 +1,8 @@
 
 /* =====================================================
-   GLOBAL THEME
-   Portfolio Paisal Johen
+   PORTFOLIO GLOBAL THEME
+   Dark: Navy + Gold
+   Light: Soft White + Gold
 ===================================================== */
 
 :root {
@@ -9,13 +10,16 @@
 
     --theme-bg: #020d19;
     --theme-surface: #071728;
+    --theme-surface-alt: #0a1d30;
     --theme-text: #f8fafc;
     --theme-muted: #9db4cc;
     --theme-border: rgba(118, 169, 207, 0.25);
     --theme-accent: #f5c84c;
+    --theme-accent-contrast: #071321;
+    --theme-shadow: rgba(0, 0, 0, 0.2);
 }
 
-/* LIGHT MODE */
+/* LIGHT THEME VARIABLES */
 
 html[data-theme="light"],
 body[data-theme="light"] {
@@ -23,35 +27,198 @@ body[data-theme="light"] {
 
     --theme-bg: #f5f7fa;
     --theme-surface: #ffffff;
+    --theme-surface-alt: #edf1f6;
     --theme-text: #172337;
     --theme-muted: #58677b;
     --theme-border: rgba(36, 61, 91, 0.16);
     --theme-accent: #c89516;
+    --theme-accent-contrast: #ffffff;
+    --theme-shadow: rgba(24, 39, 58, 0.08);
 }
 
-/* PAGE BASE */
+/* =====================================================
+   PAGE BASE — PORTFOLIO ONLY
+===================================================== */
 
-html[data-theme="dark"],
-body[data-theme="dark"] {
-    color-scheme: dark;
-}
-
-html[data-theme="light"] body {
+html[data-theme="light"] body,
+body[data-theme="light"] {
     background-color: var(--theme-bg);
     color: var(--theme-text);
 }
 
-/* SMOOTH THEME TRANSITION */
+/* =====================================================
+   SECTION BACKGROUNDS
+===================================================== */
+
+body[data-theme="light"] #home,
+body[data-theme="light"] #about,
+body[data-theme="light"] #skills,
+body[data-theme="light"] #projects,
+body[data-theme="light"] #experience,
+body[data-theme="light"] #education,
+body[data-theme="light"] #certificates,
+body[data-theme="light"] #contact {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+/* =====================================================
+   HEADINGS AND BODY TEXT
+===================================================== */
+
+body[data-theme="light"] #home h1,
+body[data-theme="light"] #home h2,
+body[data-theme="light"] #about h1,
+body[data-theme="light"] #about h2,
+body[data-theme="light"] #about h3,
+body[data-theme="light"] #skills h1,
+body[data-theme="light"] #skills h2,
+body[data-theme="light"] #skills h3,
+body[data-theme="light"] #projects h1,
+body[data-theme="light"] #projects h2,
+body[data-theme="light"] #projects h3,
+body[data-theme="light"] #experience h1,
+body[data-theme="light"] #experience h2,
+body[data-theme="light"] #experience h3,
+body[data-theme="light"] #education h1,
+body[data-theme="light"] #education h2,
+body[data-theme="light"] #education h3,
+body[data-theme="light"] #certificates h1,
+body[data-theme="light"] #certificates h2,
+body[data-theme="light"] #certificates h3,
+body[data-theme="light"] #contact h1,
+body[data-theme="light"] #contact h2,
+body[data-theme="light"] #contact h3 {
+    color: var(--theme-text);
+}
+
+body[data-theme="light"] #home p,
+body[data-theme="light"] #about p,
+body[data-theme="light"] #skills p,
+body[data-theme="light"] #projects p,
+body[data-theme="light"] #experience p,
+body[data-theme="light"] #education p,
+body[data-theme="light"] #certificates p,
+body[data-theme="light"] #contact p {
+    color: var(--theme-muted);
+}
+
+/* =====================================================
+   CARDS AND PANELS
+===================================================== */
+
+body[data-theme="light"] #about [class*="card"],
+body[data-theme="light"] #skills [class*="card"],
+body[data-theme="light"] #projects [class*="card"],
+body[data-theme="light"] #experience [class*="card"],
+body[data-theme="light"] #education [class*="card"],
+body[data-theme="light"] #certificates [class*="card"],
+body[data-theme="light"] #contact [class*="card"],
+body[data-theme="light"] #about [class*="item"],
+body[data-theme="light"] #skills [class*="item"],
+body[data-theme="light"] #projects [class*="item"],
+body[data-theme="light"] #experience [class*="item"],
+body[data-theme="light"] #education [class*="item"],
+body[data-theme="light"] #certificates [class*="item"] {
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+    box-shadow: 0 8px 24px var(--theme-shadow);
+}
+
+/* =====================================================
+   LINKS AND GOLD ACCENTS
+===================================================== */
+
+body[data-theme="light"] #home a:not(.btn),
+body[data-theme="light"] #about a:not(.btn),
+body[data-theme="light"] #skills a:not(.btn),
+body[data-theme="light"] #projects a:not(.btn),
+body[data-theme="light"] #experience a:not(.btn),
+body[data-theme="light"] #education a:not(.btn),
+body[data-theme="light"] #certificates a:not(.btn),
+body[data-theme="light"] #contact a:not(.btn) {
+    transition: color 0.25s ease;
+}
+
+body[data-theme="light"] #home .text-white,
+body[data-theme="light"] #about .text-white,
+body[data-theme="light"] #skills .text-white,
+body[data-theme="light"] #projects .text-white,
+body[data-theme="light"] #experience .text-white,
+body[data-theme="light"] #education .text-white,
+body[data-theme="light"] #certificates .text-white,
+body[data-theme="light"] #contact .text-white {
+    color: var(--theme-text) !important;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+body[data-theme="light"] #contact input,
+body[data-theme="light"] #contact textarea,
+body[data-theme="light"] #contact select {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+body[data-theme="light"] #contact input::placeholder,
+body[data-theme="light"] #contact textarea::placeholder {
+    color: #8491a2;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+body[data-theme="light"] .portfolio-footer {
+    background: var(--theme-bg);
+    color: var(--theme-text);
+    border-top: 1px solid var(--theme-border);
+}
+
+body[data-theme="light"] .portfolio-footer .footer-description,
+body[data-theme="light"] .portfolio-footer .footer-links a,
+body[data-theme="light"] .portfolio-footer .footer-newsletter > p,
+body[data-theme="light"] .portfolio-footer .footer-copyright {
+    color: var(--theme-muted);
+}
+
+body[data-theme="light"] .portfolio-footer .footer-logo,
+body[data-theme="light"] .portfolio-footer .footer-heading {
+    color: var(--theme-text);
+}
+
+body[data-theme="light"] .portfolio-footer .footer-newsletter-link {
+    background: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+body[data-theme="light"] .portfolio-footer .footer-divider {
+    background: var(--theme-border);
+}
+
+/* =====================================================
+   NAVBAR THEME TRANSITION
+===================================================== */
 
 .portfolio-navbar,
 .portfolio-navbar *,
 .portfolio-footer,
 .portfolio-footer *,
 .theme-toggle {
-    transition-property: background-color, color, border-color, box-shadow;
-    transition-duration: 0.25s;
-    transition-timing-function: ease;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
     .portfolio-navbar,
@@ -59,6 +226,6 @@ html[data-theme="light"] body {
     .portfolio-footer,
     .portfolio-footer *,
     .theme-toggle {
-        transition-duration: 0s;
+        transition: none !important;
     }
 }
