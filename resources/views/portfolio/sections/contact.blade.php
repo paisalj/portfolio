@@ -1,4 +1,4 @@
-```blade
+
 <section id="contact" class="contact-section">
 
     <div class="contact-grid-bg"></div>
@@ -300,4 +300,3 @@
     </div>
 
 </section>
-```
