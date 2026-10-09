@@ -1,0 +1,64 @@
+
+/* =====================================================
+   GLOBAL THEME
+   Portfolio Paisal Johen
+===================================================== */
+
+:root {
+    color-scheme: dark;
+
+    --theme-bg: #020d19;
+    --theme-surface: #071728;
+    --theme-text: #f8fafc;
+    --theme-muted: #9db4cc;
+    --theme-border: rgba(118, 169, 207, 0.25);
+    --theme-accent: #f5c84c;
+}
+
+/* LIGHT MODE */
+
+html[data-theme="light"],
+body[data-theme="light"] {
+    color-scheme: light;
+
+    --theme-bg: #f5f7fa;
+    --theme-surface: #ffffff;
+    --theme-text: #172337;
+    --theme-muted: #58677b;
+    --theme-border: rgba(36, 61, 91, 0.16);
+    --theme-accent: #c89516;
+}
+
+/* PAGE BASE */
+
+html[data-theme="dark"],
+body[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="light"] body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+/* SMOOTH THEME TRANSITION */
+
+.portfolio-navbar,
+.portfolio-navbar *,
+.portfolio-footer,
+.portfolio-footer *,
+.theme-toggle {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-navbar,
+    .portfolio-navbar *,
+    .portfolio-footer,
+    .portfolio-footer *,
+    .theme-toggle {
+        transition-duration: 0s;
+    }
+}
