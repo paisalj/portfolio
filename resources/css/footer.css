@@ -25,10 +25,7 @@
     z-index: 2;
 }
 
-/* =====================================================
-   BACKGROUND DECORATION
-===================================================== */
-
+/* BACKGROUND DECORATION */
 .footer-grid-bg {
     position: absolute;
     inset: 0;
@@ -89,13 +86,10 @@
     height: 400px;
 }
 
-/* =====================================================
-   BRAND
-===================================================== */
-
+/* BRAND */
 .footer-brand {
     max-width: 390px;
-    margin-bottom: 34px;
+    margin-bottom: 32px;
 }
 
 .footer-logo {
@@ -139,15 +133,14 @@
     line-height: 1.75;
 }
 
-/* =====================================================
-   FOOTER COLUMNS — TWO BALANCED COLUMNS
-===================================================== */
-
+/* FOOTER COLUMNS */
 .footer-columns {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 64px;
+    grid-template-columns: minmax(190px, 0.8fr) minmax(320px, 1.2fr);
+    gap: clamp(36px, 6vw, 90px);
     align-items: start;
+    width: min(100%, 820px);
+    margin-left: auto;
     padding-bottom: 35px;
 }
 
@@ -156,10 +149,7 @@
     min-width: 0;
 }
 
-/* =====================================================
-   HEADINGS
-===================================================== */
-
+/* HEADINGS */
 .footer-heading {
     margin: 2px 0 17px;
     color: var(--footer-gold);
@@ -168,10 +158,7 @@
     letter-spacing: -0.1px;
 }
 
-/* =====================================================
-   QUICK LINKS — RIGHT ALIGNED
-===================================================== */
-
+/* QUICK LINKS — RIGHT ALIGNED ON DESKTOP */
 .footer-navigation {
     text-align: right;
 }
@@ -217,10 +204,7 @@
     color: var(--footer-gold);
 }
 
-/* =====================================================
-   SOCIAL LINKS
-===================================================== */
-
+/* SOCIAL LINKS */
 .footer-socials {
     display: flex;
     align-items: center;
@@ -241,11 +225,7 @@
     color: var(--footer-gold);
     font-size: 1rem;
     text-decoration: none;
-    transition:
-        transform 0.22s ease,
-        color 0.22s ease,
-        border-color 0.22s ease,
-        background 0.22s ease;
+    transition: transform 0.22s ease, color 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
 
 .footer-socials a:hover {
@@ -255,12 +235,9 @@
     color: #071321;
 }
 
-/* =====================================================
-   STAY CONNECTED
-===================================================== */
-
+/* STAY CONNECTED */
 .footer-newsletter {
-    padding-left: 8px;
+    padding-left: 0;
 }
 
 .footer-newsletter > p {
@@ -323,26 +300,14 @@
     transform: translateX(2px);
 }
 
-/* =====================================================
-   DIVIDER
-===================================================== */
-
+/* DIVIDER */
 .footer-divider {
     width: 100%;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(104, 159, 202, 0.55) 8%,
-        rgba(104, 159, 202, 0.55) 92%,
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(104, 159, 202, 0.55) 8%, rgba(104, 159, 202, 0.55) 92%, transparent);
 }
 
-/* =====================================================
-   FOOTER BOTTOM
-===================================================== */
-
+/* FOOTER BOTTOM */
 .footer-bottom {
     display: flex;
     align-items: center;
@@ -400,10 +365,7 @@
     color: var(--footer-gold);
     font-size: 0.82rem;
     text-decoration: none;
-    transition:
-        transform 0.22s ease,
-        background 0.22s ease,
-        color 0.22s ease;
+    transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
 }
 
 .footer-back-top:hover {
@@ -412,10 +374,7 @@
     color: #071321;
 }
 
-/* =====================================================
-   TABLET
-===================================================== */
-
+/* TABLET */
 @media (min-width: 768px) and (max-width: 1199px) {
     .portfolio-footer {
         padding-top: 52px;
@@ -433,13 +392,10 @@
     }
 
     .footer-columns {
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 35px;
+        width: min(100%, 740px);
+        grid-template-columns: minmax(170px, 0.8fr) minmax(280px, 1.2fr);
+        gap: 34px;
         padding-bottom: 28px;
-    }
-
-    .footer-newsletter {
-        padding-left: 0;
     }
 
     .footer-newsletter > p {
@@ -452,10 +408,7 @@
     }
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
+/* MOBILE */
 @media (max-width: 767px) {
     .portfolio-footer {
         padding: 43px 0 18px;
@@ -500,7 +453,9 @@
     .footer-columns {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 22px;
+        width: 100%;
+        margin-left: 0;
         padding-bottom: 25px;
     }
 
@@ -508,34 +463,32 @@
     .footer-newsletter {
         width: 100%;
         box-sizing: border-box;
+        text-align: left;
     }
 
     .footer-navigation {
         padding-bottom: 20px;
         border-bottom: 1px solid rgba(104, 159, 202, 0.22);
-        text-align: right;
     }
 
     .footer-navigation .footer-heading {
-        text-align: right;
+        text-align: left;
     }
 
     .footer-links {
-        align-items: flex-end;
+        align-items: flex-start;
         gap: 9px;
     }
 
     .footer-links a {
+        flex-direction: row;
+        text-align: left;
         font-size: 0.86rem;
     }
 
     .footer-heading {
         margin-bottom: 12px;
         font-size: 0.94rem;
-    }
-
-    .footer-newsletter {
-        padding: 0;
     }
 
     .footer-newsletter > p {
@@ -591,10 +544,7 @@
     }
 }
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
+/* SMALL MOBILE */
 @media (max-width: 400px) {
     .portfolio-footer {
         padding-top: 36px;
@@ -614,7 +564,7 @@
     }
 
     .footer-columns {
-        gap: 22px;
+        gap: 20px;
     }
 
     .footer-heading {
@@ -640,28 +590,15 @@
     }
 }
 
-/* =====================================================
-   ANIMATIONS
-===================================================== */
-
+/* ANIMATIONS */
 @keyframes footerGlow {
-    from {
-        transform: translate3d(0, -10px, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(0, 12px, 0) scale(1.07);
-    }
+    from { transform: translate3d(0, -10px, 0) scale(1); }
+    to { transform: translate3d(0, 12px, 0) scale(1.07); }
 }
 
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
-    .footer-glow {
-        animation: none;
-    }
+    .footer-glow { animation: none; }
 
     .footer-links a,
     .footer-socials a,
