@@ -277,10 +277,9 @@
 
                             <div class="certificate-footer">
 
-```blade
 @if($certificate->image)
     <a
-        href="{{ asset('storage/' . $certificate->image) }}"
+        href="{{ asset($certificate->image) }}"
         target="_blank"
         rel="noopener noreferrer"
         class="certificate-link"
