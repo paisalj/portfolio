@@ -1,9 +1,13 @@
+```blade
 <section id="contact" class="contact-section">
 
+    <div class="contact-grid-bg"></div>
     <div class="contact-glow contact-glow-1"></div>
     <div class="contact-glow contact-glow-2"></div>
+    <div class="contact-orbit contact-orbit-1"></div>
+    <div class="contact-orbit contact-orbit-2"></div>
 
-    <div class="container position-relative">
+    <div class="container position-relative contact-container">
 
         {{-- HEADER --}}
         <div class="contact-header">
@@ -14,194 +18,59 @@
             </div>
 
             <h2 class="contact-title">
-                Let's <span>work together.</span>
+                Contact <span>Me</span>
             </h2>
 
             <p class="contact-subtitle">
-                Saya terbuka untuk peluang kerja, project, maupun
-                kolaborasi dalam pengembangan aplikasi web.
+                Jika Anda memiliki pertanyaan, saran, atau ingin
+                bekerja sama, jangan ragu untuk menghubungi saya.
+                Saya akan dengan senang hati membantu.
             </p>
 
         </div>
 
+        {{-- CONTACT LAYOUT --}}
+        <div class="contact-layout">
 
-        {{-- CONTACT CONTENT --}}
-        <div class="row g-4 align-items-stretch">
+            {{-- CONTACT FORM --}}
+            <div class="contact-form-panel">
 
-            {{-- LEFT --}}
-{{-- LEFT --}}
-<div class="col-lg-5">
-
-    <div class="contact-info-card">
-
-        <div class="contact-card-label">
-            GET IN TOUCH
-        </div>
-
-        <h3>
-            Let's build
-            <span>something great.</span>
-        </h3>
-
-        <p class="contact-info-description">
-            Saya terbuka untuk peluang kerja, project,
-            maupun kolaborasi dalam pengembangan aplikasi web.
-            Jika memiliki ide atau peluang yang ingin didiskusikan,
-            silakan kirimkan pesan melalui form di samping.
-        </p>
-
-
-        {{-- LOCATION --}}
-        @if($about?->location)
-
-            <div class="contact-info">
-
-                <div class="contact-info-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-
-                <div>
-                    <small>Location</small>
-                    <strong>{{ $about->location }}</strong>
-                </div>
-
-            </div>
-
-        @endif
-
-
-        {{-- AVAILABLE FOR --}}
-        <div class="contact-info">
-
-            <div class="contact-info-icon">
-                <i class="fa-solid fa-briefcase"></i>
-            </div>
-
-            <div>
-                <small>Available for</small>
-                <strong>Job Opportunities · Projects</strong>
-            </div>
-
-        </div>
-
-
-        {{-- FOCUS --}}
-        @if($about?->focus)
-
-            <div class="contact-info">
-
-                <div class="contact-info-icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-
-                <div>
-                    <small>Current Focus</small>
-                    <strong>{{ $about->focus }}</strong>
-                </div>
-
-            </div>
-
-        @endif
-
-
-        {{-- BOTTOM CTA --}}
-        <div class="contact-mini-cta">
-
-            <div class="contact-mini-cta-icon">
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-
-            <div>
-                <span>Open to new opportunities</span>
-                <small>Let's start a conversation.</small>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-            {{-- RIGHT --}}
-            <div class="col-lg-7">
-
-                <div class="contact-action-card">
-
-                    <div class="contact-action-icon">
-                        <i class="fa-solid fa-paper-plane"></i>
+                @if(session('contact_success'))
+                    <div class="contact-success-message">
+                        <i class="fa-solid fa-circle-check"></i>
+                        {{ session('contact_success') }}
                     </div>
+                @endif
 
-                    <h3>
-                        Let's start a conversation
-                    </h3>
+                @if($errors->any())
+                    <div class="contact-error-message">
+                        <i class="fa-solid fa-circle-exclamation"></i>
 
-                    <p>
-                        Punya pertanyaan, ide project, atau peluang
-                        kerja? Kirimkan pesan dan mari kita berdiskusi.
-                    </p>
-
-
-                    {{-- SUCCESS MESSAGE --}}
-                    @if(session('contact_success'))
-
-                        <div class="contact-success-message">
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            {{ session('contact_success') }}
-
+                        <div>
+                            <strong>Pesan belum dapat dikirim.</strong>
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
+                    </div>
+                @endif
 
-                    @endif
+                <form
+                    action="{{ route('contact.store') }}"
+                    method="POST"
+                    class="contact-form"
+                >
+                    @csrf
 
-
-                    {{-- VALIDATION ERROR --}}
-                    @if($errors->any())
-
-                        <div class="contact-error-message">
-
-                            <i class="fa-solid fa-circle-exclamation"></i>
-
-                            <div>
-
-                                <strong>
-                                    Pesan belum dapat dikirim.
-                                </strong>
-
-                                <ul>
-
-                                    @foreach($errors->all() as $error)
-
-                                        <li>
-                                            {{ $error }}
-                                        </li>
-
-                                    @endforeach
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    @endif
-
-
-                    {{-- CONTACT FORM --}}
-                    <form
-                        action="{{ route('contact.store') }}"
-                        method="POST"
-                        class="contact-form"
-                    >
-
-                        @csrf
-
+                    <div class="contact-form-row">
 
                         {{-- NAME --}}
                         <div class="contact-form-group">
-
                             <label for="contact-name">
-                                Nama
+                                <i class="fa-solid fa-user"></i>
+                                Nama Lengkap <span>*</span>
                             </label>
 
                             <input
@@ -209,18 +78,17 @@
                                 id="contact-name"
                                 name="name"
                                 value="{{ old('name') }}"
-                                placeholder="Masukkan nama Anda"
+                                placeholder="Masukkan nama lengkap"
+                                autocomplete="name"
                                 required
                             >
-
                         </div>
-
 
                         {{-- EMAIL --}}
                         <div class="contact-form-group">
-
                             <label for="contact-email">
-                                Email
+                                <i class="fa-solid fa-envelope"></i>
+                                Email <span>*</span>
                             </label>
 
                             <input
@@ -228,63 +96,201 @@
                                 id="contact-email"
                                 name="email"
                                 value="{{ old('email') }}"
-                                placeholder="nama@email.com"
+                                placeholder="Masukkan email Anda"
+                                autocomplete="email"
                                 required
                             >
-
                         </div>
 
+                    </div>
 
-                        {{-- SUBJECT --}}
-                        <div class="contact-form-group">
+                    {{-- SUBJECT --}}
+                    <div class="contact-form-group">
+                        <label for="contact-subject">
+                            <i class="fa-solid fa-list"></i>
+                            Subjek
+                        </label>
 
-                            <label for="contact-subject">
-                                Subject
-                            </label>
-
-                            <input
-                                type="text"
-                                id="contact-subject"
-                                name="subject"
-                                value="{{ old('subject') }}"
-                                placeholder="Contoh: Peluang kerja"
-                            >
-
-                        </div>
-
-
-                        {{-- MESSAGE --}}
-                        <div class="contact-form-group">
-
-                            <label for="contact-message">
-                                Pesan
-                            </label>
-
-                            <textarea
-                                id="contact-message"
-                                name="message"
-                                rows="5"
-                                placeholder="Tulis pesan Anda..."
-                                required
-                            >{{ old('message') }}</textarea>
-
-                        </div>
-
-
-                        {{-- SUBMIT --}}
-                        <button
-                            type="submit"
-                            class="contact-main-button"
+                        <input
+                            type="text"
+                            id="contact-subject"
+                            name="subject"
+                            value="{{ old('subject') }}"
+                            placeholder="Contoh: Peluang kerja"
                         >
+                    </div>
 
-                            Kirim Pesan
+                    {{-- MESSAGE --}}
+                    <div class="contact-form-group">
+                        <label for="contact-message">
+                            <i class="fa-regular fa-message"></i>
+                            Pesan <span>*</span>
+                        </label>
 
-                            <i class="fa-solid fa-paper-plane"></i>
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tuliskan pesan Anda di sini..."
+                            required
+                        >{{ old('message') }}</textarea>
+                    </div>
 
-                        </button>
+                    {{-- SUBMIT --}}
+                    <button type="submit" class="contact-main-button">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Kirim Pesan</span>
+                    </button>
 
-                    </form>
+                </form>
 
+            </div>
+
+            {{-- CONTACT DETAILS --}}
+            <div class="contact-details-column">
+
+                <div class="contact-details-card">
+
+                    {{-- EMAIL --}}
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="contact-detail-text">
+                            <small>Email</small>
+
+                            @if($about?->email)
+                                <a href="mailto:{{ $about->email }}">
+                                    {{ $about->email }}
+                                </a>
+                                <span>Kirim email kapan saja</span>
+                            @else
+                                <strong>Hubungi saya melalui form</strong>
+                            @endif
+                        </div>
+                    </div>
+
+                    {{-- PHONE --}}
+                    @if($about?->phone)
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div class="contact-detail-text">
+                                <small>Telepon</small>
+
+                                <a href="tel:{{ preg_replace('/[^0-9+]/', '', $about->phone) }}">
+                                    {{ $about->phone }}
+                                </a>
+
+                                <span>Silakan hubungi saya</span>
+                            </div>
+                        </div>
+                    @endif
+
+                    {{-- LOCATION --}}
+                    @if($about?->location)
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div class="contact-detail-text">
+                                <small>Lokasi</small>
+                                <strong>{{ $about->location }}</strong>
+                                <span>Indonesia</span>
+                            </div>
+                        </div>
+                    @endif
+
+                </div>
+
+                {{-- SOCIAL LINKS --}}
+                <div class="contact-socials">
+
+                    @if($about?->github)
+                        <a
+                            href="{{ $about->github }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            title="GitHub"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    @endif
+
+                    @if($about?->linkedin)
+                        <a
+                            href="{{ $about->linkedin }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            title="LinkedIn"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    @endif
+
+                    @if($about?->instagram)
+                        <a
+                            href="{{ $about->instagram }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            title="Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    @endif
+
+                </div>
+
+            </div>
+
+            {{-- DECORATIVE ENVELOPE --}}
+            <div class="contact-visual" aria-hidden="true">
+
+                <div class="contact-visual-orbit contact-visual-orbit-1"></div>
+                <div class="contact-visual-orbit contact-visual-orbit-2"></div>
+
+                <div class="contact-floating-icon contact-floating-mail">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <div class="contact-floating-icon contact-floating-chat">
+                    <i class="fa-regular fa-comment-dots"></i>
+                </div>
+
+                <div class="contact-envelope-scene">
+
+                    <div class="contact-envelope-shadow"></div>
+
+                    <div class="contact-envelope">
+                        <div class="contact-envelope-back"></div>
+                        <div class="contact-envelope-paper">
+                            <i class="fa-solid fa-at"></i>
+                        </div>
+                        <div class="contact-envelope-flap"></div>
+                        <div class="contact-envelope-front"></div>
+                    </div>
+
+                    <div class="contact-envelope-platform">
+                        <span></span>
+                    </div>
+
+                    <div class="contact-envelope-spark contact-spark-1"></div>
+                    <div class="contact-envelope-spark contact-spark-2"></div>
+                    <div class="contact-envelope-spark contact-spark-3"></div>
+
+                </div>
+
+                <div class="contact-visual-caption">
+                    <span></span>
+                    LET'S CONNECT
+                    <span></span>
                 </div>
 
             </div>
@@ -294,3 +300,4 @@
     </div>
 
 </section>
+```
