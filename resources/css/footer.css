@@ -756,3 +756,38 @@
         transition: none;
     }
 }
+
+/* =====================================================
+   QUICK LINKS — RIGHT ALIGNMENT
+===================================================== */
+
+.footer-navigation {
+    text-align: right;
+}
+
+.footer-navigation .footer-heading {
+    text-align: right;
+}
+
+.footer-navigation .footer-links {
+    align-items: flex-end;
+}
+
+.footer-navigation .footer-links a {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .footer-navigation {
+        text-align: right;
+    }
+
+    .footer-navigation .footer-heading {
+        text-align: right;
+    }
+
+    .footer-navigation .footer-links {
+        align-items: flex-end;
+    }
+}

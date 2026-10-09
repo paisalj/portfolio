@@ -116,65 +116,6 @@
 
             </div>
 
-            {{-- CONTACT INFORMATION --}}
-            <div class="footer-contact">
-
-                <h3 class="footer-heading">
-                    Contact Info
-                </h3>
-
-                {{-- EMAIL --}}
-                @if($home?->email)
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-
-                        <div class="footer-contact-text">
-                            <strong>Email</strong>
-                            <a href="mailto:{{ $home->email }}">
-                                {{ $home->email }}
-                            </a>
-                            <span>Kirim email kapan saja</span>
-                        </div>
-                    </div>
-                @endif
-
-                {{-- PHONE --}}
-                @if($home?->phone)
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-
-                        <div class="footer-contact-text">
-                            <strong>Telepon</strong>
-                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $home->phone) }}">
-                                {{ $home->phone }}
-                            </a>
-                            <span>Silakan hubungi saya</span>
-                        </div>
-                    </div>
-                @endif
-
-                {{-- LOCATION --}}
-                @if($home?->location)
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-
-                        <div class="footer-contact-text">
-                            <strong>Lokasi</strong>
-                            <span class="footer-location">
-                                {{ $home->location }}
-                            </span>
-                            <span>Indonesia</span>
-                        </div>
-                    </div>
-                @endif
-
-            </div>
 
             {{-- STAY CONNECTED --}}
             <div class="footer-newsletter">
