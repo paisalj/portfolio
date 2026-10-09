@@ -150,7 +150,7 @@
                         <div class="admin-certificate-current-image">
 
                             <img
-                                src="{{ asset('storage/' . $certificate->image) }}"
+                                src="{{ asset($certificate->image) }}"
                                 alt="{{ $certificate->name }}"
                             >
 
