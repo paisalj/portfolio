@@ -210,11 +210,15 @@
 
                             @if($certificate->image)
 
-                                <img
-                                    src="{{ asset('storage/' . $certificate->image) }}"
-                                    alt="{{ $certificate->name }}"
-                                    loading="lazy"
-                                >
+<img
+    src="{{ asset(
+        str_starts_with($certificate->image, 'uploads/certificates/')
+            ? $certificate->image
+            : 'storage/' . $certificate->image
+    ) }}"
+    alt="{{ $certificate->name }}"
+    loading="lazy"
+>
 
                             @else
 
@@ -279,7 +283,11 @@
 
 @if($certificate->image)
     <a
-        href="{{ asset($certificate->image) }}"
+        href="{{ asset(
+            str_starts_with($certificate->image, 'uploads/certificates/')
+                ? $certificate->image
+                : 'storage/' . $certificate->image
+        ) }}"
         target="_blank"
         rel="noopener noreferrer"
         class="certificate-link"
@@ -287,23 +295,6 @@
         <i class="fa-solid fa-eye"></i>
         Lihat Sertifikat
     </a>
-@endif
-
-@if($certificate->credential_url)
-    <a
-        href="{{ $certificate->credential_url }}"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="certificate-link"
-    >
-        Verifikasi
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </a>
-@else
-    <span class="certificate-verified">
-        <i class="fa-solid fa-circle-check"></i>
-        Sertifikat
-    </span>
 @endif
 
                                 <div class="certificate-icon">
