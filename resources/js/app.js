@@ -186,3 +186,44 @@ deleteMessageForms.forEach(function (form) {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (!themeToggle) return;
+
+    const themeIcon = themeToggle.querySelector('i');
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.body.setAttribute('data-theme', theme);
+
+        if (themeIcon) {
+            themeIcon.classList.toggle('fa-moon', theme === 'dark');
+            themeIcon.classList.toggle('fa-sun', theme === 'light');
+        }
+
+        themeToggle.setAttribute(
+            'aria-label',
+            theme === 'dark' ? 'Aktifkan mode terang' : 'Aktifkan mode gelap'
+        );
+
+        themeToggle.setAttribute(
+            'title',
+            theme === 'dark' ? 'Mode terang' : 'Mode gelap'
+        );
+    }
+
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme') || 'dark';
+
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        applyTheme(nextTheme);
+        localStorage.setItem('portfolio-theme', nextTheme);
+    });
+});

@@ -1,6 +1,15 @@
 /* =====================================================
-   PORTFOLIO NAVBAR
+   PORTFOLIO NAVBAR — NAVY & GOLD
+   Responsive: Desktop, Tablet, Mobile
+   Theme support: data-theme="dark" / data-theme="light"
 ===================================================== */
+
+:root {
+    --navbar-height: 76px;
+    --navbar-gold: #f5c84c;
+    --navbar-gold-light: #ffe28a;
+    --navbar-blue: #1683ff;
+}
 
 .portfolio-navbar {
     position: fixed;
@@ -8,105 +17,69 @@
     left: 0;
     right: 0;
     z-index: 1000;
-
-    background: rgba(3, 12, 29, 0.84);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
+    min-height: var(--navbar-height);
+    background: rgba(3, 12, 29, 0.90);
+    border-bottom: 1px solid rgba(245, 200, 76, 0.12);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
 .portfolio-navbar .container {
-    min-height: 76px;
-
+    min-height: var(--navbar-height);
     display: flex;
     align-items: center;
 }
 
-
-/* =====================================================
-   BRAND
-===================================================== */
-
+/* BRAND */
 .portfolio-brand {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    color: #ffffff !important;
+    margin-right: 24px;
+    color: #f8fafc !important;
     text-decoration: none;
-
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     font-weight: 800;
-    letter-spacing: -0.4px;
-
+    letter-spacing: -.4px;
     white-space: nowrap;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    transition: color .25s ease, transform .25s ease;
 }
 
 .portfolio-brand:hover {
-    color: #ffffff !important;
+    color: #fff !important;
     transform: translateY(-1px);
 }
 
-
-/* =====================================================
-   BRAND ICON
-===================================================== */
-
 .brand-icon {
-    width: 38px;
-    height: 38px;
-
+    width: 40px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 10px;
-
-    background: rgba(22, 131, 255, 0.1);
-    border: 1px solid rgba(22, 131, 255, 0.2);
-
-    color: #1683ff;
-
-    font-size: 0.9rem;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+    flex-shrink: 0;
+    border: 1px solid rgba(245, 200, 76, .38);
+    border-radius: 11px;
+    background: rgba(245, 200, 76, .07);
+    color: var(--navbar-gold);
+    font-size: .95rem;
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
 }
 
 .portfolio-brand:hover .brand-icon {
-    background: rgba(22, 131, 255, 0.15);
-    border-color: rgba(22, 131, 255, 0.35);
+    background: rgba(245, 200, 76, .14);
+    border-color: rgba(245, 200, 76, .7);
     transform: rotate(-3deg);
 }
 
-
-/* BRAND NAME */
-
 .portfolio-brand > span:last-child > span {
-    color: #1683ff;
+    color: var(--navbar-gold);
 }
 
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* NAV LINKS */
+.portfolio-navbar .navbar-collapse {
+    align-items: center;
+}
 
 .portfolio-navbar .navbar-nav {
     gap: 5px;
@@ -114,254 +87,188 @@
 
 .portfolio-nav-link {
     position: relative;
-
     display: inline-flex !important;
     align-items: center;
-
     min-height: 42px;
-
     padding: 0 12px !important;
-
-    color: #91a4bd !important;
-
-    font-size: 0.78rem;
-    font-weight: 600;
-
     border-radius: 9px;
-
-    transition:
-        color 0.25s ease,
-        background 0.25s ease;
+    color: #a7b6ca !important;
+    font-size: .79rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color .22s ease, background .22s ease;
 }
-
-
-/* UNDERLINE */
 
 .portfolio-nav-link::after {
     content: "";
-
     position: absolute;
-
     left: 12px;
     right: 12px;
     bottom: 4px;
-
     height: 2px;
-
     border-radius: 999px;
-
-    background: #1683ff;
-
+    background: var(--navbar-gold);
     transform: scaleX(0);
     transform-origin: center;
-
-    transition: transform 0.25s ease;
+    transition: transform .22s ease;
 }
-
-
-/* HOVER */
 
 .portfolio-nav-link:hover {
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.035);
+    color: #fff !important;
+    background: rgba(255, 255, 255, .035);
 }
 
-.portfolio-nav-link:hover::after {
-    transform: scaleX(1);
-}
-
-
-/* ACTIVE */
-
-.portfolio-nav-link.active {
-    color: #ffffff !important;
-    background: rgba(22, 131, 255, 0.08);
-}
-
+.portfolio-nav-link:hover::after,
 .portfolio-nav-link.active::after {
     transform: scaleX(1);
 }
 
+.portfolio-nav-link.active {
+    color: #fff !important;
+    background: rgba(245, 200, 76, .07);
+}
 
-/* =====================================================
-   THEME TOGGLE
-===================================================== */
-
+/* THEME BUTTON */
 .theme-toggle {
     width: 40px;
     height: 40px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    margin-left: 6px;
-
+    margin-left: 8px;
     padding: 0;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(245, 200, 76, .18);
     border-radius: 10px;
-
-    background: rgba(255, 255, 255, 0.035);
-
-    color: #9fb2c9;
-
-    font-size: 0.85rem;
-
+    background: rgba(255, 255, 255, .035);
+    color: var(--navbar-gold);
+    font-size: .92rem;
     cursor: pointer;
-
-    transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+    transition: color .25s ease, background .25s ease, border-color .25s ease, transform .25s ease;
 }
 
 .theme-toggle:hover {
-    color: #ffffff;
-
-    background: rgba(22, 131, 255, 0.1);
-    border-color: rgba(22, 131, 255, 0.3);
-
+    color: #071321;
+    background: var(--navbar-gold);
+    border-color: var(--navbar-gold);
     transform: translateY(-2px);
 }
 
-.theme-toggle:focus {
-    outline: none;
-    box-shadow: none;
+.theme-toggle:focus-visible,
+.portfolio-toggler:focus-visible {
+    outline: 2px solid var(--navbar-gold);
+    outline-offset: 3px;
 }
 
-
-/* =====================================================
-   MOBILE TOGGLE
-===================================================== */
-
+/* MOBILE HAMBURGER */
 .portfolio-toggler {
     width: 42px;
     height: 42px;
-
     display: none;
     align-items: center;
     justify-content: center;
-
+    margin-left: auto;
     padding: 0;
-
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(245, 200, 76, .2) !important;
     border-radius: 10px !important;
-
-    background: rgba(255, 255, 255, 0.035) !important;
-
+    background: rgba(255, 255, 255, .035) !important;
     box-shadow: none !important;
 }
 
 .portfolio-toggler:hover {
-    background: rgba(22, 131, 255, 0.1) !important;
-    border-color: rgba(22, 131, 255, 0.3) !important;
+    border-color: rgba(245, 200, 76, .55) !important;
+    background: rgba(245, 200, 76, .08) !important;
 }
-
-.portfolio-toggler:focus {
-    box-shadow: none !important;
-}
-
-
-/* Bootstrap hamburger */
 
 .portfolio-toggler .navbar-toggler-icon {
     width: 20px;
     height: 20px;
-
     background-image: var(--bs-navbar-toggler-icon-bg);
-
     filter: brightness(0) invert(1);
 }
 
+/* TABLET / SMALL LAPTOP */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .portfolio-brand {
+        margin-right: 12px;
+        font-size: 1.02rem;
+    }
 
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
+    .brand-icon {
+        width: 37px;
+        height: 37px;
+    }
 
     .portfolio-navbar .navbar-nav {
-        gap: 2px;
+        gap: 1px;
     }
 
     .portfolio-nav-link {
-        padding-left: 9px !important;
-        padding-right: 9px !important;
-
-        font-size: 0.74rem;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        font-size: .72rem;
     }
 
     .portfolio-nav-link::after {
-        left: 9px;
-        right: 9px;
+        left: 8px;
+        right: 8px;
     }
 
+    .theme-toggle {
+        margin-left: 4px;
+    }
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 991px) {
+/* COLLAPSED MENU — TABLET AND MOBILE */
+@media (max-width: 991.98px) {
+    .portfolio-navbar,
+    .portfolio-navbar .container {
+        --navbar-height: 70px;
+    }
 
     .portfolio-navbar .container {
-        min-height: 70px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 9px;
+        padding-bottom: 9px;
     }
 
     .portfolio-toggler {
         display: inline-flex;
+        order: 3;
     }
-
-
-    /* COLLAPSED MENU */
 
     .portfolio-navbar .navbar-collapse {
+        flex-basis: 100%;
         width: 100%;
-
         margin-top: 10px;
         padding: 10px;
-
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(245, 200, 76, .18);
         border-radius: 15px;
-
-        background: rgba(5, 17, 36, 0.97);
-
+        background: rgba(3, 14, 31, .98);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
-
-        box-shadow:
-            0 20px 45px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, .3);
     }
-
-
-    /* MENU */
 
     .portfolio-navbar .navbar-nav {
         width: 100%;
-
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-
+        align-items: stretch !important;
         gap: 4px;
     }
 
+    .portfolio-navbar .nav-item {
+        width: 100%;
+    }
 
     .portfolio-nav-link {
         width: 100%;
-
-        min-height: 46px;
-
+        min-height: 44px;
         justify-content: flex-start;
-
         padding: 0 14px !important;
-
-        border-radius: 10px;
-
-        font-size: 0.86rem;
+        border-radius: 9px;
+        font-size: .88rem;
     }
 
     .portfolio-nav-link::after {
@@ -370,78 +277,143 @@
 
     .portfolio-nav-link:hover,
     .portfolio-nav-link.active {
-        background: rgba(22, 131, 255, 0.09);
+        background: rgba(245, 200, 76, .09);
+        color: var(--navbar-gold-light) !important;
     }
-
-
-    /* THEME */
 
     .portfolio-navbar .nav-item:last-child {
         margin-top: 6px;
         padding-top: 10px;
-
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid rgba(255, 255, 255, .08);
     }
 
     .theme-toggle {
-        margin-left: 0;
+        margin: 0;
     }
-
 }
 
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
+/* SMALL MOBILE */
 @media (max-width: 480px) {
-
+    .portfolio-navbar,
     .portfolio-navbar .container {
-        min-height: 66px;
+        --navbar-height: 66px;
     }
 
     .portfolio-brand {
+        gap: 8px;
+        margin-right: 8px;
         font-size: 1rem;
     }
 
     .brand-icon {
-        width: 34px;
-        height: 34px;
-
-        font-size: 0.8rem;
+        width: 35px;
+        height: 35px;
+        border-radius: 9px;
+        font-size: .82rem;
     }
 
     .portfolio-toggler {
-        width: 40px;
-        height: 40px;
+        width: 39px;
+        height: 39px;
     }
 
     .portfolio-navbar .navbar-collapse {
         margin-top: 8px;
-        padding: 10px;
+        padding: 9px;
     }
 
     .portfolio-nav-link {
-        min-height: 44px;
-        font-size: 0.84rem;
+        min-height: 43px;
+        font-size: .85rem;
     }
-
 }
 
+/* LIGHT THEME — NAVBAR ONLY */
+html[data-theme="light"] .portfolio-navbar,
+body[data-theme="light"] .portfolio-navbar {
+    background: rgba(248, 250, 252, .94);
+    border-bottom-color: rgba(15, 35, 58, .12);
+    box-shadow: 0 6px 24px rgba(15, 35, 58, .06);
+}
 
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
+html[data-theme="light"] .portfolio-brand,
+body[data-theme="light"] .portfolio-brand {
+    color: #122238 !important;
+}
 
+html[data-theme="light"] .portfolio-brand:hover,
+body[data-theme="light"] .portfolio-brand:hover {
+    color: #122238 !important;
+}
+
+html[data-theme="light"] .portfolio-nav-link,
+body[data-theme="light"] .portfolio-nav-link {
+    color: #53657b !important;
+}
+
+html[data-theme="light"] .portfolio-nav-link:hover,
+html[data-theme="light"] .portfolio-nav-link.active,
+body[data-theme="light"] .portfolio-nav-link:hover,
+body[data-theme="light"] .portfolio-nav-link.active {
+    color: #122238 !important;
+    background: rgba(245, 200, 76, .16);
+}
+
+html[data-theme="light"] .theme-toggle,
+body[data-theme="light"] .theme-toggle {
+    border-color: rgba(15, 35, 58, .14);
+    background: rgba(15, 35, 58, .04);
+    color: #8a6500;
+}
+
+html[data-theme="light"] .theme-toggle:hover,
+body[data-theme="light"] .theme-toggle:hover {
+    background: var(--navbar-gold);
+    color: #122238;
+}
+
+@media (max-width: 991.98px) {
+    html[data-theme="light"] .portfolio-navbar .navbar-collapse,
+    body[data-theme="light"] .portfolio-navbar .navbar-collapse {
+        background: rgba(248, 250, 252, .99);
+        border-color: rgba(15, 35, 58, .13);
+        box-shadow: 0 20px 45px rgba(15, 35, 58, .12);
+    }
+
+    html[data-theme="light"] .portfolio-nav-link:hover,
+    html[data-theme="light"] .portfolio-nav-link.active,
+    body[data-theme="light"] .portfolio-nav-link:hover,
+    body[data-theme="light"] .portfolio-nav-link.active {
+        color: #122238 !important;
+        background: rgba(245, 200, 76, .2);
+    }
+
+    html[data-theme="light"] .portfolio-navbar .nav-item:last-child,
+    body[data-theme="light"] .portfolio-navbar .nav-item:last-child {
+        border-top-color: rgba(15, 35, 58, .12);
+    }
+
+    html[data-theme="light"] .portfolio-toggler,
+    body[data-theme="light"] .portfolio-toggler {
+        border-color: rgba(15, 35, 58, .15) !important;
+        background: rgba(15, 35, 58, .04) !important;
+    }
+
+    html[data-theme="light"] .portfolio-toggler .navbar-toggler-icon,
+    body[data-theme="light"] .portfolio-toggler .navbar-toggler-icon {
+        filter: none;
+    }
+}
+
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
-
     .portfolio-navbar,
     .portfolio-brand,
     .brand-icon,
     .portfolio-nav-link,
+    .portfolio-nav-link::after,
     .theme-toggle,
     .portfolio-toggler {
-        transition: none;
+        transition: none !important;
     }
-
 }
