@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers\Admin;
@@ -5,7 +6,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class CertificateController extends Controller
 {
@@ -34,9 +35,18 @@ class CertificateController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request
-                ->file('image')
-                ->store('certificates', 'public');
+            $uploadPath = public_path('uploads/certificates');
+
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
+            }
+
+            $file = $request->file('image');
+            $fileName = uniqid('certificate_') . '.' . $file->extension();
+
+            $file->move($uploadPath, $fileName);
+
+            $validated['image'] = 'uploads/certificates/' . $fileName;
         }
 
         Certificate::create($validated);
@@ -64,14 +74,30 @@ class CertificateController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/certificates');
 
-            if ($certificate->image) {
-                Storage::disk('public')->delete($certificate->image);
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
 
-            $validated['image'] = $request
-                ->file('image')
-                ->store('certificates', 'public');
+            // Hapus gambar lama jika sebelumnya tersimpan di uploads/certificates.
+            if (
+                $certificate->image &&
+                str_starts_with($certificate->image, 'uploads/certificates/')
+            ) {
+                $oldImage = public_path($certificate->image);
+
+                if (File::exists($oldImage)) {
+                    File::delete($oldImage);
+                }
+            }
+
+            $file = $request->file('image');
+            $fileName = uniqid('certificate_') . '.' . $file->extension();
+
+            $file->move($uploadPath, $fileName);
+
+            $validated['image'] = 'uploads/certificates/' . $fileName;
         }
 
         $certificate->update($validated);
@@ -83,8 +109,15 @@ class CertificateController extends Controller
 
     public function destroy(Certificate $certificate)
     {
-        if ($certificate->image) {
-            Storage::disk('public')->delete($certificate->image);
+        if (
+            $certificate->image &&
+            str_starts_with($certificate->image, 'uploads/certificates/')
+        ) {
+            $imagePath = public_path($certificate->image);
+
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
         }
 
         $certificate->delete();
