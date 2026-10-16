@@ -225,12 +225,13 @@
         --navbar-height: 70px;
     }
 
-    .portfolio-navbar .container {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-top: 9px;
-        padding-bottom: 9px;
-    }
+.portfolio-navbar .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
 
 .portfolio-toggler {
     display: inline-flex;
