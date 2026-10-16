@@ -126,34 +126,30 @@
 
                 @forelse($projects as $project)
 
-                    @php
+@php
+    $projectSkillNames = $project->skills
+        ->pluck('name')
+        ->map(fn ($name) => strtolower(trim($name)))
+        ->implode('|');
 
-                        /*
-                        |--------------------------------------------------------------------------
-                        | Project skill names untuk filter
-                        |--------------------------------------------------------------------------
-                        */
+    $projectImage = null;
 
-                        $projectSkillNames = $project->skills
-                            ->pluck('name')
-                            ->map(fn($name) => strtolower(trim($name)))
-                            ->implode('|');
+    if ($project->image) {
+        if (str_starts_with($project->image, 'http')) {
+            $projectImage = $project->image;
+        } else {
+            $imagePath = ltrim($project->image, '/');
 
-
-                        /*
-                        |--------------------------------------------------------------------------
-                        | Project image
-                        |--------------------------------------------------------------------------
-                        */
-
-                        $projectImage = $project->image
-                            ? (str_starts_with($project->image, 'http')
-                                ? $project->image
-                                : asset('storage/' . $project->image))
-                            : null;
-
-                    @endphp
-
+            // Jika path lama masih menggunakan storage/
+            if (str_starts_with($imagePath, 'storage/')) {
+                $projectImage = asset($imagePath);
+            } else {
+                // Untuk gambar yang disimpan di folder uploads
+                $projectImage = asset('uploads/' . $imagePath);
+            }
+        }
+    }
+@endphp
 
                     <article
                         class="project-card"
