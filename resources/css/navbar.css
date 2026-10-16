@@ -238,13 +238,13 @@
     }
 
     /* Keep the hamburger in the top row beside the brand */
-    .portfolio-toggler {
-        display: inline-flex;
-        order: 2;
-        margin-left: auto;
-        align-self: center;
-    }
-
+.portfolio-toggler {
+    display: inline-flex;
+    order: 0;
+    margin-left: auto;
+    align-self: center;
+    flex-shrink: 0;
+}
     .portfolio-navbar .navbar-collapse {
         flex-basis: 100%;
         width: 100%;
