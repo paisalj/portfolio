@@ -232,11 +232,12 @@
         padding-bottom: 9px;
     }
 
-    .portfolio-toggler {
-        display: inline-flex;
-        order: 3;
-    }
-
+.portfolio-toggler {
+    display: inline-flex;
+    order: 2;
+    margin-left: auto;
+    align-self: center;
+}
     .portfolio-navbar .navbar-collapse {
         flex-basis: 100%;
         width: 100%;

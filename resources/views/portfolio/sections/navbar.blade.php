@@ -11,6 +11,17 @@
             </span>
         </a>
 
+        <button
+            class="navbar-toggler portfolio-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
 
@@ -61,12 +72,6 @@
                     <a class="nav-link portfolio-nav-link" href="#contact">
                         Contact
                     </a>
-                </li>
-
-                <li class="nav-item ms-lg-3">
-                    <button class="theme-toggle" id="themeToggle">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
                 </li>
 
             </ul>
