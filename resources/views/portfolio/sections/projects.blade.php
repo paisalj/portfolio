@@ -126,30 +126,37 @@
 
                 @forelse($projects as $project)
 
-@php
-    $projectSkillNames = $project->skills
-        ->pluck('name')
-        ->map(fn ($name) => strtolower(trim($name)))
-        ->implode('|');
+                    @php
 
-    $projectImage = null;
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Project skill names untuk filter
+                        |--------------------------------------------------------------------------
+                        */
 
-    if ($project->image) {
-        if (str_starts_with($project->image, 'http')) {
-            $projectImage = $project->image;
-        } else {
-            $imagePath = ltrim($project->image, '/');
+                        $projectSkillNames = $project->skills
+                            ->pluck('name')
+                            ->map(fn($name) => strtolower(trim($name)))
+                            ->implode('|');
 
-            // Jika path lama masih menggunakan storage/
-            if (str_starts_with($imagePath, 'storage/')) {
-                $projectImage = asset($imagePath);
-            } else {
-                // Untuk gambar yang disimpan di folder uploads
-                $projectImage = asset('uploads/' . $imagePath);
-            }
-        }
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Project image
+                        |--------------------------------------------------------------------------
+                        */
+
+$projectImage = null;
+
+if ($project->image) {
+    if (str_starts_with($project->image, 'http')) {
+        $projectImage = $project->image;
+    } else {
+        $projectImage = asset(ltrim($project->image, '/'));
     }
-@endphp
+}
+                    @endphp
+
 
                     <article
                         class="project-card"
