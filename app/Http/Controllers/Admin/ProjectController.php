@@ -44,7 +44,7 @@ class ProjectController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
             'description' => ['required', 'string'],
-            'image' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
             'github_url' => ['nullable', 'url', 'max:255'],
             'demo_url' => ['nullable', 'url', 'max:255'],
             'start_date' => ['nullable', 'date'],
@@ -59,9 +59,18 @@ class ProjectController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request
-                ->file('image')
-                ->store('projects', 'public');
+            $uploadPath = public_path('uploads/projects');
+
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
+            }
+
+            $image = $request->file('image');
+            $imageName = Str::uuid() . '.' . $image->extension();
+
+            $image->move($uploadPath, $imageName);
+
+            $validated['image'] = 'uploads/projects/' . $imageName;
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
@@ -103,7 +112,7 @@ class ProjectController extends Controller
                 'unique:projects,slug,' . $project->id,
             ],
             'description' => ['required', 'string'],
-            'image' => ['nullable', 'image', 'max:2048'],
+            'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
             'github_url' => ['nullable', 'url', 'max:255'],
             'demo_url' => ['nullable', 'url', 'max:255'],
             'start_date' => ['nullable', 'date'],
@@ -118,14 +127,30 @@ class ProjectController extends Controller
         }
 
         if ($request->hasFile('image')) {
+            $uploadPath = public_path('uploads/projects');
 
-            if ($project->image) {
-                Storage::disk('public')->delete($project->image);
+            if (!File::isDirectory($uploadPath)) {
+                File::makeDirectory($uploadPath, 0755, true);
             }
 
-            $validated['image'] = $request
-                ->file('image')
-                ->store('projects', 'public');
+            $image = $request->file('image');
+            $imageName = Str::uuid() . '.' . $image->extension();
+
+            $image->move($uploadPath, $imageName);
+
+            // Hapus gambar lama hanya jika berada di folder upload project.
+            if (
+                $project->image &&
+                str_starts_with($project->image, 'uploads/projects/')
+            ) {
+                $oldImagePath = public_path($project->image);
+
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
+                }
+            }
+
+            $validated['image'] = 'uploads/projects/' . $imageName;
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
@@ -144,8 +169,15 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        if ($project->image) {
-            Storage::disk('public')->delete($project->image);
+        if (
+            $project->image &&
+            str_starts_with($project->image, 'uploads/projects/')
+        ) {
+            $imagePath = public_path($project->image);
+
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
         }
 
         $project->delete();
