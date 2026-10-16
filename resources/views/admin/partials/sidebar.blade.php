@@ -41,13 +41,6 @@
             <i class="fa-solid fa-user"></i>
             <span>About</span>
         </a>
-        <a
-            href="{{ route('admin.profile') }}"
-            class="admin-nav-link {{ request()->routeIs('admin.profile*') ? 'active' : '' }}"
-        >
-            <i class="fa-solid fa-user"></i>
-            <span>Profile</span>
-        </a>
 
 
         <a href="{{ route('admin.skills') }}" class="admin-nav-link">
